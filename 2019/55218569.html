@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+  <!-- 页面元数据 -->
+  
+  <title>Python 基础1 - AskeyNil</title>
+  
+    <meta name="keywords" content="Python">
+  
+
+  
+    <meta name="description" content="变量变量的命名规则
+只能有数字，字母，下划线（_）组成
+不能以数字开头
+不能是关键字
+区分大小写
+
+命名规范
+下划线命名法  
+my_first_name
+my_last_name
+
+
+驼峰命名法
+大驼峰
+MyFirstName
+MyLastName
+
+
+小驼峰
+myFirstName
+myLastName
+
+
+...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="AskeyNil" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/icon/favicon.ico">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148517433-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-148517433-1');
+	}, 5000);
+    </script>
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">AskeyNil's Blog</p>
+    
+    
+      <p class="subtitle"></br>所有美的事物，都值得慢慢思量，一生珍赏</p>
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>首页</p>
+            </a>
+          
+            <a href="/archives"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>归档</p>
+            </a>
+          
+            <a href="/talk"
+              
+              
+              id="talk">
+              <i class='fas fa-comment-dots fa-fw'></i><p>闲谈</p>
+            </a>
+          
+            <a href="/timeline"
+              
+              
+              id="timeline">
+              <i class='fa fa-history fa-fw'></i><p>站史</p>
+            </a>
+          
+            <a href="/about"
+              
+              
+              id="about">
+              <i class='fas fa-handshake fa-fw'></i><p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            AskeyNil
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-book fa-fw'></i>博文
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-robot fa-fw'></i>ROS
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                  
+                  
+                  
+                    id="2019-11ros-xacrohtml"
+                  >
+                  xacro 语法总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                  
+                  
+                  
+                    id="2019-11ros-urdfhtml"
+                  >
+                  URDF中link、joint属性总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                  
+                  
+                  
+                    id="categoriesROSKinetic"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                  
+                  
+                  
+                    id="2020ROS2-CLI-Toolshtml"
+                  >
+                  ROS2 CLI Tools
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
+                  
+                  
+                  
+                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
+                  >
+                  ROS2 Foxy 安装（基于 Mac OS 二进制）
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
+                  
+                  
+                  
+                    id="tagsROS2"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
+                  
+                  
+                  
+                    id="leetcode"
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-bars fa-fw'></i>站点工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                  
+                  
+                  
+                    id="https:askeynilavosappsus"
+                  >
+                  <i class='far fa-comments fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/note
+                  
+                  
+                  
+                    id="note"
+                  >
+                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
+                  
+                  
+                  
+                    id="talk"
+                  >
+                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
+                  
+                  
+                  
+                    id="day-sign"
+                  >
+                  <i class='fas fa-hourglass-half fa-fw'></i>日签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
+                  
+                  
+                  
+                    id="timeline"
+                  >
+                  <i class='fa fa-history fa-fw'></i>站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-book fa-fw'></i>博文
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-robot fa-fw'></i>ROS
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                  
+                  
+                  
+                    id="2019-11ros-xacrohtml"
+                  >
+                  xacro 语法总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                  
+                  
+                  
+                    id="2019-11ros-urdfhtml"
+                  >
+                  URDF中link、joint属性总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                  
+                  
+                  
+                    id="categoriesROSKinetic"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                  
+                  
+                  
+                    id="2020ROS2-CLI-Toolshtml"
+                  >
+                  ROS2 CLI Tools
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
+                  
+                  
+                  
+                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
+                  >
+                  ROS2 Foxy 安装（基于 Mac OS 二进制）
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
+                  
+                  
+                  
+                    id="tagsROS2"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
+                  
+                  
+                  
+                    id="leetcode"
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-bars fa-fw'></i>站点工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                  
+                  
+                  
+                    id="https:askeynilavosappsus"
+                  >
+                  <i class='far fa-comments fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/note
+                  
+                  
+                  
+                    id="note"
+                  >
+                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
+                  
+                  
+                  
+                    id="talk"
+                  >
+                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
+                  
+                  
+                  
+                    id="day-sign"
+                  >
+                  <i class='fas fa-hourglass-half fa-fw'></i>日签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
+                  
+                  
+                  
+                    id="timeline"
+                  >
+                  <i class='fa fa-history fa-fw'></i>站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Python 基础1</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path">none</div> 
+  <div id="pjax-comment-placeholder">none</div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("none" == "none") { // 移除封面 
+    document.getElementsByClassName('cover')[0].style.display = "none"; 
+    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("none" == "blog") { // 半屏 
+      document.getElementsByClassName('cover')[0].classList.remove("full"); 
+      document.getElementsByClassName('cover')[0].classList.add("half"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("none" == "docs") { // 全屏 
+      document.getElementsByClassName('cover')[0].classList.remove("half"); 
+      document.getElementsByClassName('cover')[0].classList.add("full"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover')[0].style.display = ""; 
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2019/55218569.html">
+      Python 基础1
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-04T18:55:07+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月4日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Coding/Python/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Coding/Python</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.8k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：13分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量的命名规则"><a href="#变量的命名规则" class="headerlink" title="变量的命名规则"></a>变量的命名规则</h3><ol>
+<li>只能有数字，字母，下划线（_）组成</li>
+<li>不能以数字开头</li>
+<li>不能是关键字</li>
+<li>区分大小写</li>
+</ol>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><ol>
+<li>下划线命名法  <ul>
+<li><code>my_first_name</code></li>
+<li><code>my_last_name</code></li>
+</ul>
+</li>
+<li>驼峰命名法<ol>
+<li>大驼峰<ul>
+<li><code>MyFirstName</code></li>
+<li><code>MyLastName</code></li>
+</ul>
+</li>
+<li>小驼峰<ul>
+<li><code>myFirstName</code></li>
+<li><code>myLastName</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>变量类型分为：<strong>数值型</strong>和<strong>非数值型</strong></p>
+<h4 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h4><table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int</td>
+<td align="left">整型</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">浮点型</td>
+</tr>
+<tr>
+<td align="left">bool</td>
+<td align="left">布尔型</td>
+</tr>
+<tr>
+<td align="left">complex</td>
+<td align="left">复数型</td>
+</tr>
+</tbody></table>
+<a id="more"></a> 
+
+
+
+<h4 id="非数值型"><a href="#非数值型" class="headerlink" title="非数值型"></a>非数值型</h4><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>list</td>
+<td>列表</td>
+</tr>
+<tr>
+<td>tuple</td>
+<td>元组</td>
+</tr>
+<tr>
+<td>set</td>
+<td>集合</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>字典</td>
+</tr>
+</tbody></table>
+<h4 id="变量类型的特征和获取"><a href="#变量类型的特征和获取" class="headerlink" title="变量类型的特征和获取"></a>变量类型的特征和获取</h4><p>在Python中定义变量不需要指定数据类型，变量的类型可以在使用过程中随时变化，以最后一次<code>=</code>操作为准</p>
+<blockquote>
+<p>当我们需要获取该变量的类型的时候，可以使用 <code>type</code>获取当前变量的类型</p>
+</blockquote>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+</tr>
+<tr>
+<td>//</td>
+<td>取整除</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余数</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂</td>
+</tr>
+</tbody></table>
+<h4 id="不同变量类型之间的运算"><a href="#不同变量类型之间的运算" class="headerlink" title="不同变量类型之间的运算"></a>不同变量类型之间的运算</h4><ol>
+<li><strong>数值型变量</strong>之间可以直接计算</li>
+<li><strong>字符串</strong>之间使用<code>+</code>拼接字符串</li>
+<li><strong>字符串变量</strong>和<strong>整型</strong>使用<code>*</code>重复拼接相同的字符串</li>
+<li><strong>数值型变量</strong>和<strong>字符串</strong>不能进行其他计算</li>
+</ol>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>加等于(<code>a += b</code>等同于<code>a = a + b</code>)</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>减等于(<code>a -= b</code>等同于<code>a = a - b</code>)</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>乘等于(<code>a *= b</code>等同于<code>a = a * b</code>)</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>除等于(<code>a /= b</code>等同于<code>a = a / b</code>)</td>
+</tr>
+<tr>
+<td>//=</td>
+<td>整除等于(<code>a //= b</code>等同于<code>a = a // b</code>)</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>模等于(<code>a %= b</code>等同于<code>a = a % b</code>)</td>
+</tr>
+<tr>
+<td>**=</td>
+<td>幂等于(<code>a **= b</code>等同于<code>a = a ** b</code>)</td>
+</tr>
+</tbody></table>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>or</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>not</td>
+<td>逻辑非</td>
+</tr>
+</tbody></table>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><ol>
+<li>单目运算符：只需要一个数据运算的运算符，比如 not</li>
+<li>双目运算符：需要两个数据运算的运算符</li>
+<li>总的来说：单目运算符的优先级高于双目运算符</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>**</td>
+<td>幂（最高优先级）</td>
+</tr>
+<tr>
+<td>* / % //</td>
+<td>乘、除、取余数、取整除</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>加、减</td>
+</tr>
+<tr>
+<td>&lt;= &lt; &gt; &gt;=</td>
+<td>比较运算符</td>
+</tr>
+<tr>
+<td>== !=</td>
+<td>等于运算符</td>
+</tr>
+<tr>
+<td>= %= /= //= -= += *= **=</td>
+<td>赋值运算符</td>
+</tr>
+<tr>
+<td>not or and</td>
+<td>逻辑运算符</td>
+</tr>
+</tbody></table>
+<h2 id="输入输出操作"><a href="#输入输出操作" class="headerlink" title="输入输出操作"></a>输入输出操作</h2><h3 id="输出函数"><a href="#输出函数" class="headerlink" title="输出函数"></a>输出函数</h3><ol>
+<li>普通输出</li>
+<li>格式化输出</li>
+</ol>
+<p><code>print()</code>函数</p>
+<h4 id="格式化输出格式"><a href="#格式化输出格式" class="headerlink" title="格式化输出格式"></a>格式化输出格式</h4><table>
+<thead>
+<tr>
+<th>格式化字符串</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>有符号的十进制整数，%06d表示不足 6 位以 0 补齐</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数，%.2f 表示小数后只显示两位</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>输出%</td>
+</tr>
+</tbody></table>
+<p>###输入函数</p>
+<p>获取用户从键盘上输入的信息，需要使用 <code>input</code>函数，不管用户输入了任何内容，Python 都会认为是一个<strong>字符串</strong></p>
+<h4 id="转换输入函数"><a href="#转换输入函数" class="headerlink" title="转换输入函数"></a>转换输入函数</h4><p>使用强制转换来使得用户输入的字符串转换为我们需要的数据类型</p>
+<ol>
+<li><code>float()</code>转换为浮点类型</li>
+<li><code>int()</code>转换为整型</li>
+</ol>
+<h2 id="条件控制语句if"><a href="#条件控制语句if" class="headerlink" title="条件控制语句if"></a>条件控制语句if</h2><ul>
+<li><p>程序满足特定的条件才能执行的特定代码</p>
+</li>
+<li><p>条件控制语句使用 <code>if</code> 关键字</p>
+</li>
+</ul>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件为真时，要做的事情</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  条件为假时，要做的事情</span><br></pre></td></tr></table></figure>
+
+<p><code>if...elif...else</code> 格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>为真时，要做的事情</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>:</span><br><span class="line">    条件<span class="number">1</span>为假且条件<span class="number">2</span>为真时，要做的事情</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    以上条件均为假时，要做的事情</span><br></pre></td></tr></table></figure>
+
+<h4 id="if-嵌套"><a href="#if-嵌套" class="headerlink" title="if 嵌套"></a>if 嵌套</h4><p>在实际开发中，有多个条件判断的需求，就需要使用 if 嵌套</p>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">  <span class="keyword">if</span> 条件<span class="number">2</span>:</span><br><span class="line">    条件<span class="number">1</span>，条件<span class="number">2</span>均为真时，要做的事情</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="循环控制语句-while和-for"><a href="#循环控制语句-while和-for" class="headerlink" title="循环控制语句 while和 for"></a>循环控制语句 while和 for</h2><p>循环的作用就是让代码执行指定的重复的代码</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>while循环 主要用在遍历指定次数的时候使用</p>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">  条件为真时，要做的事情</span><br><span class="line">  ...</span><br><span class="line">  修改条件</span><br></pre></td></tr></table></figure>
+
+<p>条件主要控制循环何时结束，注意如果条件一直不能为假，则该循环就为死循环，死循环会一直执行该重复的指令，无法终止。</p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>for循环 主要用在遍历容器类中的元素的时候使用</p>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 临时变量 <span class="keyword">in</span> 容器:</span><br><span class="line">  循环满足条件需要执行的代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="range"><a href="#range" class="headerlink" title="range"></a>range</h4><p><code>range()</code>可以理解为数学中左闭右开的区间，常常使用在 for 语句中</p>
+<h3 id="break-和-continue语句"><a href="#break-和-continue语句" class="headerlink" title="break 和 continue语句"></a>break 和 continue语句</h3><p><code>break</code>语句和 <code>continue</code>语句是专门在循环中使用的关键字</p>
+<ol>
+<li>当某一条件满足时，执行了 break 语句，这层循环将不在进行，会直接退出当层循环（后面会讲到循环嵌套，break 只会跳出一层循环）</li>
+<li>当某一条件满足时，执行了 continue 语句，会直接跳过该次循环，直接到下一次循环中（在循环嵌套中，同样只会跳到该层循环的下次循环中，其他层次的循环不会受到影响）</li>
+</ol>
+<h3 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h3><p>循环嵌套的意思就是循环中还有循环</p>
+<h3 id="循环结合-else"><a href="#循环结合-else" class="headerlink" title="循环结合 else"></a>循环结合 else</h3><p>循环后面跟了一个 else 语句，该语句会在循环正常结束后执行，但是如果循环是通过 <code>break语句</code>进行结束的，该 else 中的语句就不会执行了</p>
+<h2 id="高级数据类型"><a href="#高级数据类型" class="headerlink" title="高级数据类型"></a>高级数据类型</h2><p>所有的<code>非数值型变量</code>都有以下特点：</p>
+<ol>
+<li>都是一个序列 <code>sequence</code>，也可以理解为容器</li>
+<li>都可以取值[0] （集合除外）</li>
+<li>都可以用 <code>for ... in ...</code> 遍历</li>
+<li>计算长度、最大/最小值、比较、删除</li>
+<li>连接<code>+</code>和重复<code>*</code></li>
+<li>切片</li>
+</ol>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>字符串就是一串字符，是编程语言中表示文本的数据类型</li>
+<li>在Python 中可以使用<code>一对双引号 &quot;&quot; </code>或<code>一对单引号 &#39;&#39; </code>来定义一个字符串<ul>
+<li>虽然有转义字符帮助我们转义<code>&quot;</code>和<code>&#39;</code>，但是在开发中<ul>
+<li>在字符串内部有使用<code>&quot;</code>的需求，一般使用<code>&#39;</code>来定义字符串</li>
+<li>在字符串内部有使用<code>&#39;</code>的需求，一般使用<code>&quot;</code>来定义字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可以使用索引来获取字符串指定位置的字符，索引从 0 开始</li>
+</ul>
+<p>Python 中可以使用多行字符串，多行字符串的定义方式与多行注释的方式一致，使用三个<code>&quot;&quot;&quot;</code>进行定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">这是一个多行字符串的🌰</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h4><h5 id="判断操作"><a href="#判断操作" class="headerlink" title="判断操作"></a>判断操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isalpha()</td>
+<td>如果一个字符串所有字符都是字母的时候，返回 True</td>
+</tr>
+<tr>
+<td>isdecimal()</td>
+<td>如果一个字符串所有字符都是数字的时候，返回 True</td>
+</tr>
+<tr>
+<td>islower()</td>
+<td>如果一个字符串所有字符都是小写字母的时候，返回 True</td>
+</tr>
+<tr>
+<td>isupper()</td>
+<td>如果一个字符串所有字符都是大写字母的时候，返回 True</td>
+</tr>
+<tr>
+<td>startwith(str)</td>
+<td>检查一个字符串是以 str 开头的时候，返回 True</td>
+</tr>
+<tr>
+<td>endswith(str)</td>
+<td>检查一个字符串是以 str 结尾的时候，返回 True</td>
+</tr>
+</tbody></table>
+<h5 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>find(str, start = 0, end = len(string))</td>
+<td>查找 str 是否在这个字符串中，如果在则返回开始的索引值，查不到则返回-1</td>
+</tr>
+<tr>
+<td>rfind(str, start = 0, end = len(string))</td>
+<td>类似find()，但是是从右边开始查找</td>
+</tr>
+<tr>
+<td>index(str, start = 0, end = len(string))</td>
+<td>跟find()类似，但是查不到会抛出异常</td>
+</tr>
+<tr>
+<td>rindex(str, start = 0, end = len(string))</td>
+<td>跟rfind()类似，但是是从右边开始查找</td>
+</tr>
+<tr>
+<td>replace(old_str, new_str, num=string.count(old))</td>
+<td>返回一个新的字符串，把 old_str 替换成 new_str</td>
+</tr>
+</tbody></table>
+<h5 id="拆分和连接"><a href="#拆分和连接" class="headerlink" title="拆分和连接"></a>拆分和连接</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>partition(str)</td>
+<td>返回一个元组，把字符串根据 str 分隔成 3 元素的元组</td>
+</tr>
+<tr>
+<td>rpartition(str)</td>
+<td>类似partition()，但是是从右边开始查找</td>
+</tr>
+<tr>
+<td>split(str, num)</td>
+<td>根据 str 分隔字符串到一个列表中，num 是分隔的次数</td>
+</tr>
+<tr>
+<td>splitlines()</td>
+<td>返回列表，根据行分隔</td>
+</tr>
+<tr>
+<td>string1 + string2</td>
+<td>拼接两个字符串</td>
+</tr>
+<tr>
+<td>join(seq)</td>
+<td>返回一个字符串，以 str作为分隔符，将 seq 中所有元素合并成一个新的字符串</td>
+</tr>
+</tbody></table>
+<h5 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lower()</td>
+<td>将所有字符转化为小写</td>
+</tr>
+<tr>
+<td>upper()</td>
+<td>将所有字符转化为大写</td>
+</tr>
+</tbody></table>
+<h5 id="文本对齐"><a href="#文本对齐" class="headerlink" title="文本对齐"></a>文本对齐</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ljust(width)</td>
+<td>返回一个新字符串，在左边填充直到字符串长度为 width，默认填充空格</td>
+</tr>
+<tr>
+<td>rjust(width)</td>
+<td>返回一个新字符串，在右边填充直到字符串长度为 width，默认填充空格</td>
+</tr>
+<tr>
+<td>center(width)</td>
+<td>返回一个新字符串，在两边填充直到字符串长度为 width，默认填充空格</td>
+</tr>
+</tbody></table>
+<h5 id="去除空白符"><a href="#去除空白符" class="headerlink" title="去除空白符"></a>去除空白符</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lstrip()</td>
+<td>返回新字符串，截掉左边的空白字符，或指定字符</td>
+</tr>
+<tr>
+<td>rstrip()</td>
+<td>返回新字符串，截掉右边的空白字符，或指定字符</td>
+</tr>
+<tr>
+<td>strip()</td>
+<td>返回新字符串，截掉两边的空白字符，或指定字符</td>
+</tr>
+</tbody></table>
+<h3 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h3><p>list列表将是我们学习 Python 中使用最频繁的一个数据类型，该类型用来存储一串数据，存储的数据我们称之为<code>元素</code></p>
+<h4 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h4><ol>
+<li>列表用<code>[]</code>定义，元素之间用<code>,</code>分隔开即可</li>
+<li>列表中可以有不同的数据类型，每个元素可以是任意类型</li>
+</ol>
+<h4 id="列表的访问"><a href="#列表的访问" class="headerlink" title="列表的访问"></a>列表的访问</h4><p>访问列表一般通过索引的方式，这里要注意的是，索引是从 0 开始的，即列表中的第一个元素的索引为 0</p>
+<blockquote>
+<p>当然，我们最常用的还是用循环去遍历列表中的元素，通过 for 和 while 都可以，建议使用 for，看起来会更加简洁，但是在一些需要知道索引的情况下，while 也不失为一种优秀的选择。while 的循环条件比 for 来的更加灵活</p>
+</blockquote>
+<h4 id="列表的操作"><a href="#列表的操作" class="headerlink" title="列表的操作"></a>列表的操作</h4><h5 id="增加操作"><a href="#增加操作" class="headerlink" title="增加操作"></a>增加操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>append(item)</td>
+<td>在末尾追加item</td>
+</tr>
+<tr>
+<td>insert(index, item)</td>
+<td>在 index 位置插入 item</td>
+</tr>
+<tr>
+<td>extend(Iterable)</td>
+<td>将可迭代对象中的元素添加到列表中</td>
+</tr>
+</tbody></table>
+<h5 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>del List(index)</td>
+<td>删除List的指定 index 的元素</td>
+</tr>
+<tr>
+<td>remove(item)</td>
+<td>删除第一个出现的指定item</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>删除末尾数据，并返回被删除的元素</td>
+</tr>
+<tr>
+<td>pop(index)</td>
+<td>删除指定索引的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>清空列表</td>
+</tr>
+</tbody></table>
+<h5 id="修改操作"><a href="#修改操作" class="headerlink" title="修改操作"></a>修改操作</h5><blockquote>
+<p>List[index] = item    # 修改 List中指定 index 的元素为 item</p>
+</blockquote>
+<h5 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>List[index]</td>
+<td>查询 List指定 index 的元素，index 不存在时将会抛出异常</td>
+</tr>
+<tr>
+<td>index(item)</td>
+<td>根据 item 查找指定 List 中的该 item 的位置，没查到的时候会抛出异常</td>
+</tr>
+<tr>
+<td>count(item)</td>
+<td>item在列表中出现的次数</td>
+</tr>
+<tr>
+<td>len(List)</td>
+<td>List 的长度</td>
+</tr>
+<tr>
+<td>if item in List:</td>
+<td>检查List 中是否包含 item</td>
+</tr>
+</tbody></table>
+<h5 id="排序操作"><a href="#排序操作" class="headerlink" title="排序操作"></a>排序操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sort()</td>
+<td>升序</td>
+</tr>
+<tr>
+<td>sort(reverse = True)</td>
+<td>降序</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>逆序，反转</td>
+</tr>
+</tbody></table>
+<h5 id="最值操作"><a href="#最值操作" class="headerlink" title="最值操作"></a>最值操作</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>max()</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>最小值</td>
+</tr>
+</tbody></table>
+<h4 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h4><p>列表嵌套和上文讲到的循环嵌套类似，即在列表中还有列表，即列表的元素还是一个列表，这就是列表嵌套，在实际使用中经常出现，eg:<code>a = [[1,2,3],[4,5,6],[7,8,9]]</code>这就是一个简单的两个列表嵌套</p>
+<h3 id="tuple-元组"><a href="#tuple-元组" class="headerlink" title="tuple 元组"></a>tuple 元组</h3><p>元组和列表类似，不同的地方在与元组不允许对内部的元素进行修改</p>
+<ol>
+<li>元素用()定义</li>
+<li>用于存储一串数据，元素之间用<code>,</code>分隔</li>
+<li>元组的索引从 0 开始</li>
+<li>元组的类型：<code>tuple</code></li>
+</ol>
+<h4 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h4><p><code>info_tuple = (1, 2, 3, 4)</code></p>
+<blockquote>
+<p>注意，如果元组中只有一个元素的时候需要在后加一个<code>,</code></p>
+<p>eg：</p>
+<p>a = (10)  # 如果这样定义一个一元素元组是错误的，次数的 a 为 int 类型而不是tuple</p>
+<p>a = (10,) #一元素元组的正确定义方式</p>
+</blockquote>
+<p><strong>元组最大的特点就是不能修改</strong></p>
+<h4 id="元组的操作"><a href="#元组的操作" class="headerlink" title="元组的操作"></a>元组的操作</h4><p>元组的操作和数组的操作类似，只是没有数组的增加，删除，修改，排序操作。</p>
+<h4 id="元素的使用场景"><a href="#元素的使用场景" class="headerlink" title="元素的使用场景"></a>元素的使用场景</h4><ol>
+<li>作为自动组包的默认类型</li>
+<li>自动解包</li>
+<li>交换数据</li>
+<li>格式化输出</li>
+<li>让列表不可被修改，保护数据安全</li>
+</ol>
+<h3 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h3><p>集合是无序的，且集合中的元素是唯一的</p>
+<p>集合一般用来对列表或元组进行去重操作，<strong>注意：如果用 set 进行了去重操作，列表或元组中的元素位置将变化，因为 set 是无序的</strong></p>
+<blockquote>
+<p>创建空集合的方式 set1 = set()</p>
+</blockquote>
+<h4 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>add()</td>
+<td>添加一个元素到集合中</td>
+</tr>
+<tr>
+<td>update()</td>
+<td>将传入数据拆分，然后添加到集合中</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>删除集合中一个元素，如果没有，程序抛出异常</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>随机删除一个元素，如果没有元素，程序将抛出异常</td>
+</tr>
+<tr>
+<td>discard()</td>
+<td>元素存在直接删除，不存在不做任何操作</td>
+</tr>
+</tbody></table>
+<h4 id="集合的交集、子集、超集、并集、异或、差集"><a href="#集合的交集、子集、超集、并集、异或、差集" class="headerlink" title="集合的交集、子集、超集、并集、异或、差集"></a>集合的交集、子集、超集、并集、异或、差集</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>s1.issubset(s2)</td>
+<td>s1 &lt; s2</td>
+<td>s1 是否是 s2 的子集</td>
+</tr>
+<tr>
+<td>s1.issuperset(s2)</td>
+<td>s1 &gt; s2</td>
+<td>s1 是否是 s2 的超集</td>
+</tr>
+<tr>
+<td>s1.union(s2)</td>
+<td>s1 &amp; s2</td>
+<td>s1 和 s2 的并集</td>
+</tr>
+<tr>
+<td>s1.intersection(s2)</td>
+<td>s1 &amp; s2</td>
+<td>s1 和 s2 的交集</td>
+</tr>
+<tr>
+<td>s1.difference(s2)</td>
+<td>s1 - s2</td>
+<td>s1 和 s2 的差集</td>
+</tr>
+<tr>
+<td>s1.symmetric_difference(s2)</td>
+<td>s1 ^ s2</td>
+<td>s1 和 s2 的异或</td>
+</tr>
+</tbody></table>
+<h3 id="dict-字典"><a href="#dict-字典" class="headerlink" title="dict 字典"></a>dict 字典</h3><p>dict 是除列表以外 Python 中最灵活的数据类型</p>
+<ul>
+<li>字典可以用来存储多个数据</li>
+<li>字典用<code>&#123;&#125;</code>定义</li>
+<li>字典使用<code>键值对</code>存储数据，键值对之间的关系用<code>,</code>分隔<ul>
+<li><code>键 key</code>是索引</li>
+<li><code>值 value</code>是数据</li>
+<li><code>键</code>和<code>值</code>用<code>:</code>进行分隔</li>
+<li><code>值</code>可以是任何数据类型，但<code>键</code>只能是<code>字符串、数字或元组</code></li>
+<li><code>键</code>必须唯一</li>
+</ul>
+</li>
+</ul>
+<h4 id="字典的操作"><a href="#字典的操作" class="headerlink" title="字典的操作"></a>字典的操作</h4><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增加</td>
+<td>dict[key] = value</td>
+<td>键不存在时，会添加键值对；键存在时，会修改键值对</td>
+</tr>
+<tr>
+<td></td>
+<td>dic.setdefault(key, value)</td>
+<td>键不存在时，会添加键值对；键存在时，不做任何处理</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>del dict[key]</td>
+<td>删除指定键值对</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.pop(key)</td>
+<td>删除指定键值对，并返回被删除的值</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.clear()</td>
+<td>清空字典</td>
+</tr>
+<tr>
+<td>修改</td>
+<td>dict[key] = value</td>
+<td>键不存在时，会添加键值对；键存在时，会修改键值对</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.update(key=value)</td>
+<td>键不存在时，会添加键值对；键存在时，会修改键值对</td>
+</tr>
+<tr>
+<td>查询</td>
+<td>dict[key]</td>
+<td>根据键取出值，键不存在时，会抛出异常</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.get(key)</td>
+<td>根据键取出值，键不存在时，不会抛出异常</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.keys()</td>
+<td>可进行遍历，获取所有键</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.values()</td>
+<td>可进行遍历，获取所有值</td>
+</tr>
+<tr>
+<td></td>
+<td>dict.items()</td>
+<td>可进行遍历，获取所有（键，值）</td>
+</tr>
+</tbody></table>
+<h3 id="公共语法"><a href="#公共语法" class="headerlink" title="公共语法"></a>公共语法</h3><h4 id="Python-内置函数"><a href="#Python-内置函数" class="headerlink" title="Python 内置函数"></a>Python 内置函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(item)</td>
+<td>计算容器中元素个数</td>
+<td></td>
+</tr>
+<tr>
+<td>del item</td>
+<td>删除变量</td>
+<td></td>
+</tr>
+<tr>
+<td>max(item)</td>
+<td>返回容器中元素最大值</td>
+<td>字典只比较 key</td>
+</tr>
+<tr>
+<td>min(item)</td>
+<td>返回容器中元素最小值</td>
+<td>字典只比较 key</td>
+</tr>
+</tbody></table>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>支持的数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>合并</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td>*</td>
+<td>重复</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td>in</td>
+<td>是否存在（字典中判断键）</td>
+<td>字符串、列表、元组、集合、字典</td>
+</tr>
+<tr>
+<td>not in</td>
+<td>是否不存在（字典中判断键）</td>
+<td>字符串、列表、元组、集合、字典</td>
+</tr>
+<tr>
+<td>&gt; &gt;= == &lt; &lt;=</td>
+<td>比较</td>
+<td>字符串、列表、元组</td>
+</tr>
+</tbody></table>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://askeynil.github.io/2019/55218569.html>https://askeynil.github.io/2019/55218569.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://www.askeynil.com" rel="nofollow noopener">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets/icon/avatar.png">
+    <p>AskeyNil</p>
+  </a>
+</div>
+
+        
+      
+        
+          <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年8月6日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/cc28d4d3.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Python 基础2</p>
+                <p class='content'>函数所谓函数，就是把一个具有独立功能的代码块组织成一个整体，在需要的时候调用。
+函数的使用一般包含两个步骤：
+
+定义函数：在函数中编写代码、实现功能
+调用函数：执行编写的代码
+
+好的函数，可以提...</p>
+              </a>
+            
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">变量的命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-text">命名规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">变量类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="toc-text">数值型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="toc-text">非数值型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%89%B9%E5%BE%81%E5%92%8C%E8%8E%B7%E5%8F%96"><span class="toc-text">变量类型的特征和获取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">算数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">不同变量类型之间的运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%93%8D%E4%BD%9C"><span class="toc-text">输入输出操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0"><span class="toc-text">输出函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-text">格式化输出格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-text">转换输入函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5if"><span class="toc-text">条件控制语句if</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if-%E5%B5%8C%E5%A5%97"><span class="toc-text">if 嵌套</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-while%E5%92%8C-for"><span class="toc-text">循环控制语句 while和 for</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-text">for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#range"><span class="toc-text">range</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break-%E5%92%8C-continue%E8%AF%AD%E5%8F%A5"><span class="toc-text">break 和 continue语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97"><span class="toc-text">循环嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E5%90%88-else"><span class="toc-text">循环结合 else</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">高级数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-text">字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C"><span class="toc-text">判断操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-text">查找和替换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E5%92%8C%E8%BF%9E%E6%8E%A5"><span class="toc-text">拆分和连接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="toc-text">大小写转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AF%B9%E9%BD%90"><span class="toc-text">文本对齐</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%BB%E9%99%A4%E7%A9%BA%E7%99%BD%E7%AC%A6"><span class="toc-text">去除空白符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list-%E5%88%97%E8%A1%A8"><span class="toc-text">list 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">列表的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-text">列表的访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">列表的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-text">增加操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-text">删除操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">修改操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="toc-text">查询操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">排序操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-text">最值操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="toc-text">列表嵌套</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tuple-%E5%85%83%E7%BB%84"><span class="toc-text">tuple 元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">元组的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">元组的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">元素的使用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set%E9%9B%86%E5%90%88"><span class="toc-text">set集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C"><span class="toc-text">集合操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E4%BA%A4%E9%9B%86%E3%80%81%E5%AD%90%E9%9B%86%E3%80%81%E8%B6%85%E9%9B%86%E3%80%81%E5%B9%B6%E9%9B%86%E3%80%81%E5%BC%82%E6%88%96%E3%80%81%E5%B7%AE%E9%9B%86"><span class="toc-text">集合的交集、子集、超集、并集、异或、差集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dict-%E5%AD%97%E5%85%B8"><span class="toc-text">dict 字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">字典的操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E8%AF%AD%E6%B3%95"><span class="toc-text">公共语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-text">Python 内置函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">运算符</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>标签云</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/Array/" style="font-size: 14px; color: #999">Array</a> <a href="/tags/C/" style="font-size: 20.67px; color: #6c6c6c">C++</a> <a href="/tags/CLI-Tools/" style="font-size: 14px; color: #999">CLI Tools</a> <a href="/tags/CMakeLists/" style="font-size: 14px; color: #999">CMakeLists</a> <a href="/tags/Database/" style="font-size: 14px; color: #999">Database</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px; color: #999">Dynamic Programming</a> <a href="/tags/Enum/" style="font-size: 14px; color: #999">Enum</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/LeetCode-Easy/" style="font-size: 14px; color: #999">LeetCode Easy</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/NumPy/" style="font-size: 17.33px; color: #828282">NumPy</a> <a href="/tags/OpenCV/" style="font-size: 20.67px; color: #6c6c6c">OpenCV</a> <a href="/tags/PyQt5/" style="font-size: 14px; color: #999">PyQt5</a> <a href="/tags/Python/" style="font-size: 22.33px; color: #606060">Python</a> <a href="/tags/ROS/" style="font-size: 24px; color: #555">ROS</a> <a href="/tags/ROS-Service/" style="font-size: 14px; color: #999">ROS Service</a> <a href="/tags/ROS-Topic/" style="font-size: 15.67px; color: #8e8e8e">ROS Topic</a> <a href="/tags/ROS-command/" style="font-size: 15.67px; color: #8e8e8e">ROS command</a> <a href="/tags/ROS-msg/" style="font-size: 14px; color: #999">ROS msg</a> <a href="/tags/ROS-srv/" style="font-size: 14px; color: #999">ROS srv</a> <a href="/tags/ROS2/" style="font-size: 15.67px; color: #8e8e8e">ROS2</a> <a href="/tags/Shell/" style="font-size: 19px; color: #777">Shell</a> <a href="/tags/SymPy/" style="font-size: 14px; color: #999">SymPy</a> <a href="/tags/URDF/" style="font-size: 15.67px; color: #8e8e8e">URDF</a> <a href="/tags/Vim/" style="font-size: 14px; color: #999">Vim</a> <a href="/tags/install/" style="font-size: 14px; color: #999">install</a> <a href="/tags/roslaunch/" style="font-size: 14px; color: #999">roslaunch</a> <a href="/tags/xacro/" style="font-size: 14px; color: #999">xacro</a> <a href="/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">分水岭算法</a> <a href="/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/" style="font-size: 14px; color: #999">轮廓提取</a> <a href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">边缘检测</a>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/matplotlib-common-method.html" title="Matplotlib 常用整理" rel="bookmark">Matplotlib 常用整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/1df81ffb.html" title="NumPy 之 mgrid、ogrid" rel="bookmark">NumPy 之 mgrid、ogrid</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/bae2941.html" title="OpenCV 之硬币分割" rel="bookmark">OpenCV 之硬币分割</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/e181f182.html" title="OpenCV 入门" rel="bookmark">OpenCV 入门</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/29129922.html" title="PyQt5 的学习与使用" rel="bookmark">PyQt5 的学习与使用</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:askeynil@gmail.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/askeynil"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 AskeyNil</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      <li class='navigation'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/archives
+        
+        
+        
+        
+          id="archives"
+        >
+        <i class='fas fa-archive fa-fw'></i> 归档
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/categories
+        
+        
+        
+        
+          id="categories"
+        >
+        <i class='fas fa-folder-open fa-fw'></i> 分类
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/tags
+        
+        
+        
+        
+          id="tags"
+        >
+        <i class='fas fa-tags fa-fw'></i> 标签
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/note
+        
+        
+        
+        
+          id="note"
+        >
+        <i class='fas fa-pen-square fa-fw fa-fw'></i> 便签
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/talk
+        
+        
+        
+        
+          id="talk"
+        >
+        <i class='fas fa-comment-dots fa-fw'></i> 闲谈
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/day-sign
+        
+        
+        
+        
+          id="day-sign"
+        >
+        <i class='fas fa-hourglass-half fa-fw'></i> 日签
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/timeline
+        
+        
+        
+        
+          id="timeline"
+        >
+        <i class='fa fa-history fa-fw'></i> 站史
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          copyText.style.display = 'block';
+          hrText.style.display = 'block';
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if (false == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    <!-- 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+ -->
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/1.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/2.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/3.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/4.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/5.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/6.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/7.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/8.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/9.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
+      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+
+    let ALLPATH = '';
+    if(ALLPATH != '') pageUrl = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: pageUrl,
+      appId: "oLOfpLWUeN88TsR6gviA7dVk-MdYXbMMI",
+      appKey: "oNbFzpdr4m1YkWnDB9nggyqt",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/talk"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('config', 'UA-148517433-1', {'page_path': document.location.pathname});
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>

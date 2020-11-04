@@ -1,0 +1,2927 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+  <!-- 页面元数据 -->
+  
+  <title>OpenCV 常用方法整理 - AskeyNil</title>
+  
+    <meta name="keywords" content="OpenCV,C++,Python">
+  
+
+  
+    <meta name="description" content="
+以下只列举常用的方法和常用的参数，例如枚举，只会将最常用的几个列举出来，详细的请参考官方文档。
+对于C++默认使用了using namespace cv;
+对于Python默认使用了import cv2 as cv 和 import numpy as np
+OpenCV版本：3.4.7
+
+读取图片1imread...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="AskeyNil" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/icon/favicon.ico">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148517433-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-148517433-1');
+	}, 5000);
+    </script>
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">AskeyNil's Blog</p>
+    
+    
+      <p class="subtitle"></br>所有美的事物，都值得慢慢思量，一生珍赏</p>
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>首页</p>
+            </a>
+          
+            <a href="/archives"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>归档</p>
+            </a>
+          
+            <a href="/talk"
+              
+              
+              id="talk">
+              <i class='fas fa-comment-dots fa-fw'></i><p>闲谈</p>
+            </a>
+          
+            <a href="/timeline"
+              
+              
+              id="timeline">
+              <i class='fa fa-history fa-fw'></i><p>站史</p>
+            </a>
+          
+            <a href="/about"
+              
+              
+              id="about">
+              <i class='fas fa-handshake fa-fw'></i><p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            AskeyNil
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-book fa-fw'></i>博文
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-robot fa-fw'></i>ROS
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                  
+                  
+                  
+                    id="2019-11ros-xacrohtml"
+                  >
+                  xacro 语法总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                  
+                  
+                  
+                    id="2019-11ros-urdfhtml"
+                  >
+                  URDF中link、joint属性总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                  
+                  
+                  
+                    id="categoriesROSKinetic"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                  
+                  
+                  
+                    id="2020ROS2-CLI-Toolshtml"
+                  >
+                  ROS2 CLI Tools
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
+                  
+                  
+                  
+                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
+                  >
+                  ROS2 Foxy 安装（基于 Mac OS 二进制）
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
+                  
+                  
+                  
+                    id="tagsROS2"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
+                  
+                  
+                  
+                    id="leetcode"
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-bars fa-fw'></i>站点工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                  
+                  
+                  
+                    id="https:askeynilavosappsus"
+                  >
+                  <i class='far fa-comments fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/note
+                  
+                  
+                  
+                    id="note"
+                  >
+                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
+                  
+                  
+                  
+                    id="talk"
+                  >
+                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
+                  
+                  
+                  
+                    id="day-sign"
+                  >
+                  <i class='fas fa-hourglass-half fa-fw'></i>日签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
+                  
+                  
+                  
+                    id="timeline"
+                  >
+                  <i class='fa fa-history fa-fw'></i>站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-book fa-fw'></i>博文
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-robot fa-fw'></i>ROS
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                  
+                  
+                  
+                    id="2019-11ros-xacrohtml"
+                  >
+                  xacro 语法总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                  
+                  
+                  
+                    id="2019-11ros-urdfhtml"
+                  >
+                  URDF中link、joint属性总结
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                  
+                  
+                  
+                    id="categoriesROSKinetic"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                  
+                  
+                  
+                    id="2020ROS2-CLI-Toolshtml"
+                  >
+                  ROS2 CLI Tools
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
+                  
+                  
+                  
+                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
+                  >
+                  ROS2 Foxy 安装（基于 Mac OS 二进制）
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
+                  
+                  
+                  
+                    id="tagsROS2"
+                  >
+                  更多 <i class="fas fa-chevron-right fa-fw"></i>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
+                  
+                  
+                  
+                    id="leetcode"
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-bars fa-fw'></i>站点工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                  
+                  
+                  
+                    id="https:askeynilavosappsus"
+                  >
+                  <i class='far fa-comments fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/note
+                  
+                  
+                  
+                    id="note"
+                  >
+                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
+                  
+                  
+                  
+                    id="talk"
+                  >
+                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
+                  
+                  
+                  
+                    id="day-sign"
+                  >
+                  <i class='fas fa-hourglass-half fa-fw'></i>日签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
+                  
+                  
+                  
+                    id="timeline"
+                  >
+                  <i class='fa fa-history fa-fw'></i>站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">OpenCV 常用方法整理</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path">none</div> 
+  <div id="pjax-comment-placeholder">none</div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("none" == "none") { // 移除封面 
+    document.getElementsByClassName('cover')[0].style.display = "none"; 
+    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("none" == "blog") { // 半屏 
+      document.getElementsByClassName('cover')[0].classList.remove("full"); 
+      document.getElementsByClassName('cover')[0].classList.add("half"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("none" == "docs") { // 全屏 
+      document.getElementsByClassName('cover')[0].classList.remove("half"); 
+      document.getElementsByClassName('cover')[0].classList.add("full"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover')[0].style.display = ""; 
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2019/144d9f9d.html">
+      OpenCV 常用方法整理
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-02T11:00:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2019年11月2日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Coding/OpenCV/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Coding/OpenCV</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：5.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：27分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <blockquote>
+<p>以下只列举常用的方法和常用的参数，例如枚举，只会将最常用的几个列举出来，详细的请参考官方文档。</p>
+<p>对于<code>C++</code>默认使用了<code>using namespace cv;</code></p>
+<p>对于<code>Python</code>默认使用了<code>import cv2 as cv</code> 和 <code>import numpy as np</code></p>
+<p>OpenCV版本：3.4.7</p>
+</blockquote>
+<h2 id="读取图片"><a href="#读取图片" class="headerlink" title="读取图片"></a>读取图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imread(filename, flags)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>filename</code>：图片路径</li>
+<li><code>flags</code>：<ol>
+<li><code>IMREAD_COLOR</code>：默认值，返回3通道的BGR色彩图像</li>
+<li><code>IMREAD_GRAYSCALE</code>：返回单通道灰色图片</li>
+<li><code>IMREAD_UNCHANGED</code>：按原样返回。</li>
+</ol>
+</li>
+</ol>
+<a id="more"></a>
+
+
+
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mat src = imread(<span class="string">&quot;1.jpg&quot;</span>, IMREAD_UNCHANGED);</span><br></pre></td></tr></table></figure>
+
+<p>对于<code>C++</code>来说，<code>imread</code>的返回值为<code>Mat</code>类，该类是OpenCV的自建类</p>
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src = cv.imread(<span class="string">&quot;1.jpg&quot;</span>, cv.IMREAD_UNCHANGED)</span><br></pre></td></tr></table></figure>
+
+<p>对于<code>Python</code>来说，<code>imread</code>的返回值为<code>NumPy.ndarray</code></p>
+<blockquote>
+<p>对于图像矩阵，<code>C++</code>都是自建的<code>Mat</code>类，而<code>Python</code>则是<code>numpy.ndarray</code>。后面不在赘述这个问题。</p>
+</blockquote>
+<h2 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imwrite(filename, img)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>filename</code>：图片要保存的路径</li>
+<li><code>img</code>：图像矩阵</li>
+</ol>
+<blockquote>
+<p>比较简单，不做详细介绍。</p>
+<p>该方法还有一个参数，可以参数编码，详细点击<a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d4/da8/group__imgcodecs.html#gabbc7ef1aa2edfaa87772f1202d67e0ce">imwrite</a></p>
+</blockquote>
+<h2 id="显示图片"><a href="#显示图片" class="headerlink" title="显示图片"></a>显示图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show(winname, src)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>winname</code>：窗口的名称</li>
+<li><code>src</code>：显示的图片矩阵</li>
+</ol>
+<h2 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h2><p>图片缩放常见算法有：</p>
+<ol>
+<li>最近领域插值法</li>
+<li>双线性插值法</li>
+<li>双三次插值法</li>
+</ol>
+<p>OpenCV官方提供的<code>resize()</code>的函数（默认为双线性插值法）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize(src, dst, dsize, fx, fy, interpolation)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>要缩放的图片</li>
+<li><code>dst</code>输出的图像</li>
+<li><code>dsize</code>输出图像的大小<ul>
+<li><code>C++</code>：<code>Size</code>类</li>
+<li><code>Python</code>：元组，前面为<code>width</code>，后面为<code>height</code></li>
+</ul>
+</li>
+<li><code>fx</code>：沿水平轴的比例因子<ul>
+<li>当它等于 0 时，计算为 <code>dsize.width / src.cols</code></li>
+</ul>
+</li>
+<li><code>fy</code>：沿垂直轴的比例因子<ul>
+<li>当它等于 0 时，计算为 <code>dsize.height / src.rows</code></li>
+</ul>
+</li>
+<li><code>interpolation</code>：缩放用的方法<ol>
+<li><code>INTER_NEAREST</code>：最近邻域插值法</li>
+<li><code>INTER_LINEAR</code>：双线性插值法</li>
+<li><code>INTER_CUBIC</code>：双三次插值法</li>
+</ol>
+</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line">resize(src, dst, Size(<span class="number">100</span>, <span class="number">100</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.resize(src, (<span class="number">100</span>, <span class="number">100</span>), interpolation=cv.INTER_NEAREST)</span><br></pre></td></tr></table></figure>
+
+<h2 id="图像操作"><a href="#图像操作" class="headerlink" title="图像操作"></a>图像操作</h2><h3 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h3><p>矩阵的缩放、旋转、位移都可以使用矩阵变换来实现</p>
+<p>缩放矩阵：<br>$$<br>\begin{bmatrix}<br>k_x &amp; 0 &amp; 0 \<br>0 &amp; k_y &amp; 0<br>\end{bmatrix}<br>$$<br>旋转矩阵：<br>$$<br>\begin{bmatrix}<br>cos\theta &amp; -sin\theta &amp; 0 \<br>sin\theta &amp; cos\theta &amp; 0<br>\end{bmatrix}<br>$$<br>位移：<br>$$<br>\begin{bmatrix}<br>1 &amp; 0 &amp; t_x \<br>0 &amp; 1 &amp; t_y<br>\end{bmatrix}<br>$$<br><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#ga0203d9ee5fcd28d40dbc4a1ea4451983">仿射变换</a>的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warpAffine(src, dst, M, dsize)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：输入的图像</li>
+<li><code>dst</code>：输出的图像</li>
+<li><code>M</code>：（2 x 3）的转换矩阵</li>
+<li><code>dsize</code>：输出图像的尺寸</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#gafbbc470ce83812914a70abfb604f4326">获取旋转矩阵的方法</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getRotationMatrix2D(center, angle, scale)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>center</code>：旋转中心<ol>
+<li><code>c++</code>：类型为<code>Point2f</code></li>
+<li><code>Python</code>：类型为元组，两个元素，分别是<code>x，y</code>。</li>
+</ol>
+</li>
+<li><code>angle</code>：旋转角度，单位为度，正值表示逆时针旋转。</li>
+<li><code>scale</code>：缩放比例</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 平移矩阵</span></span><br><span class="line">Mat translation_matrix = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">2</span>, <span class="number">3</span>) &lt;&lt; <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缩放矩阵</span></span><br><span class="line">Mat scale_matrix = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">2</span>, <span class="number">3</span>) &lt;&lt; <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旋转矩阵</span></span><br><span class="line">Mat rotated_matrix = getRotationMatrix2D(</span><br><span class="line">    Point2f(src.<span class="built_in">size</span>().<span class="built_in">width</span> / <span class="number">2</span>, src.<span class="built_in">size</span>().<span class="built_in">height</span> / <span class="number">2</span>), <span class="number">45</span>, <span class="number">0.5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取对应的图形</span></span><br><span class="line">Mat dst;</span><br><span class="line"><span class="comment">// 平移</span></span><br><span class="line"><span class="comment">// warpAffine(src, dst, translation_matrix, src.size());</span></span><br><span class="line"><span class="comment">// 缩放</span></span><br><span class="line"><span class="comment">// warpAffine(src, dst, scale_matrix, src.size());</span></span><br><span class="line"><span class="comment">// 旋转</span></span><br><span class="line"><span class="comment">// warpAffine(src, dst, rotated_matrix, src.size());</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// imshow(&quot;dst&quot;, dst);</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取图像的高和宽</span></span><br><span class="line">height, width = src.shape[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平移矩阵</span></span><br><span class="line">translation_matrix = np.float32([[<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">                                 [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line"><span class="comment"># 缩放矩阵</span></span><br><span class="line">scale_matrix = np.float32([[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                           [<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转矩阵</span></span><br><span class="line">rotated_matrix = cv.getRotationMatrix2D((width/<span class="number">2</span>, height/<span class="number">2</span>), <span class="number">45</span>, <span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平移</span></span><br><span class="line"><span class="comment"># dst = cv.warpAffine(src, translation_matrix, src.shape[1::-1])</span></span><br><span class="line"><span class="comment"># 缩放</span></span><br><span class="line"><span class="comment"># dst = cv.warpAffine(src, scale_matrix, src.shape[1::-1])</span></span><br><span class="line"><span class="comment"># 旋转</span></span><br><span class="line"><span class="comment"># dst = cv.warpAffine(src, rotated_matrix, src.shape[1::-1])</span></span><br><span class="line"><span class="comment"># 解释一下src.shape[1::-1]</span></span><br><span class="line"><span class="comment"># 在src.shape中，第一个值代表height，第二个代表width</span></span><br><span class="line"><span class="comment"># 在 warpAffine 参数中 dsize, 第一个表示width, 第二个表示height</span></span><br><span class="line"><span class="comment"># 综上，将其反过来即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cv.imshow(&quot;dst&quot;, dst)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="透视变换"><a href="#透视变换" class="headerlink" title="透视变换"></a>透视变换</h3><p>透视变换（Perspective Transformation)是指利用透视中心、像点、目标点三点共线的条件，按透视旋转定律使承影面（透视面）绕迹线（透视轴）旋转某一角度，破坏原有的投影光线束，仍能保持承影面上投影几何图形不变的变换。</p>
+<p><img src="/img/OpenCV/1.jpg" alt="ros_topic">  </p>
+<p><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#gaf73673a7e8e18ec6963e3774e6a94b87">透视变换</a>的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp(src, dst, M, dsize)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：输入的图像</li>
+<li><code>dst</code>：输出的图像</li>
+<li><code>M</code>：（3 x 3）转换矩阵</li>
+<li><code>dsize</code>：输出图像的尺寸</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#gae66ba39ba2e47dd0750555c7e986ab85">获取透视变换需要的矩阵</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getPerspectiveTransform(src, dst)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：原图中四边形顶点的坐标<ol>
+<li><code>C++</code>：类型为<code>vector&lt;Point2f&gt;</code></li>
+<li><code>Python</code>：类型为<code>numpy.ndarray</code> ，<code>dtype</code>为<code>numpy.float32</code></li>
+</ol>
+</li>
+<li><code>dst</code>：目标图像中的对应四个点的坐标，类型同上。</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里仅仅说明用法，参数根据实际情况，src_point和dst_point应该不一样才对</span></span><br><span class="line"><span class="built_in">vector</span>&lt;Point2f&gt; src_point&#123;Point2i(<span class="number">0</span>, <span class="number">0</span>), Point2i(<span class="number">0</span>, <span class="number">1</span>), Point2i(<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">                              Point2i(<span class="number">1</span>, <span class="number">1</span>)&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Point2f&gt; dst_point&#123;Point2i(<span class="number">0</span>, <span class="number">0</span>), Point2i(<span class="number">0</span>, <span class="number">1</span>), Point2i(<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">                          Point2i(<span class="number">1</span>, <span class="number">1</span>)&#125;;</span><br><span class="line">Mat matrix = getPerspectiveTransform(src_point, dst_point);</span><br><span class="line">Mat dst;</span><br><span class="line">warpPerspective(src, dst, matrix, src.<span class="built_in">size</span>());</span><br><span class="line">imshow(<span class="string">&quot;dst&quot;</span>, dst);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同上</span></span><br><span class="line">src_point = np.float32(((<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>)))</span><br><span class="line">dst_point = np.float32(((<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>)))</span><br><span class="line">print(type(src_point))</span><br><span class="line">matrix = cv.getPerspectiveTransform(src_point, dst_point)</span><br><span class="line">dst = cv.warpPerspective(src, matrix, src.shape[<span class="number">1</span>::<span class="number">-1</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;dst&quot;</span>, dst)</span><br></pre></td></tr></table></figure>
+
+<h2 id="图像金字塔（上、下采样）"><a href="#图像金字塔（上、下采样）" class="headerlink" title="图像金字塔（上、下采样）"></a>图像金字塔（上、下采样）</h2><h3 id="上采样"><a href="#上采样" class="headerlink" title="上采样"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d4/d86/group__imgproc__filter.html#gada75b59bdaaca411ed6fee10085eb784">上采样</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyrUp(src, dst)</span><br></pre></td></tr></table></figure>
+
+<h3 id="下采样"><a href="#下采样" class="headerlink" title="下采样"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d4/d86/group__imgproc__filter.html#gaf9bba239dfca11654cb7f50f889fc2ff">下采样</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyrDown(src, dst)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：原图</li>
+<li><code>dst</code>：采样结果图</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Mat up_dst, down_dst;</span><br><span class="line"><span class="comment">// 上采样</span></span><br><span class="line">pyrUp(src, up_dst);</span><br><span class="line"><span class="comment">// 下采样</span></span><br><span class="line">pyrDown(src, down_dst);</span><br><span class="line"></span><br><span class="line">imshow(<span class="string">&quot;up_dst&quot;</span>, up_dst);</span><br><span class="line">imshow(<span class="string">&quot;down_dst&quot;</span>, down_dst);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上采样</span></span><br><span class="line">up_dst = cv.pyrUp(src)</span><br><span class="line"><span class="comment"># 下采样</span></span><br><span class="line">down_dst = cv.pyrDown(src)</span><br><span class="line"></span><br><span class="line">cv.imshow(<span class="string">&quot;up_dst&quot;</span>, up_dst)</span><br><span class="line">cv.imshow(<span class="string">&quot;down_dst&quot;</span>, down_dst)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图像融合"><a href="#图像融合" class="headerlink" title="图像融合"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d2/de8/group__core__array.html#gafafb2513349db3bcff51f54ee5592a19">图像融合</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addWeighted(src1, alpha, src2, beta, gamma, dst)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src1</code>：图1</li>
+<li><code>alpha</code>：图1系数，double</li>
+<li><code>src2</code>：图2</li>
+<li><code>beta</code>：图2系数，double</li>
+<li><code>gamma</code>：添加的标量</li>
+<li><code>dst</code>：输出图像</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line">addWeighted(src, <span class="number">0.5</span>, src, <span class="number">0.5</span>, <span class="number">100</span>, dst);</span><br><span class="line">imshow(<span class="string">&quot;dst&quot;</span>, dst);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.addWeighted(src, <span class="number">0.5</span>, src, <span class="number">0.5</span>, <span class="number">100</span>)</span><br><span class="line">cv.imshow(<span class="string">&quot;dst&quot;</span>, dst)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><h3 id="绘制线段"><a href="#绘制线段" class="headerlink" title="绘制线段"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d6/d6e/group__imgproc__draw.html#ga7078a9fae8c7e7d13d24dac2520ae4a2">绘制线段</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line(src, pt1, pt2, color, thickness, lineType)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：图片</li>
+<li><code>pt1</code>：起点<ol>
+<li><code>C++</code>：<code>Point</code>类型</li>
+<li><code>Python</code>：元组类型</li>
+</ol>
+</li>
+<li><code>pt2</code>：终止点，类型同上</li>
+<li><code>color</code>：颜色<ol>
+<li><code>C++</code>：<code>Scalar</code>类型，GBR</li>
+<li><code>Python</code>：颜色（GBR）元组</li>
+</ol>
+</li>
+<li><code>thickness</code>：线宽，<code>int</code>，默认值为1</li>
+<li><code>lineType</code>：线类型<ol>
+<li><code>LINE_AA</code>：抗锯齿线</li>
+<li><code>LINE_8</code>：8连线，默认值</li>
+</ol>
+</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">line</span>(src, Point(<span class="number">100</span>, <span class="number">100</span>), Point(<span class="number">200</span>, <span class="number">200</span>), Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.line(src, (<span class="number">100</span>, <span class="number">100</span>), (<span class="number">200</span>, <span class="number">200</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d6/d6e/group__imgproc__draw.html#ga07d2f74cadcf8e305e810ce8eed13bc9">绘制矩形</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rectangle(src, pt1, pt2, color, thickness, lineType)</span><br></pre></td></tr></table></figure>
+
+<p>参数同上，但是<code>pt1</code>和<code>pt2</code>一定是矩形的对角点。</p>
+<blockquote>
+<p><strong>注意：</strong>如果<code>thickness</code>为负数，则会使用<code>color</code>填充整个矩阵</p>
+</blockquote>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rectangle(src, Point(<span class="number">100</span>, <span class="number">100</span>), Point(<span class="number">200</span>, <span class="number">200</span>), Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.rectangle(src, (<span class="number">100</span>, <span class="number">100</span>), (<span class="number">200</span>, <span class="number">200</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="绘制圆"><a href="#绘制圆" class="headerlink" title="绘制圆"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d6/d6e/group__imgproc__draw.html#gaf10604b069374903dbd0f0488cb43670">绘制圆</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">circle(src, center, radius, color, thickness, lineType)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：图片</li>
+<li><code>center</code>：圆的中点<ol>
+<li><code>C++</code>：<code>Point</code>类型</li>
+<li><code>Python</code>：元组类型，<code>(x, y)</code></li>
+</ol>
+</li>
+<li><code>radius</code>：半径，<code>int</code></li>
+<li><code>color</code>：颜色，同<code>line</code></li>
+<li><code>thickness</code>：线宽，同<code>line</code></li>
+<li><code>lineType</code>：线类型，同<code>line</code></li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">circle</span>(src, Point(<span class="number">100</span>, <span class="number">100</span>), <span class="number">100</span>, Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.circle(src, (<span class="number">100</span>, <span class="number">100</span>), <span class="number">100</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="绘制多边形"><a href="#绘制多边形" class="headerlink" title="绘制多边形"></a>绘制多边形</h3><blockquote>
+<p>该方法用于绘制多条多边形曲线</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">polylines(src, pts, isClosed, color, thickness, lineType)</span><br></pre></td></tr></table></figure>
+
+<p>与上相同的参数不做解释（<code>src</code>、<code>color</code>、<code>thickness</code>、<code>lineType</code>）</p>
+<ol>
+<li><code>pts</code>：顶点集合，二维数组，分别表示多边形数量，多边形的顶点位置</li>
+<li><code>isClosed</code>：是否闭合。如果闭合会从最后一个顶点到第一个顶点绘制一条直线。</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt; pts&#123;</span><br><span class="line">        &#123;Point(<span class="number">100</span>, <span class="number">100</span>), Point(<span class="number">200</span>, <span class="number">200</span>), Point(<span class="number">300</span>, <span class="number">400</span>), Point(<span class="number">200</span>, <span class="number">100</span>)&#125;&#125;;</span><br><span class="line">polylines(src, pts, <span class="literal">false</span>, Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>));</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pts = np.array([[(<span class="number">100</span>, <span class="number">100</span>), (<span class="number">200</span>, <span class="number">200</span>), (<span class="number">300</span>, <span class="number">400</span>), (<span class="number">200</span>, <span class="number">100</span>)]])</span><br><span class="line">cv.polylines(src, pts, <span class="literal">False</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="绘制文字"><a href="#绘制文字" class="headerlink" title="绘制文字"></a>绘制文字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">putText(src, text, org, fontFace, fontScale, Color, lineType)</span><br></pre></td></tr></table></figure>
+
+<p>与上相同的参数不做介绍。</p>
+<ol>
+<li><code>text</code>：文字文本，<code>string</code>类型</li>
+<li><code>org</code>：文字左下角的坐标位置<ol>
+<li><code>C++</code>：<code>Point</code>类型</li>
+<li><code>Python</code>：元组类型，<code>(x, y)</code></li>
+</ol>
+</li>
+<li><code>fontFace</code>：字体名称。具体见<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d0/de1/group__core.html#ga0f9314ea6e35f99bb23f29567fc16e11">HersheyFonts</a>，<strong>注意</strong>：OpenCV默认不支持中文</li>
+<li><code>fontScale</code>：字体的缩放大小。</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">putText(src, <span class="string">&quot;I&#x27;m a text&quot;</span>, Point(<span class="number">100</span>, <span class="number">100</span>), FONT_HERSHEY_PLAIN, <span class="number">1</span>, Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.putText(src, <span class="string">&quot;I&#x27;m a text&quot;</span>, (<span class="number">100</span>, <span class="number">100</span>), cv.FONT_HERSHEY_PLAIN, <span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="转换颜色空间"><a href="#转换颜色空间" class="headerlink" title="转换颜色空间"></a>转换颜色空间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvtColor(src, dst, code)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>code</code>：颜色空间转换代码</li>
+</ol>
+<blockquote>
+<p>该方法我们常常用来将原图转换为灰色图和将GBR转换为HSV</p>
+</blockquote>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line">cvtColor(src, dst, COLOR_BGR2GRAY);</span><br><span class="line">imshow(<span class="string">&quot;dst&quot;</span>, dst);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.cvtColor(src, cv.COLOR_BGR2GRAY)</span><br><span class="line">cv.imshow(<span class="string">&quot;dst&quot;</span>, dst)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><h3 id="统计直方图"><a href="#统计直方图" class="headerlink" title="统计直方图"></a>统计直方图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calcHist(images, channels, mask,hist,histSize, ranges)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>images</code>：需要处理的图片数组</li>
+<li><code>channels</code>：计算对应图片的哪个通道</li>
+<li><code>mask</code>：蒙版</li>
+<li><code>hist</code>：输出的直方图数组</li>
+<li><code>histSize</code>：输出的直方图的大小</li>
+<li><code>ranges</code>：范围</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mat hist;</span><br><span class="line">calcHist(<span class="built_in">vector</span>&lt;Mat&gt;&#123;src&#125;, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&#123;<span class="number">0</span>&#125;,　Mat(), hist, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&#123;<span class="number">256</span>&#125;,</span><br><span class="line">         <span class="built_in">vector</span>&lt;<span class="keyword">float</span>&gt;&#123;<span class="number">0</span>, <span class="number">256</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：这里的vector后面使用的是大括号，注意vector大括号初始化和小括号初始化的差别。</p>
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hist = cv.calcHist([src], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br></pre></td></tr></table></figure>
+
+<p>或者使用<code>numpy</code>的方式统计</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计第1个通道,其他类似</span></span><br><span class="line">hist = np.bincount(src[:,<span class="number">0</span>].ravel(), minlength=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="绘制直方图"><a href="#绘制直方图" class="headerlink" title="绘制直方图"></a>绘制直方图</h3><p>C++中绘制直方图比较麻烦，我们使用<code>polylines</code>取画出多边形，从而形成直方图。抽成自定义函数如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawHist</span><span class="params">(Mat &amp;hist, <span class="keyword">const</span> Scalar &amp;color = Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> bin = <span class="number">4</span>, <span class="built_in">width</span> = <span class="number">256</span> * bin, <span class="built_in">height</span> = <span class="number">800</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;Point&gt; points;</span><br><span class="line">    <span class="function">Mat <span class="title">dst</span><span class="params">(<span class="built_in">height</span>, <span class="built_in">width</span>, CV_8UC3)</span></span>;</span><br><span class="line">    <span class="comment">// 标准化</span></span><br><span class="line">    Mat out;</span><br><span class="line">    normalize(hist, out, <span class="number">0</span>, <span class="built_in">height</span> - <span class="number">100</span>, NORM_MINMAX);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i; i &lt; hist.<span class="built_in">size</span>().<span class="built_in">height</span>; i++) &#123;</span><br><span class="line">        points.push_back(Point(i * bin, <span class="number">790</span> - out.at&lt;<span class="keyword">float</span>&gt;(i)));</span><br><span class="line">    &#125;</span><br><span class="line">    polylines(dst, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt;&#123;points&#125;, <span class="literal">false</span>, color, <span class="number">1</span>, LINE_AA);</span><br><span class="line">    imshow(<span class="string">&quot;hist&quot;</span>, dst);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Python中使用Matplotlib即可，方便快捷高效。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(hist)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="HSV模型"><a href="#HSV模型" class="headerlink" title="HSV模型"></a>HSV模型</h2><p>HSV(Hue, Saturation, Value)是根据颜色的直观特性由A. R. Smith在1978年创建的一种颜色空间, 也称六角锥体模型(Hexcone Model)。</p>
+<p>这个模型中颜色的参数分别是：色调（H），饱和度（S），明度（V）</p>
+<ol>
+<li>当 S = 1，V=1时，H所代表的任何颜色被称为纯色</li>
+<li>当 S = 0，即饱和度为0，颜色最浅，最浅被描述为灰色，灰色的亮度由V决定，此时H无意义</li>
+<li>当 V = 0 时，颜色最暗，最暗被描述为黑色，因此此时H和S均无意义。</li>
+</ol>
+<p><strong>注意</strong>：在OpenCV中，H、S、V的取值范围是[0, 180]、[0, 255]、[0, 255]，而不是[0, 360]、[0, 1]、[0, 1]</p>
+<p>下面列出部分的HSV空间颜色值：</p>
+<p><img src="/img/OpenCV/2.jpg" alt="ros_topic">  </p>
+<h2 id="图像二值化"><a href="#图像二值化" class="headerlink" title="图像二值化"></a>图像二值化</h2><h3 id="手动设置阈值"><a href="#手动设置阈值" class="headerlink" title="手动设置阈值"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57">手动设置阈值</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold(src, dst, thresh, maxval, type)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：单通道灰度图</li>
+<li><code>thresh</code>：阈值</li>
+<li><code>maxval</code>：最大值（一般取255）</li>
+<li><code>type</code>：类型</li>
+</ol>
+<p>当前公式解析有问题，<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#ggaa9e58d2860d4afa658ef70a9b1115576a19120b1a11d8067576cc24f4d2f03754">公式来源</a></p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>THRESH_BINARY</td>
+<td>$dst\left( x,y\right) =\begin{cases}maxval &amp; if\ src(x, y)\ &gt;\ thresh \ 0\end{cases}$</td>
+</tr>
+<tr>
+<td>THRESH_BINARY_INV</td>
+<td>$dst\left( x,y\right) =\begin{cases}0 &amp; if\ src(x, y)\ &gt;\ thresh \ maxval\end{cases}$</td>
+</tr>
+<tr>
+<td>THRESH_TRUNC</td>
+<td>$dst\left( x,y\right) =\begin{cases}threshold &amp; if\ src(x, y)\ &gt;\ thresh \ src(x,y)\end{cases}$</td>
+</tr>
+<tr>
+<td>THRESH_TOZERO</td>
+<td>$dst\left( x,y\right) =\begin{cases}src(x,y) &amp; if\ src(x, y)\ &gt;\ thresh \ 0\end{cases}$</td>
+</tr>
+<tr>
+<td>THRESH_TOZERO_INV</td>
+<td>$dst\left( x,y\right) =\begin{cases}0 &amp; if\ src(x, y)\ &gt;\ thresh \ src(x,y) \end{cases}$</td>
+</tr>
+</tbody></table>
+<p>OpenCV官网使用了一张图片来描述这5个参数不同的含义，如下：</p>
+<p><img src="/img/OpenCV/3.jpg" alt="ros_topic">  </p>
+<p>除了上面的5个参数，还有两个自动算法标志：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>参数解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>THRESH_OTSU</td>
+<td>大津算法</td>
+</tr>
+<tr>
+<td>THRESH_TRIANGLE</td>
+<td>三角算法（常用在图中出现大量的近视颜色的情况下）</td>
+</tr>
+</tbody></table>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line"><span class="comment">// 手动填写阈值</span></span><br><span class="line">threshold(src, dst, <span class="number">100</span>, <span class="number">255</span>, THRESH_BINARY);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 大津算法，手动输入的阈值无效，三角算法类似，正确的阈值需要通过返回值获取。</span></span><br><span class="line">threshold(src, dst, <span class="number">100</span>, <span class="number">255</span>, THRESH_BINARY | THRESH_OTSU);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># retval 实际阈值</span></span><br><span class="line">retval, dst = cv.threshold(src, <span class="number">100</span>, <span class="number">255</span>, cv.THRESH_BINARY)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 大津算法</span></span><br><span class="line">retval, dst = cv.threshold(src, <span class="number">100</span>, <span class="number">255</span>, cv.THRESH_BINARY | cv.THRESH_OTSU)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="自适应阈值"><a href="#自适应阈值" class="headerlink" title="自适应阈值"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#ga72b913f352e4a1b1b397736707afcde3">自适应阈值</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adaptiveThreshold(src, dst, maxValue, adaptiveMethod, thresholdType, C)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>adaptiveMethod</code>：自适应阈值算法<ol>
+<li><code>ADAPTIVE_THRESH_MEAN_C</code>：附近区域减去恒定的平均C</li>
+<li><code>ADAPTIVE_THRESH_GAUSSIAN_C</code>：领域值减去参数C的高斯加权和</li>
+</ol>
+</li>
+<li><code>thresholdType</code>：阈值类型，只允许是以下两个<ol>
+<li><code>THRESH_BINARY</code>：超过阈值是maxval，低于阈值是0</li>
+<li><code>THRESH_BINARY_INV</code>：超过阈值是0，低于阈值是maxval</li>
+</ol>
+</li>
+<li><code>blockSize</code>：邻域大小，必须是奇数。</li>
+<li><code>C</code>：参数C</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adaptiveThreshold(src, dst, <span class="number">255</span>, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY, <span class="number">3</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.adaptiveThreshold(src, <span class="number">255</span>, </span><br><span class="line">                           cv.ADAPTIVE_THRESH_GAUSSIAN_C, </span><br><span class="line">                           cv.THRESH_BINARY, </span><br><span class="line">                           <span class="number">3</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图片卷积"><a href="#图片卷积" class="headerlink" title="图片卷积"></a>图片卷积</h2><h3 id="自定义卷积核"><a href="#自定义卷积核" class="headerlink" title="自定义卷积核"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga27c049795ce870216ddfb366086b5a04">自定义卷积核</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter2D(src, dst, ddepth, kernel)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>ddepth</code>：目标图像的深度</li>
+<li><code>kernel</code>：卷积核</li>
+</ol>
+<p>官网给出的计算的公式：<br>$$<br>\texttt{dst} (x,y) = \sum _{ \stackrel{0\leq x’ &lt; \texttt{kernel.cols},}{0\leq y’ &lt; \texttt{kernel.rows}} } \texttt{kernel} (x’,y’)* \texttt{src} (x+x’- \texttt{anchor.x} ,y+y’- \texttt{anchor.y} )<br>$$<br><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line"><span class="comment">// 1. 均值滤波</span></span><br><span class="line">Mat means_kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>) / <span class="number">9</span>;</span><br><span class="line"><span class="comment">// 2. 高斯模糊</span></span><br><span class="line">Mat gaussian_kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>) / <span class="number">16</span>;</span><br><span class="line"><span class="comment">// 3. Sobel 算子</span></span><br><span class="line"><span class="comment">// 3.1 水平梯度</span></span><br><span class="line">Mat sobel_h_kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-2</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 3.2 垂直梯度</span></span><br><span class="line">Mat sobel_v_kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 4. 拉普拉斯算子</span></span><br><span class="line"><span class="comment">// 4.1 普通型</span></span><br><span class="line">Mat laplacian_normal_kernel =</span><br><span class="line">    (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-4</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 4.2 增强型</span></span><br><span class="line">Mat laplacian_strong_kernel =</span><br><span class="line">    (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 5. 锐化滤波</span></span><br><span class="line">Mat sharpen_kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">9</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以均值滤波为例，其他都是一样的使用方式</span></span><br><span class="line">filter2D(src, dst, <span class="number">-1</span>, means_kernel);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 均值滤波</span></span><br><span class="line">means_kernel = np.float32(((<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                           (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                           (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>))) / <span class="number">9</span></span><br><span class="line"><span class="comment"># 2. 高斯模糊</span></span><br><span class="line">gaussian_kernel = np.float32(((<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>),</span><br><span class="line">                              (<span class="number">2</span>, <span class="number">4</span>, <span class="number">2</span>),</span><br><span class="line">                              (<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>))) / <span class="number">16</span></span><br><span class="line"><span class="comment"># 3. Sobel 算子</span></span><br><span class="line"><span class="comment"># 3.1 水平梯度</span></span><br><span class="line">sobel_h_kernel = np.float32(((<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">                             (<span class="number">-2</span>, <span class="number">0</span>, <span class="number">2</span>),</span><br><span class="line">                             (<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>)))</span><br><span class="line"><span class="comment"># 3.2 垂直梯度</span></span><br><span class="line">sobel_v_kernel = np.float32(((<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-1</span>),</span><br><span class="line">                             (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">                             (<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)))</span><br><span class="line"><span class="comment"># 4. 拉普拉斯算子</span></span><br><span class="line"><span class="comment"># 4.1 普通型</span></span><br><span class="line">laplacian_normal_kernel = np.float32(((<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">                                      (<span class="number">1</span>, <span class="number">-4</span>, <span class="number">1</span>),</span><br><span class="line">                                      (<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)))</span><br><span class="line"><span class="comment"># 4.2 增强型</span></span><br><span class="line">laplacian_strong_kernel = np.float32(((<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                      (<span class="number">1</span>, <span class="number">-4</span>, <span class="number">1</span>),</span><br><span class="line">                                      (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)))</span><br><span class="line"><span class="comment"># 5. 锐化滤波</span></span><br><span class="line">sharpen_kernel = np.float32(((<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>),</span><br><span class="line">                             (<span class="number">-1</span>, <span class="number">9</span>, <span class="number">-1</span>),</span><br><span class="line">                             (<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以均值滤波为例，其他都是一样的使用方式</span></span><br><span class="line">dst = cv.filter2D(src, <span class="number">-1</span>, means_kernel)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>自定义卷积核比较灵活，只要定好卷积核，就可以使用该方法进行卷积。</p>
+</blockquote>
+<h3 id="均值滤波"><a href="#均值滤波" class="headerlink" title="均值滤波"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga8c45db9afe636703801b0b2e440fce37">均值滤波</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blur(src, dst, ksize)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>ksize</code>：卷积核尺寸<ol>
+<li><code>C++</code>：<code>Size</code>类型</li>
+<li><code>Python</code>：元组类型</li>
+</ol>
+</li>
+</ol>
+<p><strong>C++</strong></p>
+<h3 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1">高斯模糊</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GaussianBlur(src, dst, ksize, sigmaX, sigmaY)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>sigmaX</code>：x轴上的高斯标准差</li>
+<li><code>sigmaY</code>：y轴上的高斯标准差，如果为0，设置为等于<code>sigmaY</code></li>
+</ol>
+<p>**C++**：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Mat dst;</span><br><span class="line">GaussianBlur(src, dst, Size(<span class="number">3</span>, <span class="number">3</span>), <span class="number">1</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.GaussianBlur(src, (<span class="number">3</span>, <span class="number">3</span>), <span class="number">1</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9">中值滤波</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">medianBlur(src, dst, ksize)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意此处的 ksize 为int类型</p>
+</blockquote>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">medianBlur(src, dst, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<h3 id="Sobel算子"><a href="#Sobel算子" class="headerlink" title="Sobel算子"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gacea54f142e81b6758cb6f375ce782c8d">Sobel算子</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sobel(src, dst, ddepth, dx, dy, ksize&#x3D;3)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>dx</code>：沿x轴的阶数</li>
+<li><code>dy</code>：沿y轴的阶数</li>
+</ol>
+<p><strong>C++</strong></p>
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 沿 x 轴计算一阶sobel</span></span><br><span class="line">dst = cv.Sobel(src, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 沿 y 轴计算一阶sobel</span></span><br><span class="line">dst = cv.Sobel(src, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Scharr滤波器"><a href="#Scharr滤波器" class="headerlink" title="Scharr滤波器"></a>Scharr滤波器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scharr(src, dst, ddepth, dx, dy)</span><br></pre></td></tr></table></figure>
+
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 沿 x 轴计算一阶 Scharr</span></span><br><span class="line">Scharr(src, dst, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 沿 y 轴计算一阶 Scharr</span></span><br><span class="line">Scharr(src, dst, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 沿 x 轴计算一阶 Scharr</span></span><br><span class="line">dst = cv.Scharr(src, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 沿 y 轴计算一阶 Scharr</span></span><br><span class="line">dst = cv.Scharr(src, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="拉普拉斯算子"><a href="#拉普拉斯算子" class="headerlink" title="拉普拉斯算子"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gad78703e4c8fe703d479c1860d76429e6">拉普拉斯算子</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Laplacian(src, dst, ddepth, ksize&#x3D;1)</span><br></pre></td></tr></table></figure>
+
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Laplacian(src, dst, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.Laplacian(src, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="canny边缘检测算法"><a href="#canny边缘检测算法" class="headerlink" title="canny边缘检测算法"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/dd/d1a/group__imgproc__feature.html#ga04723e007ed888ddf11d9ba04e2232de">canny边缘检测算法</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Canny(src, edges, threshold1, threshold2)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>edges</code>：边缘图，单通道8位。</li>
+<li><code>threshold1</code>：第一个阈值</li>
+<li><code>threshold2</code>：第二个阈值</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Canny(src, dst, <span class="number">50</span>, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.Canny(src, <span class="number">50</span>, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga9d7064d478c95d60003cf839430737ed">双边滤波</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bilateralFilter(src, dst, d, sigmaColor, sigmaSpace)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>d</code>：滤波期间使用的每个像素邻域的直径。</li>
+<li><code>sigmaColor</code>：在色彩空间中过滤的标准差</li>
+<li><code>sigmaSpace</code>：在坐标空间中过滤的标准差</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bilateralFilter(src, dst, <span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.bilateralFilter(src, <span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="霍夫变换"><a href="#霍夫变换" class="headerlink" title="霍夫变换"></a>霍夫变换</h2><h3 id="霍夫圆"><a href="#霍夫圆" class="headerlink" title="霍夫圆"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/dd/d1a/group__imgproc__feature.html#ga47849c3be0d0406ad3ca45db65a25d2d">霍夫圆</a></h3><p>使用霍夫变换在灰度图中查找圆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HoughCircles(src, circles, method, dp, minDist, </span><br><span class="line">             param1&#x3D;100, param2&#x3D;100, minRadius&#x3D;0, maxRadius&#x3D;0)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>circles</code>：找到的圆的输出向量</li>
+<li><code>method</code>：检测方法<ol>
+<li>当前唯一实现的方法是<code>HOUGH_GRADIENT</code></li>
+</ol>
+</li>
+<li><code>dp</code>：分辨率，累加器分辨率和图像分辨率的反比。</li>
+<li><code>minDist</code>：检测到圆心的最小距离</li>
+<li><code>param1</code>：传递给Canny边缘检测器的两个阈值中的更高的那个，更低的是它的一半</li>
+<li><code>param2</code>：它是检测圆心的累加器阈值，越小，假圆可能越多。</li>
+<li><code>minRadius</code>：最小圆半径</li>
+<li><code>maxRadius</code>：最大圆半径</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mat circles;</span><br><span class="line">HoughCircles(src, circles, HOUGH_GRADIENT, <span class="number">1</span>, <span class="number">100</span>, <span class="number">160</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">// circles 中是检测到的圆的圆心(x, y)和半径</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">circles = cv.HoughCircles(src, HOUGH_GRADIENT, <span class="number">1</span>, <span class="number">100</span>, <span class="number">160</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="霍夫直线变换–找直线"><a href="#霍夫直线变换–找直线" class="headerlink" title="霍夫直线变换–找直线"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/dd/d1a/group__imgproc__feature.html#ga46b4e588934f6c8dfd509cc6e0e4545a">霍夫直线变换–找直线</a></h3><blockquote>
+<p>使用标准霍夫变换或者标准多尺度霍夫变换查找直线</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HoughLines(src, lines, rho, theta, threshold, </span><br><span class="line">           srn&#x3D;0, stn&#x3D;0, min_theta&#x3D;0, max_theta&#x3D;CV_PI)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>lines</code>：检测出来的直线（里面的参数是rho和theta）</li>
+<li><code>rho</code>：距离分辨率（以像素为单位）</li>
+<li><code>theta</code>：角度分辨率（以弧度为单位）</li>
+<li><code>threshold</code>：累加器阈值</li>
+<li><code>srn</code>：它是距离分辨率rho的除数</li>
+<li><code>stn</code>：它是角度分辨率theta的除数，如果两个都等于0，则使用标准霍夫变换。否则使用多尺度霍夫变换</li>
+<li><code>min_theta</code>：最小角度：介于<code>0</code>和<code>max_theta</code>之间</li>
+<li><code>max_theta</code>：最大角度：介于<code>min_theta</code>和<code>CV_PI</code>之间</li>
+</ol>
+<blockquote>
+<p>注意：输入图必须是二值图</p>
+</blockquote>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将 src 转化为二值图</span></span><br><span class="line">Mat binary;</span><br><span class="line">adaptiveThreshold(src, binary, <span class="number">255</span>, ADAPTIVE_THRESH_MEAN_C,</span><br><span class="line">                  THRESH_BINARY_INV, <span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">Mat lines;</span><br><span class="line">HoughLines(binary, lines, <span class="number">1</span>, CV_PI / <span class="number">180</span>, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 src 转化为二值图</span></span><br><span class="line">binary = cv.adaptiveThreshold(</span><br><span class="line">    src, <span class="number">255</span>, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY_INV, <span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">lines = cv.HoughLines(binary, <span class="number">1</span>, np.pi / <span class="number">180</span>, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意 lines 的参数分别对应的是一条直线的 rho 和 theta</p>
+</blockquote>
+<h3 id="霍夫直线变换–找线段"><a href="#霍夫直线变换–找线段" class="headerlink" title="霍夫直线变换–找线段"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/dd/d1a/group__imgproc__feature.html#ga8618180a5948286384e3b7ca02f6feeb">霍夫直线变换–找线段</a></h3><blockquote>
+<p>使用概率霍夫变换在二进制图像中查找线段</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HoughLinesP(src, lines, rho, theta, theshold, minLineLength&#x3D;0, maxLineGap&#x3D;0)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>minLineLength</code>：线段的最小长度。</li>
+<li><code>maxLineGap</code>：连接该线上的点之间的最大允许间隙。</li>
+</ol>
+<blockquote>
+<p>注意：输入图必须是二值图</p>
+</blockquote>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Mat binary, gray;</span><br><span class="line">cvtColor(src, gray, COLOR_BGR2GRAY);</span><br><span class="line">adaptiveThreshold(gray, binary, <span class="number">255</span>, ADAPTIVE_THRESH_MEAN_C,</span><br><span class="line">                  THRESH_BINARY_INV, <span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line">imshow(<span class="string">&quot;binary&quot;</span>, binary);</span><br><span class="line"><span class="built_in">vector</span>&lt;Vec4i&gt; lines;</span><br><span class="line">HoughLinesP(binary, lines, <span class="number">1</span>, CV_PI / <span class="number">180</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">30</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> <span class="built_in">line</span> : lines) &#123;</span><br><span class="line">    cv::<span class="built_in">line</span>(src, Point(<span class="built_in">line</span>[<span class="number">0</span>], <span class="built_in">line</span>[<span class="number">1</span>]), Point(<span class="built_in">line</span>[<span class="number">2</span>], <span class="built_in">line</span>[<span class="number">3</span>]),</span><br><span class="line">             Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)</span><br><span class="line">binary = cv.adaptiveThreshold(</span><br><span class="line">    gray, <span class="number">255</span>, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY_INV, <span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line">lines = cv.HoughLinesP(binary, <span class="number">1</span>, np.pi / <span class="number">180</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line">    cv.line(src, (x1, y1), (x2, y2), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, binary)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：实际使用中，C++的<code>HoughLineP</code> 和Python的<code>HoughLineP</code>最终的结果有差异，原因未知。</p>
+</blockquote>
+<h2 id="查找轮廓和绘制轮廓"><a href="#查找轮廓和绘制轮廓" class="headerlink" title="查找轮廓和绘制轮廓"></a>查找轮廓和绘制轮廓</h2><p><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d3/dc0/group__imgproc__shape.html#ga17ed9f5d79ae97bd4c7cf18403e1689a">查找轮廓</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findContours(image, contours, hierachy, mode, method)</span><br></pre></td></tr></table></figure>
+
+<p>参数描述：</p>
+<ol>
+<li><code>image</code>：二值图</li>
+<li><code>contours</code>：查找到的所有轮廓</li>
+<li><code>hierachy</code>：层级关系（目前很少用到）</li>
+<li><code>mode</code>：<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d3/dc0/group__imgproc__shape.html#ga17ed9f5d79ae97bd4c7cf18403e1689a">轮廓的检索模式</a><ol>
+<li><code>RETR_EXTERNAL</code>：仅检索外部轮廓。</li>
+<li><code>RETR_LIST</code>：不建立索引关系的情况下，检索所有轮廓。</li>
+<li><code>RETR_CCOMP</code>：检索所有轮廓，分为两级层次结构。</li>
+<li><code>RETR_TREE</code>：检索所有轮廓，重建嵌套的完整结构。</li>
+</ol>
+</li>
+<li><code>method</code>：<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d3/dc0/group__imgproc__shape.html#ga4303f45752694956374734a03c54d5ff">轮廓近似方法</a><ol>
+<li><code>CHAIN_APPROX_NONE</code>：绝对存储所有轮廓点</li>
+<li><code>CHAIN_APPROX_SIMPLE</code>：压缩水平，垂直和对角线段，仅保留其端点。</li>
+</ol>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d6/d6e/group__imgproc__draw.html#ga746c0625f1781f1ffc9056259103edbc">绘制轮廓</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drawContours(image, contours, contourIdx, color, thickness, lineType)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>contours</code>：上面方法找到的所有轮廓点</li>
+<li><code>countourIdx</code>：要绘制的索引，-1代表所有</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Mat gray, binary;</span><br><span class="line">cvtColor(src, gray, COLOR_BGR2GRAY);</span><br><span class="line">adaptiveThreshold(gray, binary, <span class="number">255</span>, ADAPTIVE_THRESH_GAUSSIAN_C,</span><br><span class="line">                  THRESH_BINARY_INV, <span class="number">255</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt; contours;</span><br><span class="line">findContours(binary, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);</span><br><span class="line">drawContours(src, contours, <span class="number">-1</span>, Scalar(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">binary = cv.adaptiveThreshold(</span><br><span class="line">    gray, <span class="number">255</span>, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY_INV, <span class="number">255</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">_, contours, hierarchy = cv.findContours(</span><br><span class="line">    binary, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)</span><br><span class="line">cv.drawContours(src, contours, <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, binary)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意</strong>：<code>findContours</code>会返回三个值，分别是，图像，轮廓，层级。</p>
+</blockquote>
+<h2 id="膨胀和腐蚀"><a href="#膨胀和腐蚀" class="headerlink" title="膨胀和腐蚀"></a>膨胀和腐蚀</h2><p>形态学变化是基于图像形状的一些简单操作。操作对象一般是二值图像，需要两个输入，一个是我们的原图，另一个是<strong>3x3的结构元素</strong>(内核)，决定了膨胀操作的本质。常见的操作是图像的膨胀和腐蚀。以及他们的进阶操作注入Opening、Closing、Gradient等等。</p>
+<h3 id="获取结构元素"><a href="#获取结构元素" class="headerlink" title="获取结构元素"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gac342a1bb6eabf6f55c803b09268e36dc">获取结构元素</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getStructuringElement(shape, ksize)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>shape</code>： <a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gac2db39b56866583a95a5680313c314ad">结构元素的形状</a><ol>
+<li><code>MORPH_RECT</code>：矩形结构元素</li>
+<li><code>MORPH_CROSS</code>：十字形结构元素</li>
+<li><code>MORPH_ELLIPSE</code>：椭圆形结构元素</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>用法在下面</p>
+</blockquote>
+<h3 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga4ff0f3318642c4f469d0e11f242f3b6c">膨胀</a></h3><p>用大值填充小值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dilate(src, dst, kernel)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>kernel</code>：结构元素</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mat dilate_later;</span><br><span class="line">Mat kernel = getStructuringElement(MORPH_RECT, Size(<span class="number">5</span>, <span class="number">5</span>));</span><br><span class="line">dilate(src, dilate_later, kernel);</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br><span class="line">imshow(<span class="string">&quot;binary&quot;</span>, dilate_later);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kernel = cv.getStructuringElement(cv.MORPH_RECT, (<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line">dilate_later = cv.dilate(src, kernel)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, dilate_later)</span><br></pre></td></tr></table></figure>
+
+<h3 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#gaeb1e0c1033e3f6b891a25d0511362aeb">腐蚀</a></h3><p>用小值填充大值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">erode(src, dst, kernel)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mat erode_later;</span><br><span class="line">Mat kernel = getStructuringElement(MORPH_RECT, Size(<span class="number">5</span>, <span class="number">5</span>));</span><br><span class="line">erode(src, erode_later, kernel);</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br><span class="line">imshow(<span class="string">&quot;binary&quot;</span>, erode_later);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kernel = cv.getStructuringElement(cv.MORPH_RECT, (<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line">erode_later = cv.erode(src, kernel)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, erode_later)</span><br></pre></td></tr></table></figure>
+
+<h3 id="高级形态转化"><a href="#高级形态转化" class="headerlink" title="高级形态转化"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga67493776e3ad1a3df63883829375201f">高级形态转化</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morphologyEx(src, dst, op, kernel)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>op</code>：<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d4/d86/group__imgproc__filter.html#ga7be549266bad7b2e6a04db49827f9f32">形态转化方式</a><ol>
+<li><code>MORPH_ERODE</code>：腐蚀</li>
+<li><code>MORPH_DILATE</code>：膨胀</li>
+<li><code>MORPH_OPEN</code>：开操作，先腐蚀后膨胀</li>
+<li><code>MORPH_CLOSE</code>：闭操作，先膨胀后腐蚀</li>
+<li>…</li>
+</ol>
+</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mat src_later;</span><br><span class="line">Mat kernel = getStructuringElement(MORPH_RECT, Size(<span class="number">5</span>, <span class="number">5</span>));</span><br><span class="line"><span class="comment">// 开操作，其他操作将 op 的值进行更换即可</span></span><br><span class="line">morphologyEx(src, src_later, MORPH_OPEN, kernel);</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br><span class="line">imshow(<span class="string">&quot;binary&quot;</span>, src_later);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kernel = getStructuringElement(cv.MORPH_RECT, Size(<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line"><span class="comment"># 开操作，其他操作将 op 的值进行更换即可</span></span><br><span class="line">src_later = cv.morphologyEx(src, cv.MORPH_OPEN, kernel)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, src_later)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="泛洪填充（漫水填充）"><a href="#泛洪填充（漫水填充）" class="headerlink" title="泛洪填充（漫水填充）"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#gaf1f55a048f8a45bc3383586e80b1f0d0">泛洪填充（漫水填充）</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">floodFill(image, mask，seedPoint, newVal, rect, loDiff&#x3D;Scalar(), upDiff&#x3D;Scalar(), flags)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>seedPoint</code>：起始点</li>
+<li><code>newVal</code>：新值</li>
+<li><code>rect</code>：最小边界矩形，一般使用默认</li>
+<li><code>loDiff</code>：最大较低色差</li>
+<li><code>upDiff</code>：最大较高色差</li>
+<li><code>flags</code>：操作标志<ol>
+<li><code>FLOODFILL_FIXED_RANGE</code></li>
+</ol>
+</li>
+</ol>
+<p>$$<br>\texttt{src} (x’,y’)- \texttt{loDiff} \leq \texttt{src} (x,y) \leq \texttt{src} (x’,y’)+ \texttt{upDiff}<br>$$</p>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#123;5, 5&#125; 是一种简写方式，会自动生成 Point，&#123;0, 0, 255&#125;同理，会自动生成 Scalar</span></span><br><span class="line">floodFill(src, &#123;<span class="number">5</span>, <span class="number">5</span>&#125;, &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>&#125;);</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv.floodFill(src, (<span class="number">5</span>, <span class="number">5</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>));</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图像分水岭"><a href="#图像分水岭" class="headerlink" title="图像分水岭"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#ga3267243e4d3f95165d55a618c65ac6e1">图像分水岭</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watershed(image, markers)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>markders</code>：标记，类型必须是CV_32S</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Mat <span class="title">markers</span><span class="params">(src.<span class="built_in">size</span>(), CV_32S)</span></span>;</span><br><span class="line"><span class="built_in">circle</span>(markers, &#123;src.<span class="built_in">size</span>().<span class="built_in">width</span> / <span class="number">2</span>, src.<span class="built_in">size</span>().<span class="built_in">height</span> / <span class="number">2</span>&#125;, <span class="number">2</span>, &#123;<span class="number">255</span>&#125;,</span><br><span class="line">       <span class="number">-1</span>);</span><br><span class="line"><span class="built_in">circle</span>(markers, &#123;<span class="number">10</span>, <span class="number">10</span>&#125;, <span class="number">2</span>, &#123;<span class="number">1</span>&#125;, <span class="number">-1</span>);</span><br><span class="line">watershed(src, markers);</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; markers &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">Mat result;</span><br><span class="line">markers.convertTo(result, CV_8UC3);</span><br><span class="line">imshow(<span class="string">&quot;src&quot;</span>, src);</span><br><span class="line">imshow(<span class="string">&quot;result&quot;</span>, result);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">height, width = src.shape[:<span class="number">2</span>]</span><br><span class="line">markers = np.zeros(src.shape[:<span class="number">2</span>], np.int32)</span><br><span class="line">cv.circle(markers, (width // <span class="number">2</span>, height//<span class="number">2</span>), <span class="number">2</span>, (<span class="number">255</span>), <span class="number">-1</span>)</span><br><span class="line">cv.circle(markers, (<span class="number">10</span>, <span class="number">10</span>), <span class="number">2</span>, (<span class="number">1</span>), <span class="number">-1</span>)</span><br><span class="line">cv.watershed(src, markers)</span><br><span class="line">markers = markers.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>, src)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, markers)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：标定点一般需要我们实际取获取。这里仅仅是使用固定点举例子罢了。</p>
+</blockquote>
+<h2 id="距离变换"><a href="#距离变换" class="headerlink" title="距离变换"></a><a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#ga25c259e7e2fa2ac70de4606ea800f12f">距离变换</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distanceTransform(src, dst, distanceType, maskSize, dstType&#x3D;CV_32F)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>src</code>：8位单通道二进制图</li>
+<li><code>dst</code>：输出具有计算出的距离图像。它是大小与<code>src</code>相同的8位或32位浮点单通道图像。</li>
+<li><code>distanceType</code>：<a target="_blank" rel="noopener" href="https://docs.opencv.org/3.4.7/d7/d1b/group__imgproc__misc.html#gaa2bfbebbc5c320526897996aafa1d8eb">距离类型</a>，一般采用欧式距离就好了<ol>
+<li><code>DIST_L1</code>：distance = |x1-x2| + |y1-y2|</li>
+<li><code>DIST_L2</code>：简单的欧式距离</li>
+<li><code>DIST_C</code>：distance = max(|x1-x2|,|y1-y2|)</li>
+<li><code>DIST_L12</code>：L1-L2 metric: distance = 2(sqrt(1+x*x/2) - 1))</li>
+<li><code>DIST_FAIR</code>：distance = c^2(|x|/c-log(1+|x|/c)), c = 1.3998</li>
+<li><code>DIST_WELSCH</code>：distance = c^2/2(1-exp(-(x/c)^2)), c = 2.9846</li>
+<li><code>DIST_HUBER</code>：distance = |x|&lt;c ? x^2/2 : c(|x|-c/2), c=1.345</li>
+</ol>
+</li>
+<li><code>maskSize</code>：距离变换蒙版大小，一般用3或5</li>
+<li><code>dstType</code>：输出类型，一般采用默认值</li>
+</ol>
+<p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Mat gray, binary, dst;</span><br><span class="line">cvtColor(src, gray, COLOR_BGR2GRAY);</span><br><span class="line">adaptiveThreshold(gray, binary, <span class="number">255</span>, ADAPTIVE_THRESH_GAUSSIAN_C,</span><br><span class="line">                  THRESH_BINARY_INV, <span class="number">255</span>, <span class="number">1</span>);</span><br><span class="line">distanceTransform(binary, dst, DIST_L2, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// 将数据归一化到0-1之间，显示效果比较好</span></span><br><span class="line">normalize(dst, dst, <span class="number">0</span>, <span class="number">1</span>, NORM_MINMAX);</span><br><span class="line">imshow(<span class="string">&quot;dst&quot;</span>, dst);</span><br><span class="line">imshow(<span class="string">&quot;binary&quot;</span>, binary);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)</span><br><span class="line">binary = cv.adaptiveThreshold(</span><br><span class="line">    gray, <span class="number">255</span>, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY_INV, <span class="number">255</span>, <span class="number">1</span>)</span><br><span class="line">dst = cv.distanceTransform(binary, cv.DIST_L2, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 将数据归一化到0-1之间，显示效果比较好</span></span><br><span class="line">cv.normalize(dst, dst, <span class="number">0</span>, <span class="number">1</span>, cv.NORM_MINMAX)</span><br><span class="line">cv.imshow(<span class="string">&quot;binary&quot;</span>, binary)</span><br><span class="line">cv.imshow(<span class="string">&quot;dst&quot;</span>, dst)</span><br></pre></td></tr></table></figure>
+
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://askeynil.github.io/2019/144d9f9d.html>https://askeynil.github.io/2019/144d9f9d.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://www.askeynil.com" rel="nofollow noopener">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets/icon/avatar.png">
+    <p>AskeyNil</p>
+  </a>
+</div>
+
+        
+      
+        
+          <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年11月2日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OpenCV/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>OpenCV</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/bae2941.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>OpenCV 之硬币分割</p>
+                <p class='content'>
+官方例程：https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershe...</p>
+              </a>
+            
+            
+              <a class='next' href='/2019/e181f182.html'>
+                <p class='title'>OpenCV 入门<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>图像的读写与显示读取图像使用函数 cv.imread() 来读取图像，该函数共两个参数
+
+图像的路径
+图像的读取方式
+cv.IMREAD_COLOR 加载彩色图像，图像的任何透明度都将被忽略。这...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87"><span class="toc-text">读取图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="toc-text">保存图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87"><span class="toc-text">显示图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%BC%A9%E6%94%BE"><span class="toc-text">图片缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">图像操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-text">仿射变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2"><span class="toc-text">透视变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%87%91%E5%AD%97%E5%A1%94%EF%BC%88%E4%B8%8A%E3%80%81%E4%B8%8B%E9%87%87%E6%A0%B7%EF%BC%89"><span class="toc-text">图像金字塔（上、下采样）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E9%87%87%E6%A0%B7"><span class="toc-text">上采样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E9%87%87%E6%A0%B7"><span class="toc-text">下采样</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E8%9E%8D%E5%90%88"><span class="toc-text">图像融合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%9B%BE%E5%BD%A2"><span class="toc-text">绘制图形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%BA%BF%E6%AE%B5"><span class="toc-text">绘制线段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9F%A9%E5%BD%A2"><span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%9C%86"><span class="toc-text">绘制圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-text">绘制多边形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%96%87%E5%AD%97"><span class="toc-text">绘制文字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4"><span class="toc-text">转换颜色空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-text">直方图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-text">统计直方图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-text">绘制直方图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HSV%E6%A8%A1%E5%9E%8B"><span class="toc-text">HSV模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E4%BA%8C%E5%80%BC%E5%8C%96"><span class="toc-text">图像二值化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE%E9%98%88%E5%80%BC"><span class="toc-text">手动设置阈值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E9%98%88%E5%80%BC"><span class="toc-text">自适应阈值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%8D%B7%E7%A7%AF"><span class="toc-text">图片卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%B7%E7%A7%AF%E6%A0%B8"><span class="toc-text">自定义卷积核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A"><span class="toc-text">高斯模糊</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-text">中值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sobel%E7%AE%97%E5%AD%90"><span class="toc-text">Sobel算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scharr%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-text">Scharr滤波器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="toc-text">拉普拉斯算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95"><span class="toc-text">canny边缘检测算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2"><span class="toc-text">双边滤波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2"><span class="toc-text">霍夫变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%9C%86"><span class="toc-text">霍夫圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%8D%E5%A4%AB%E7%9B%B4%E7%BA%BF%E5%8F%98%E6%8D%A2%E2%80%93%E6%89%BE%E7%9B%B4%E7%BA%BF"><span class="toc-text">霍夫直线变换–找直线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%8D%E5%A4%AB%E7%9B%B4%E7%BA%BF%E5%8F%98%E6%8D%A2%E2%80%93%E6%89%BE%E7%BA%BF%E6%AE%B5"><span class="toc-text">霍夫直线变换–找线段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E8%BD%AE%E5%BB%93%E5%92%8C%E7%BB%98%E5%88%B6%E8%BD%AE%E5%BB%93"><span class="toc-text">查找轮廓和绘制轮廓</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%86%A8%E8%83%80%E5%92%8C%E8%85%90%E8%9A%80"><span class="toc-text">膨胀和腐蚀</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%84%E5%85%83%E7%B4%A0"><span class="toc-text">获取结构元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%86%A8%E8%83%80"><span class="toc-text">膨胀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%90%E8%9A%80"><span class="toc-text">腐蚀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E5%BD%A2%E6%80%81%E8%BD%AC%E5%8C%96"><span class="toc-text">高级形态转化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85%EF%BC%88%E6%BC%AB%E6%B0%B4%E5%A1%AB%E5%85%85%EF%BC%89"><span class="toc-text">泛洪填充（漫水填充）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E6%B0%B4%E5%B2%AD"><span class="toc-text">图像分水岭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%E5%8F%98%E6%8D%A2"><span class="toc-text">距离变换</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>标签云</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/Array/" style="font-size: 14px; color: #999">Array</a> <a href="/tags/C/" style="font-size: 20.67px; color: #6c6c6c">C++</a> <a href="/tags/CLI-Tools/" style="font-size: 14px; color: #999">CLI Tools</a> <a href="/tags/CMakeLists/" style="font-size: 14px; color: #999">CMakeLists</a> <a href="/tags/Database/" style="font-size: 14px; color: #999">Database</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px; color: #999">Dynamic Programming</a> <a href="/tags/Enum/" style="font-size: 14px; color: #999">Enum</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/LeetCode-Easy/" style="font-size: 14px; color: #999">LeetCode Easy</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/NumPy/" style="font-size: 17.33px; color: #828282">NumPy</a> <a href="/tags/OpenCV/" style="font-size: 20.67px; color: #6c6c6c">OpenCV</a> <a href="/tags/PyQt5/" style="font-size: 14px; color: #999">PyQt5</a> <a href="/tags/Python/" style="font-size: 22.33px; color: #606060">Python</a> <a href="/tags/ROS/" style="font-size: 24px; color: #555">ROS</a> <a href="/tags/ROS-Service/" style="font-size: 14px; color: #999">ROS Service</a> <a href="/tags/ROS-Topic/" style="font-size: 15.67px; color: #8e8e8e">ROS Topic</a> <a href="/tags/ROS-command/" style="font-size: 15.67px; color: #8e8e8e">ROS command</a> <a href="/tags/ROS-msg/" style="font-size: 14px; color: #999">ROS msg</a> <a href="/tags/ROS-srv/" style="font-size: 14px; color: #999">ROS srv</a> <a href="/tags/ROS2/" style="font-size: 15.67px; color: #8e8e8e">ROS2</a> <a href="/tags/Shell/" style="font-size: 19px; color: #777">Shell</a> <a href="/tags/SymPy/" style="font-size: 14px; color: #999">SymPy</a> <a href="/tags/URDF/" style="font-size: 15.67px; color: #8e8e8e">URDF</a> <a href="/tags/Vim/" style="font-size: 14px; color: #999">Vim</a> <a href="/tags/install/" style="font-size: 14px; color: #999">install</a> <a href="/tags/roslaunch/" style="font-size: 14px; color: #999">roslaunch</a> <a href="/tags/xacro/" style="font-size: 14px; color: #999">xacro</a> <a href="/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">分水岭算法</a> <a href="/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/" style="font-size: 14px; color: #999">轮廓提取</a> <a href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">边缘检测</a>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/bae2941.html" title="OpenCV 之硬币分割" rel="bookmark">OpenCV 之硬币分割</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/b1861ead.html" title="OpenCV 之特征匹配" rel="bookmark">OpenCV 之特征匹配</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/b202f100.html" title="OpenCV 之角点检测" rel="bookmark">OpenCV 之角点检测</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/e181f182.html" title="OpenCV 入门" rel="bookmark">OpenCV 入门</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:askeynil@gmail.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/askeynil"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 AskeyNil</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      <li class='navigation'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/archives
+        
+        
+        
+        
+          id="archives"
+        >
+        <i class='fas fa-archive fa-fw'></i> 归档
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/categories
+        
+        
+        
+        
+          id="categories"
+        >
+        <i class='fas fa-folder-open fa-fw'></i> 分类
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/tags
+        
+        
+        
+        
+          id="tags"
+        >
+        <i class='fas fa-tags fa-fw'></i> 标签
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/note
+        
+        
+        
+        
+          id="note"
+        >
+        <i class='fas fa-pen-square fa-fw fa-fw'></i> 便签
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/talk
+        
+        
+        
+        
+          id="talk"
+        >
+        <i class='fas fa-comment-dots fa-fw'></i> 闲谈
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/day-sign
+        
+        
+        
+        
+          id="day-sign"
+        >
+        <i class='fas fa-hourglass-half fa-fw'></i> 日签
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/timeline
+        
+        
+        
+        
+          id="timeline"
+        >
+        <i class='fa fa-history fa-fw'></i> 站史
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          copyText.style.display = 'block';
+          hrText.style.display = 'block';
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if (false == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    <!-- 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+ -->
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/1.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/2.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/3.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/4.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/5.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/6.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/7.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/8.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/9.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
+      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+
+    let ALLPATH = '';
+    if(ALLPATH != '') pageUrl = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: pageUrl,
+      appId: "oLOfpLWUeN88TsR6gviA7dVk-MdYXbMMI",
+      appKey: "oNbFzpdr4m1YkWnDB9nggyqt",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/talk"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('config', 'UA-148517433-1', {'page_path': document.location.pathname});
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
