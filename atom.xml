@@ -3,11 +3,11 @@
   <title>AskeyNil</title>
   
   
-  <link href="https://askeynil.github.io/atom.xml" rel="self"/>
+  <link href="https://www.askeynil.com/atom.xml" rel="self"/>
   
-  <link href="https://askeynil.github.io/"/>
+  <link href="https://www.askeynil.com/"/>
   <updated>2020-09-02T02:36:03.000Z</updated>
-  <id>https://askeynil.github.io/</id>
+  <id>https://www.askeynil.com/</id>
   
   <author>
     <name>AskeyNil</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>ROS2 CLI Tools</title>
-    <link href="https://askeynil.github.io/2020/ROS2-CLI-Tools.html"/>
-    <id>https://askeynil.github.io/2020/ROS2-CLI-Tools.html</id>
+    <link href="https://www.askeynil.com/2020/ROS2-CLI-Tools.html"/>
+    <id>https://www.askeynil.com/2020/ROS2-CLI-Tools.html</id>
     <published>2020-08-26T11:34:31.000Z</published>
     <updated>2020-09-02T02:36:03.000Z</updated>
     
@@ -49,21 +49,21 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Foxy" scheme="https://askeynil.github.io/categories/ROS/Foxy/"/>
+    <category term="Foxy" scheme="https://www.askeynil.com/categories/ROS/Foxy/"/>
     
     
-    <category term="ROS2" scheme="https://askeynil.github.io/tags/ROS2/"/>
+    <category term="ROS2" scheme="https://www.askeynil.com/tags/ROS2/"/>
     
-    <category term="CLI Tools" scheme="https://askeynil.github.io/tags/CLI-Tools/"/>
+    <category term="CLI Tools" scheme="https://www.askeynil.com/tags/CLI-Tools/"/>
     
   </entry>
   
   <entry>
     <title>ROS2 Foxy 安装（基于 Mac OS 二进制）</title>
-    <link href="https://askeynil.github.io/2020/ROS2-Foxy-macOS-Install-Binary.html"/>
-    <id>https://askeynil.github.io/2020/ROS2-Foxy-macOS-Install-Binary.html</id>
+    <link href="https://www.askeynil.com/2020/ROS2-Foxy-macOS-Install-Binary.html"/>
+    <id>https://www.askeynil.com/2020/ROS2-Foxy-macOS-Install-Binary.html</id>
     <published>2020-08-21T12:05:51.000Z</published>
     <updated>2020-08-26T11:31:38.000Z</updated>
     
@@ -81,21 +81,21 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Foxy" scheme="https://askeynil.github.io/categories/ROS/Foxy/"/>
+    <category term="Foxy" scheme="https://www.askeynil.com/categories/ROS/Foxy/"/>
     
     
-    <category term="ROS2" scheme="https://askeynil.github.io/tags/ROS2/"/>
+    <category term="ROS2" scheme="https://www.askeynil.com/tags/ROS2/"/>
     
-    <category term="install" scheme="https://askeynil.github.io/tags/install/"/>
+    <category term="install" scheme="https://www.askeynil.com/tags/install/"/>
     
   </entry>
   
   <entry>
     <title>git submodule 基本使用</title>
-    <link href="https://askeynil.github.io/2020/use-of-git-submoudle.html"/>
-    <id>https://askeynil.github.io/2020/use-of-git-submoudle.html</id>
+    <link href="https://www.askeynil.com/2020/use-of-git-submoudle.html"/>
+    <id>https://www.askeynil.com/2020/use-of-git-submoudle.html</id>
     <published>2020-08-19T12:28:45.000Z</published>
     <updated>2020-08-20T13:12:17.000Z</updated>
     
@@ -113,19 +113,19 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="Git" scheme="https://askeynil.github.io/categories/Coding/Git/"/>
+    <category term="Git" scheme="https://www.askeynil.com/categories/Coding/Git/"/>
     
     
-    <category term="Git" scheme="https://askeynil.github.io/tags/Git/"/>
+    <category term="Git" scheme="https://www.askeynil.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>因时机械爪驱动</title>
-    <link href="https://askeynil.github.io/2019/32569ea8.html"/>
-    <id>https://askeynil.github.io/2019/32569ea8.html</id>
+    <link href="https://www.askeynil.com/2019/32569ea8.html"/>
+    <id>https://www.askeynil.com/2019/32569ea8.html</id>
     <published>2019-11-17T05:00:00.000Z</published>
     <updated>2019-11-17T05:00:00.000Z</updated>
     
@@ -144,21 +144,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="驱动开发" scheme="https://askeynil.github.io/categories/Coding/%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    <category term="驱动开发" scheme="https://www.askeynil.com/categories/Coding/%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>使用 C++ 实现复杂枚举</title>
-    <link href="https://askeynil.github.io/2019/cc-complex-enum.html"/>
-    <id>https://askeynil.github.io/2019/cc-complex-enum.html</id>
+    <link href="https://www.askeynil.com/2019/cc-complex-enum.html"/>
+    <id>https://www.askeynil.com/2019/cc-complex-enum.html</id>
     <published>2019-11-13T12:00:00.000Z</published>
     <updated>2019-11-13T12:00:00.000Z</updated>
     
@@ -172,21 +172,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="C++" scheme="https://askeynil.github.io/categories/Coding/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/categories/Coding/C/"/>
     
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
-    <category term="Enum" scheme="https://askeynil.github.io/tags/Enum/"/>
+    <category term="Enum" scheme="https://www.askeynil.com/tags/Enum/"/>
     
   </entry>
   
   <entry>
     <title>xacro 语法总结</title>
-    <link href="https://askeynil.github.io/2019/3f08735f.html"/>
-    <id>https://askeynil.github.io/2019/3f08735f.html</id>
+    <link href="https://www.askeynil.com/2019/3f08735f.html"/>
+    <id>https://www.askeynil.com/2019/3f08735f.html</id>
     <published>2019-11-09T03:00:00.000Z</published>
     <updated>2019-11-09T03:00:00.000Z</updated>
     
@@ -205,23 +205,23 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="URDF" scheme="https://askeynil.github.io/tags/URDF/"/>
+    <category term="URDF" scheme="https://www.askeynil.com/tags/URDF/"/>
     
-    <category term="xacro" scheme="https://askeynil.github.io/tags/xacro/"/>
+    <category term="xacro" scheme="https://www.askeynil.com/tags/xacro/"/>
     
   </entry>
   
   <entry>
     <title>URDF 中 link、joint 属性总结</title>
-    <link href="https://askeynil.github.io/2019/bcc307b4.html"/>
-    <id>https://askeynil.github.io/2019/bcc307b4.html</id>
+    <link href="https://www.askeynil.com/2019/bcc307b4.html"/>
+    <id>https://www.askeynil.com/2019/bcc307b4.html</id>
     <published>2019-11-08T00:00:00.000Z</published>
     <updated>2019-11-08T00:00:00.000Z</updated>
     
@@ -237,23 +237,23 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="roslaunch" scheme="https://askeynil.github.io/tags/roslaunch/"/>
+    <category term="roslaunch" scheme="https://www.askeynil.com/tags/roslaunch/"/>
     
-    <category term="URDF" scheme="https://askeynil.github.io/tags/URDF/"/>
+    <category term="URDF" scheme="https://www.askeynil.com/tags/URDF/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 和 ROS 一起使用的一些坑</title>
-    <link href="https://askeynil.github.io/2019/e4bbffed.html"/>
-    <id>https://askeynil.github.io/2019/e4bbffed.html</id>
+    <link href="https://www.askeynil.com/2019/e4bbffed.html"/>
+    <id>https://www.askeynil.com/2019/e4bbffed.html</id>
     <published>2019-11-06T12:00:00.000Z</published>
     <updated>2019-11-07T00:00:00.000Z</updated>
     
@@ -272,23 +272,23 @@
     
     
     
-    <category term="BugFix" scheme="https://askeynil.github.io/categories/BugFix/"/>
+    <category term="BugFix" scheme="https://www.askeynil.com/categories/BugFix/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
-    <category term="Anaconda" scheme="https://askeynil.github.io/tags/Anaconda/"/>
+    <category term="Anaconda" scheme="https://www.askeynil.com/tags/Anaconda/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 之特征匹配</title>
-    <link href="https://askeynil.github.io/2019/b1861ead.html"/>
-    <id>https://askeynil.github.io/2019/b1861ead.html</id>
+    <link href="https://www.askeynil.com/2019/b1861ead.html"/>
+    <id>https://www.askeynil.com/2019/b1861ead.html</id>
     <published>2019-11-06T08:00:00.000Z</published>
     <updated>2019-11-06T08:00:00.000Z</updated>
     
@@ -310,21 +310,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/categories/Coding/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/categories/Coding/OpenCV/"/>
     
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 之角点检测</title>
-    <link href="https://askeynil.github.io/2019/b202f100.html"/>
-    <id>https://askeynil.github.io/2019/b202f100.html</id>
+    <link href="https://www.askeynil.com/2019/b202f100.html"/>
+    <id>https://www.askeynil.com/2019/b202f100.html</id>
     <published>2019-11-04T02:00:00.000Z</published>
     <updated>2019-11-04T02:00:00.000Z</updated>
     
@@ -347,21 +347,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/categories/Coding/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/categories/Coding/OpenCV/"/>
     
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>Shell 命令之查找</title>
-    <link href="https://askeynil.github.io/2019/fafe7b6d.html"/>
-    <id>https://askeynil.github.io/2019/fafe7b6d.html</id>
+    <link href="https://www.askeynil.com/2019/fafe7b6d.html"/>
+    <id>https://www.askeynil.com/2019/fafe7b6d.html</id>
     <published>2019-11-03T02:00:00.000Z</published>
     <updated>2019-11-03T02:00:00.000Z</updated>
     
@@ -385,19 +385,19 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="Shell" scheme="https://askeynil.github.io/categories/Coding/Shell/"/>
+    <category term="Shell" scheme="https://www.askeynil.com/categories/Coding/Shell/"/>
     
     
-    <category term="Shell" scheme="https://askeynil.github.io/tags/Shell/"/>
+    <category term="Shell" scheme="https://www.askeynil.com/tags/Shell/"/>
     
   </entry>
   
   <entry>
     <title>NumPy 之 mgrid、ogrid</title>
-    <link href="https://askeynil.github.io/2019/1df81ffb.html"/>
-    <id>https://askeynil.github.io/2019/1df81ffb.html</id>
+    <link href="https://www.askeynil.com/2019/1df81ffb.html"/>
+    <id>https://www.askeynil.com/2019/1df81ffb.html</id>
     <published>2019-11-02T14:00:00.000Z</published>
     <updated>2019-11-02T14:00:00.000Z</updated>
     
@@ -421,21 +421,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/categories/Coding/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/categories/Coding/Python/"/>
     
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
-    <category term="NumPy" scheme="https://askeynil.github.io/tags/NumPy/"/>
+    <category term="NumPy" scheme="https://www.askeynil.com/tags/NumPy/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 之硬币分割</title>
-    <link href="https://askeynil.github.io/2019/bae2941.html"/>
-    <id>https://askeynil.github.io/2019/bae2941.html</id>
+    <link href="https://www.askeynil.com/2019/bae2941.html"/>
+    <id>https://www.askeynil.com/2019/bae2941.html</id>
     <published>2019-11-02T05:00:00.000Z</published>
     <updated>2019-11-02T12:00:00.000Z</updated>
     
@@ -462,29 +462,29 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/categories/Coding/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/categories/Coding/OpenCV/"/>
     
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
-    <category term="分水岭算法" scheme="https://askeynil.github.io/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/"/>
+    <category term="分水岭算法" scheme="https://www.askeynil.com/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/"/>
     
-    <category term="边缘检测" scheme="https://askeynil.github.io/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/"/>
+    <category term="边缘检测" scheme="https://www.askeynil.com/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/"/>
     
-    <category term="轮廓提取" scheme="https://askeynil.github.io/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/"/>
+    <category term="轮廓提取" scheme="https://www.askeynil.com/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 常用方法整理</title>
-    <link href="https://askeynil.github.io/2019/144d9f9d.html"/>
-    <id>https://askeynil.github.io/2019/144d9f9d.html</id>
+    <link href="https://www.askeynil.com/2019/144d9f9d.html"/>
+    <id>https://www.askeynil.com/2019/144d9f9d.html</id>
     <published>2019-11-02T02:00:00.000Z</published>
     <updated>2019-11-02T03:00:00.000Z</updated>
     
@@ -511,23 +511,23 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/categories/Coding/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/categories/Coding/OpenCV/"/>
     
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="C++" scheme="https://askeynil.github.io/tags/C/"/>
+    <category term="C++" scheme="https://www.askeynil.com/tags/C/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 入门</title>
-    <link href="https://askeynil.github.io/2019/e181f182.html"/>
-    <id>https://askeynil.github.io/2019/e181f182.html</id>
+    <link href="https://www.askeynil.com/2019/e181f182.html"/>
+    <id>https://www.askeynil.com/2019/e181f182.html</id>
     <published>2019-10-23T12:00:00.000Z</published>
     <updated>2019-10-23T12:00:00.000Z</updated>
     
@@ -551,21 +551,21 @@
     
     
     
-    <category term="Coding" scheme="https://askeynil.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://www.askeynil.com/categories/Coding/"/>
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/categories/Coding/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/categories/Coding/OpenCV/"/>
     
     
-    <category term="OpenCV" scheme="https://askeynil.github.io/tags/OpenCV/"/>
+    <category term="OpenCV" scheme="https://www.askeynil.com/tags/OpenCV/"/>
     
-    <category term="Python" scheme="https://askeynil.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.askeynil.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Service 通讯</title>
-    <link href="https://askeynil.github.io/2019/a2babe33.html"/>
-    <id>https://askeynil.github.io/2019/a2babe33.html</id>
+    <link href="https://www.askeynil.com/2019/a2babe33.html"/>
+    <id>https://www.askeynil.com/2019/a2babe33.html</id>
     <published>2019-10-21T07:00:00.000Z</published>
     <updated>2019-10-21T07:00:00.000Z</updated>
     
@@ -588,21 +588,21 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="ROS Service" scheme="https://askeynil.github.io/tags/ROS-Service/"/>
+    <category term="ROS Service" scheme="https://www.askeynil.com/tags/ROS-Service/"/>
     
   </entry>
   
   <entry>
     <title>消息的发布者（Publisher）</title>
-    <link href="https://askeynil.github.io/2019/c8e84d4d.html"/>
-    <id>https://askeynil.github.io/2019/c8e84d4d.html</id>
+    <link href="https://www.askeynil.com/2019/c8e84d4d.html"/>
+    <id>https://www.askeynil.com/2019/c8e84d4d.html</id>
     <published>2019-10-18T04:00:00.000Z</published>
     <updated>2020-11-04T10:55:07.309Z</updated>
     
@@ -632,21 +632,21 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="ROS Topic" scheme="https://askeynil.github.io/tags/ROS-Topic/"/>
+    <category term="ROS Topic" scheme="https://www.askeynil.com/tags/ROS-Topic/"/>
     
   </entry>
   
   <entry>
     <title>消息订阅者（Subscriber）</title>
-    <link href="https://askeynil.github.io/2019/b013f674.html"/>
-    <id>https://askeynil.github.io/2019/b013f674.html</id>
+    <link href="https://www.askeynil.com/2019/b013f674.html"/>
+    <id>https://www.askeynil.com/2019/b013f674.html</id>
     <published>2019-10-18T04:00:00.000Z</published>
     <updated>2020-11-04T10:55:07.310Z</updated>
     
@@ -677,21 +677,21 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="ROS Topic" scheme="https://askeynil.github.io/tags/ROS-Topic/"/>
+    <category term="ROS Topic" scheme="https://www.askeynil.com/tags/ROS-Topic/"/>
     
   </entry>
   
   <entry>
     <title>ROS 命令行工具介绍</title>
-    <link href="https://askeynil.github.io/2019/412acdc0.html"/>
-    <id>https://askeynil.github.io/2019/412acdc0.html</id>
+    <link href="https://www.askeynil.com/2019/412acdc0.html"/>
+    <id>https://www.askeynil.com/2019/412acdc0.html</id>
     <published>2019-10-18T02:00:00.000Z</published>
     <updated>2020-11-04T10:55:07.304Z</updated>
     
@@ -717,23 +717,23 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="ROS command" scheme="https://askeynil.github.io/tags/ROS-command/"/>
+    <category term="ROS command" scheme="https://www.askeynil.com/tags/ROS-command/"/>
     
-    <category term="Shell" scheme="https://askeynil.github.io/tags/Shell/"/>
+    <category term="Shell" scheme="https://www.askeynil.com/tags/Shell/"/>
     
   </entry>
   
   <entry>
     <title>ROS 概述</title>
-    <link href="https://askeynil.github.io/2019/ROS-Overview.html"/>
-    <id>https://askeynil.github.io/2019/ROS-Overview.html</id>
+    <link href="https://www.askeynil.com/2019/ROS-Overview.html"/>
+    <id>https://www.askeynil.com/2019/ROS-Overview.html</id>
     <published>2019-10-18T02:00:00.000Z</published>
     <updated>2019-10-18T02:00:00.000Z</updated>
     
@@ -765,16 +765,16 @@
     
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/categories/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/categories/ROS/"/>
     
-    <category term="Kinetic" scheme="https://askeynil.github.io/categories/ROS/Kinetic/"/>
+    <category term="Kinetic" scheme="https://www.askeynil.com/categories/ROS/Kinetic/"/>
     
     
-    <category term="ROS" scheme="https://askeynil.github.io/tags/ROS/"/>
+    <category term="ROS" scheme="https://www.askeynil.com/tags/ROS/"/>
     
-    <category term="ROS command" scheme="https://askeynil.github.io/tags/ROS-command/"/>
+    <category term="ROS command" scheme="https://www.askeynil.com/tags/ROS-command/"/>
     
-    <category term="Shell" scheme="https://askeynil.github.io/tags/Shell/"/>
+    <category term="Shell" scheme="https://www.askeynil.com/tags/Shell/"/>
     
   </entry>
   
