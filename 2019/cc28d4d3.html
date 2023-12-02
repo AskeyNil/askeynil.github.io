@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-    
-  
+
+
+
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
   <!-- 页面元数据 -->
-  
-  <title>Python 基础2 - AskeyNil</title>
-  
-    <meta name="keywords" content="Python">
-  
 
-  
-    <meta name="description" content="函数所谓函数，就是把一个具有独立功能的代码块组织成一个整体，在需要的时候调用。
+  <title>Python 基础2 - AskeyNil</title>
+
+  <meta name="keywords" content="Python">
+
+
+
+  <meta name="description" content="函数所谓函数，就是把一个具有独立功能的代码块组织成一个整体，在需要的时候调用。
 函数的使用一般包含两个步骤：
 
 定义函数：在函数中编写代码、实现功能
@@ -36,1933 +37,2008 @@
 函数的定义规范：
 
 d...">
-  
+
 
   <!-- feed -->
-  
-    <link rel="alternate" href="/atom.xml" title="AskeyNil" type="application/atom+xml">
-  
+
+  <link rel="alternate" href="/atom.xml" title="AskeyNil" type="application/atom+xml">
+
 
   <!-- import meta -->
-  
+
 
   <!-- link -->
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
 
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
 
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
 
-  
 
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
 
-  
 
-  
-    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/icon/favicon.ico">
-  
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
 
-  
 
-  
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+
+
+
+  <link rel="shortcut icon" type='image/x-icon'
+    href="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/icon/favicon.ico">
+
+
+
+
+
 
   <!-- import link -->
-  
 
-  
-  
-    
-<link rel="stylesheet" href="/css/style.css">
 
-  
 
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script>
-	setTimeout(function() {
-	  let script = document.createElement('script');
-	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148517433-1";
-	  script.defer=true;
-	  document.body.appendChild(script);
+
+
+  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    setTimeout(function () {
+      let script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148517433-1";
+      script.defer = true;
+      document.body.appendChild(script);
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'UA-148517433-1');
-	}, 5000);
-    </script>
-  
-  
+    }, 5000);
+  </script>
+
+
 </head>
 
 <body>
-  
-  
-  
+
+
+
   <div class="cover-wrapper">
     <cover class='cover post' style="display: none;">
       <div class='cover-body'>
-  <div class='a'>
-    
-    
-      <p class="title">AskeyNil's Blog</p>
-    
-    
-      <p class="subtitle"></br>所有美的事物，都值得慢慢思量，一生珍赏</p>
-    
-  </div>
-  <div class='b'>
-    <div class='menu navigation dock'>
-      <div class='list-h'>
-        
-          
-            <a href="/"
-              
-              
-              id="home">
-              <i class='fas fa-home fa-fw'></i><p>首页</p>
-            </a>
-          
-            <a href="/archives"
-              
-              
-              id="archives">
-              <i class='fas fa-archive fa-fw'></i><p>归档</p>
-            </a>
-          
-            <a href="/timeline"
-              
-              
-              id="timeline">
-              <i class='fa fa-history fa-fw'></i><p>站史</p>
-            </a>
-          
-            <a href="/about"
-              
-              
-              id="about">
-              <i class='fas fa-handshake fa-fw'></i><p>关于</p>
-            </a>
-          
-        
+        <div class='a'>
+
+
+          <p class="title">AskeyNil's Blog</p>
+
+
+          <p class="subtitle"></br>所有美的事物，都值得慢慢思量，一生珍赏</p>
+
+        </div>
+        <div class='b'>
+          <div class='menu navigation dock'>
+            <div class='list-h'>
+
+
+              <a href="/" id="home">
+                <i class='fas fa-home fa-fw'></i>
+                <p>首页</p>
+              </a>
+
+              <a href="/archives" id="archives">
+                <i class='fas fa-archive fa-fw'></i>
+                <p>归档</p>
+              </a>
+
+              <a href="/timeline" id="timeline">
+                <i class='fa fa-history fa-fw'></i>
+                <p>站史</p>
+              </a>
+
+              <a href="/about" id="about">
+                <i class='fas fa-handshake fa-fw'></i>
+                <p>关于</p>
+              </a>
+
+
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
     <header class="l_header shadow blur">
-  <div class='container'>
-  <div class='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
-    </div>
-		<div class="nav-main">
-      
-        
-        <a class="title flat-box" target="_self" href='/'>
-          
-          
-          
-            AskeyNil
-          
-        </a>
-      
+      <div class='container'>
+        <div class='wrapper'>
+          <div class='nav-sub'>
+            <p class="title"></p>
+            <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+              <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
 
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fa fa-book fa-fw'></i>博文
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
-                  
-                  
-                  
-                    id="atomxml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fas fa-robot fa-fw'></i>ROS
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li class='header'>
-                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
-                  
-                  
-                  
-                    id="2019-11ros-xacrohtml"
-                  >
-                  xacro 语法总结
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
-                  
-                  
-                  
-                    id="2019-11ros-urdfhtml"
-                  >
-                  URDF中link、joint属性总结
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
-                  
-                  
-                  
-                    id="categoriesROSKinetic"
-                  >
-                  更多 <i class="fas fa-chevron-right fa-fw"></i>
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li class='header'>
-                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
-                  
-                  
-                  
-                    id="2020ROS2-CLI-Toolshtml"
-                  >
-                  ROS2 CLI Tools
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
-                  
-                  
-                  
-                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
-                  >
-                  ROS2 Foxy 安装（基于 Mac OS 二进制）
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
-                  
-                  
-                  
-                    id="tagsROS2"
-                  >
-                  更多 <i class="fas fa-chevron-right fa-fw"></i>
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
-                  
-                  
-                  
-                    id="leetcode"
-                  >
-                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fa fa-bars fa-fw'></i>站点工具
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
-                  
-                  
-                  
-                    id="https:askeynilavosappsus"
-                  >
-                  <i class='far fa-comments fa-fw'></i>评论管理
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/note
-                  
-                  
-                  
-                    id="note"
-                  >
-                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
-                  
-                  
-                  
-                    id="talk"
-                  >
-                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
-                  
-                  
-                  
-                    id="day-sign"
-                  >
-                  <i class='fas fa-hourglass-half fa-fw'></i>日签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
-                  
-                  
-                  
-                    id="timeline"
-                  >
-                  <i class='fa fa-history fa-fw'></i>站史
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/about
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
+              <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
 
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
-        </form>
+            </ul>
+          </div>
+          <div class="nav-main">
+
+
+            <a class="title flat-box" target="_self" href='/'>
+
+
+
+              AskeyNil
+
+            </a>
+
+
+            <div class='menu navigation'>
+              <ul class='nav-list-h m-pc'>
+
+
+
+
+
+                <li>
+                  <a class="menuitem flat-box faa-parent animated-hover">
+                    <i class='fa fa-book fa-fw'></i>博文
+                  </a>
+
+                  <ul class="list-v">
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/archives id="archives">
+                        <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/categories id="categories">
+                        <i class='fas fa-folder-open fa-fw'></i>分类
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/tags id="tags">
+                        <i class='fas fa-tags fa-fw'></i>标签
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <hr>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml id="atomxml">
+                        <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                      </a>
+
+                    </li>
+
+
+
+                  </ul>
+
+                </li>
+
+
+
+
+
+                <li>
+                  <a class="menuitem flat-box faa-parent animated-hover">
+                    <i class='fas fa-robot fa-fw'></i>ROS
+                  </a>
+
+                  <ul class="list-v">
+
+
+
+                    <li class='header'>
+                      <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                        id="2019-11ros-xacrohtml">
+                        xacro 语法总结
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                        id="2019-11ros-urdfhtml">
+                        URDF中link、joint属性总结
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                        id="categoriesROSKinetic">
+                        更多 <i class="fas fa-chevron-right fa-fw"></i>
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <hr>
+
+
+
+
+
+                    <li class='header'>
+                      <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                        id="2020ROS2-CLI-Toolshtml">
+                        ROS2 CLI Tools
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover"
+                        href=/2020/ROS2-Foxy-macOS-Install-Binary.html id="2020ROS2-Foxy-macOS-Install-Binaryhtml">
+                        ROS2 Foxy 安装（基于 Mac OS 二进制）
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/ id="tagsROS2">
+                        更多 <i class="fas fa-chevron-right fa-fw"></i>
+                      </a>
+
+                    </li>
+
+
+
+                  </ul>
+
+                </li>
+
+
+
+
+
+                <li>
+                  <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode id="leetcode">
+                    <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                  </a>
+
+                </li>
+
+
+
+
+
+                <li>
+                  <a class="menuitem flat-box faa-parent animated-hover">
+                    <i class='fa fa-bars fa-fw'></i>站点工具
+                  </a>
+
+                  <ul class="list-v">
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                        id="https:askeynilavosappsus">
+                        <i class='far fa-comments fa-fw'></i>评论管理
+                      </a>
+
+                    </li>
+
+
+
+                  </ul>
+
+                </li>
+
+
+
+
+
+                <li>
+                  <a class="menuitem flat-box faa-parent animated-hover">
+                    <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                  </a>
+
+                  <ul class="list-v">
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/note id="note">
+                        <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/talk id="talk">
+                        <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign id="day-sign">
+                        <i class='fas fa-hourglass-half fa-fw'></i>日签
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <hr>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/timeline id="timeline">
+                        <i class='fa fa-history fa-fw'></i>站史
+                      </a>
+
+                    </li>
+
+
+
+
+
+                    <li>
+                      <a class="menuitem flat-box faa-parent animated-hover" href=/about id="about">
+                        <i class='fas fa-info-circle fa-fw'></i>关于
+                      </a>
+
+                    </li>
+
+
+
+                  </ul>
+
+                </li>
+
+
+
+              </ul>
+            </div>
+
+            <div class="m_search">
+              <form name="searchform" class="form u-search-form">
+                <i class="icon fas fa-search fa-fw"></i>
+                <input type="text" class="input u-search-input" placeholder="Search..." />
+              </form>
+            </div>
+
+            <ul class='switcher nav-list-h m-phone'>
+
+              <li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+
+              <li>
+                <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+                <ul class="menu-phone list-v navigation white-box">
+
+
+
+                  <li>
+                    <a class="menuitem flat-box faa-parent animated-hover">
+                      <i class='fa fa-book fa-fw'></i>博文
+                    </a>
+
+                    <ul class="list-v">
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/archives id="archives">
+                          <i class='fas fa-archive faa-tada fa-fw'></i>归档
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/categories id="categories">
+                          <i class='fas fa-folder-open fa-fw'></i>分类
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/tags id="tags">
+                          <i class='fas fa-tags fa-fw'></i>标签
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <hr>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml id="atomxml">
+                          <i class='fas fa-rss fa-fw'></i>RSS 订阅
+                        </a>
+
+                      </li>
+
+
+
+                    </ul>
+
+                  </li>
+
+
+
+
+
+                  <li>
+                    <a class="menuitem flat-box faa-parent animated-hover">
+                      <i class='fas fa-robot fa-fw'></i>ROS
+                    </a>
+
+                    <ul class="list-v">
+
+
+
+                      <li class='header'>
+                        <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
+                          id="2019-11ros-xacrohtml">
+                          xacro 语法总结
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
+                          id="2019-11ros-urdfhtml">
+                          URDF中link、joint属性总结
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
+                          id="categoriesROSKinetic">
+                          更多 <i class="fas fa-chevron-right fa-fw"></i>
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <hr>
+
+
+
+
+
+                      <li class='header'>
+                        <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
+                          id="2020ROS2-CLI-Toolshtml">
+                          ROS2 CLI Tools
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover"
+                          href=/2020/ROS2-Foxy-macOS-Install-Binary.html id="2020ROS2-Foxy-macOS-Install-Binaryhtml">
+                          ROS2 Foxy 安装（基于 Mac OS 二进制）
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/ id="tagsROS2">
+                          更多 <i class="fas fa-chevron-right fa-fw"></i>
+                        </a>
+
+                      </li>
+
+
+
+                    </ul>
+
+                  </li>
+
+
+
+
+
+                  <li>
+                    <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode id="leetcode">
+                      <i class='fas fa-laptop-code fa-fw'></i>LeetCode
+                    </a>
+
+                  </li>
+
+
+
+
+
+                  <li>
+                    <a class="menuitem flat-box faa-parent animated-hover">
+                      <i class='fa fa-bars fa-fw'></i>站点工具
+                    </a>
+
+                    <ul class="list-v">
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
+                          id="https:askeynilavosappsus">
+                          <i class='far fa-comments fa-fw'></i>评论管理
+                        </a>
+
+                      </li>
+
+
+
+                    </ul>
+
+                  </li>
+
+
+
+
+
+                  <li>
+                    <a class="menuitem flat-box faa-parent animated-hover">
+                      <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                    </a>
+
+                    <ul class="list-v">
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/note id="note">
+                          <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/talk id="talk">
+                          <i class='fas fa-comment-dots fa-fw'></i>闲谈
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign id="day-sign">
+                          <i class='fas fa-hourglass-half fa-fw'></i>日签
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <hr>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/timeline id="timeline">
+                          <i class='fa fa-history fa-fw'></i>站史
+                        </a>
+
+                      </li>
+
+
+
+
+
+                      <li>
+                        <a class="menuitem flat-box faa-parent animated-hover" href=/about id="about">
+                          <i class='fas fa-info-circle fa-fw'></i>关于
+                        </a>
+
+                      </li>
+
+
+
+                    </ul>
+
+                  </li>
+
+
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-			<ul class='switcher nav-list-h m-phone'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fa fa-book fa-fw'></i>博文
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/archives
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive faa-tada fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/categories
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/tags
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
-                  
-                  
-                  
-                    id="atomxml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>RSS 订阅
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fas fa-robot fa-fw'></i>ROS
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li class='header'>
-                <i class='fas fa-th fa-fw'></i>ROS Kinetic Kame
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-xacro.html
-                  
-                  
-                  
-                    id="2019-11ros-xacrohtml"
-                  >
-                  xacro 语法总结
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2019-11/ros-urdf.html
-                  
-                  
-                  
-                    id="2019-11ros-urdfhtml"
-                  >
-                  URDF中link、joint属性总结
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/ROS/Kinetic/
-                  
-                  
-                  
-                    id="categoriesROSKinetic"
-                  >
-                  更多 <i class="fas fa-chevron-right fa-fw"></i>
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li class='header'>
-                <i class='fab fa-slack fa-fw'></i>ROS Foxy Fitzroy
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-CLI-Tools.html
-                  
-                  
-                  
-                    id="2020ROS2-CLI-Toolshtml"
-                  >
-                  ROS2 CLI Tools
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/2020/ROS2-Foxy-macOS-Install-Binary.html
-                  
-                  
-                  
-                    id="2020ROS2-Foxy-macOS-Install-Binaryhtml"
-                  >
-                  ROS2 Foxy 安装（基于 Mac OS 二进制）
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/ROS2/
-                  
-                  
-                  
-                    id="tagsROS2"
-                  >
-                  更多 <i class="fas fa-chevron-right fa-fw"></i>
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/leetcode
-                  
-                  
-                  
-                    id="leetcode"
-                  >
-                  <i class='fas fa-laptop-code fa-fw'></i>LeetCode
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fa fa-bars fa-fw'></i>站点工具
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://askeynil.avosapps.us/
-                  
-                  
-                  
-                    id="https:askeynilavosappsus"
-                  >
-                  <i class='far fa-comments fa-fw'></i>评论管理
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/note
-                  
-                  
-                  
-                    id="note"
-                  >
-                  <i class='fas fa-pen-square fa-fw fa-fw'></i>便签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/talk
-                  
-                  
-                  
-                    id="talk"
-                  >
-                  <i class='fas fa-comment-dots fa-fw'></i>闲谈
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/day-sign
-                  
-                  
-                  
-                    id="day-sign"
-                  >
-                  <i class='fas fa-hourglass-half fa-fw'></i>日签
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/timeline
-                  
-                  
-                  
-                    id="timeline"
-                  >
-                  <i class='fa fa-history fa-fw'></i>站史
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/about
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
-  </div>
-</header>
+    </header>
 
   </div>
-  
+
 
 
   <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
-      
-        <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">Python 基础2</div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path">none</div> 
-  <div id="pjax-comment-placeholder">none</div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
-    document.getElementsByClassName('cover')[0].style.display = "none"; 
-    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("none" == "blog") { // 半屏 
-      document.getElementsByClassName('cover')[0].classList.remove("full"); 
-      document.getElementsByClassName('cover')[0].classList.add("half"); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
-      document.getElementsByClassName('cover')[0].classList.remove("half"); 
-      document.getElementsByClassName('cover')[0].classList.add("full"); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover')[0].style.display = ""; 
-    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
 
-      
-      
-
-<div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
-      
+      <!--此文件用来存放一些不方便取值的变量-->
+      <!--思路大概是将值藏到重加载的区域内-->
 
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h1 class="title">
-    <a href="/2019/cc28d4d3.html">
-      Python 基础2
-    </a>
-  </h1>
 
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-04T18:55:07+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月4日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Coding/Python/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Coding/Python</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.3k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：8分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-        </div>
-        
-          <hr>
-        
+      <div id="pjax-data" style="display: none">
+        <div id="pjax-ispage">true</div>
+        <div id="pjax-pageTitle">Python 基础2</div>
+        <div id="pjax-enable-cover">true</div>
+        <div id="pjax-comment-path">none</div>
+        <div id="pjax-comment-placeholder">none</div>
       </div>
-    
-  </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>所谓函数，就是把一个具有独立功能的代码块组织成一个整体，在需要的时候调用。</p>
-<p>函数的使用一般包含两个步骤：</p>
-<ol>
-<li>定义函数：在函数中编写代码、实现功能</li>
-<li>调用函数：执行编写的代码</li>
-</ol>
-<p>好的函数，可以提高代码编写的效率，以及代码的复用性。</p>
-<h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名():</span></span><br><span class="line">  执行的代码    </span><br></pre></td></tr></table></figure>
-
-<p>函数的定义规范：</p>
-<ol>
-<li><code>def</code>是<code>define</code>的缩写</li>
-<li>函数的名称应该能简单明确的表明函数的功能，比如 <code>min()</code>很清晰的表达了该函数就是用来求最小值的</li>
-<li>函数名称的命名应该符合标识符的命名规则：<ul>
-<li>只能由<code>字母</code>、<code>数字</code>和<code>下划线</code>组成</li>
-<li>不能以数字开头</li>
-<li>不能跟关键字重名</li>
-</ul>
-</li>
-</ol>
-<h3 id="函数的执行过程"><a href="#函数的执行过程" class="headerlink" title="函数的执行过程"></a>函数的执行过程</h3><ol>
-<li>代码执行到函数定义时，不会走到函数的内部，只是将该函数名作为一个标识符，添加到内存中</li>
-<li>当调用函数时，才会从内存中去查询该函数，并执行函数内部的相关代码</li>
-</ol>
-<a id="more"></a> 
+      <script>
+        // 处理封面 此时 jquery 还没加载 
+        if ("none" == "none") { // 移除封面 
+          document.getElementsByClassName('cover')[0].style.display = "none";
+          document.getElementsByClassName('l_body')[0].classList.add("nocover");
+          document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+        } else {
+          if ("none" == "blog") { // 半屏 
+            document.getElementsByClassName('cover')[0].classList.remove("full");
+            document.getElementsByClassName('cover')[0].classList.add("half");
+            document.getElementsByClassName('scroll-down')[0].style.display = "none";
+          } else if ("none" == "docs") { // 全屏 
+            document.getElementsByClassName('cover')[0].classList.remove("half");
+            document.getElementsByClassName('cover')[0].classList.add("full");
+            document.getElementsByClassName('scroll-down')[0].style.display = "";
+          }
+          document.getElementsByClassName('cover')[0].style.display = "";
+          document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+          document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+        } 
+      </script>
 
 
 
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>函数的参数，可以在调用函数时传递给函数内部进行使用，参数的作用就是为了增加函数的通用型，增强函数的功能。</p>
-<h4 id="参数的定义以及调用格式"><a href="#参数的定义以及调用格式" class="headerlink" title="参数的定义以及调用格式"></a>参数的定义以及调用格式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数的定义</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 函数名(<span class="params">参数</span>):</span></span><br><span class="line">  执行的代码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数的调用</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+      <div class='l_main'>
 
 
 
-<h4 id="函数参数可以用多个"><a href="#函数参数可以用多个" class="headerlink" title="函数参数可以用多个"></a>函数参数可以用多个</h4><p>在函数定义的时候，可以有多个参数传递，同时也接收多个参数</p>
-<h4 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h4><p><strong>形参</strong>的全称为“形式参数”，由于它不是实际存在的变量，所以又称为<strong>虚拟变量</strong>。形参就是在函数被调用的时候用来接收实参的数据的变量</p>
-<p><strong>实参</strong>全称为“实际参数”，是在调用时传递给函数的参数。</p>
-<blockquote>
-<ol>
-<li>在调用函数时，实参将赋值给形参。因而，必须注意实参的个数、类型与形参一一对应，并且实参必须要有确定的值</li>
-<li>实参可以是常量、变量、表达式、函数等，无论实参是何种类型，在函数进行调用的时候，它们都必须有一个具体确定的值。</li>
-</ol>
-</blockquote>
-<h5 id="形参的作用域"><a href="#形参的作用域" class="headerlink" title="形参的作用域"></a>形参的作用域</h5><blockquote>
-<p>​    作用域，通常来说，一段程序代码中所用到的名字并不中是有效、可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域</p>
-</blockquote>
-<ul>
-<li>形参的作用域只在定义函数的代码块中，一旦超出该范围就不能继续使用了</li>
-<li>不同的函数中，可以使用相同的形参名，不会相互影响</li>
-<li>作用域的使用提高了程序逻辑的局部性，增强了程序的可靠性，减少了名字冲突</li>
-<li>函数间的形参是不能相互使用的</li>
-</ul>
-<h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4><p>在实际开发中，有时候我们希望一段函数在执行结束后，能告诉调用者一个结果，以便调用者根据这个结果进行下一步的处理。</p>
-<p>在函数中我们使用 <code>return</code> 关键字来返回结果，调用函数的一方，可以使用变量来接收函数的返回结果</p>
-<h4 id="函数的四种类型"><a href="#函数的四种类型" class="headerlink" title="函数的四种类型"></a>函数的四种类型</h4><ol>
-<li>无参数，无返回值</li>
-<li>无参数，有返回值</li>
-<li>有参数，无返回值</li>
-<li>有参数，有返回值</li>
-</ol>
-<h4 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h4><p>在一个函数内，我们又调用了另一个函数，这就是函数的嵌套调用。</p>
-<h4 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h4><h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5><ul>
-<li>局部变量就是定义在函数内部的变量</li>
-<li>在不同的函数中，可以定义相同的名字的局部变量，但是各用个的不会产生影响</li>
-<li>局部变量的作用域只在该函数内部</li>
-<li>局部变量的目的是为了存储需要临时保存的数据</li>
-</ul>
-<h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><ul>
-<li>全局变量是定义在所以函数外的变量</li>
-<li>全局变量在整个 py 文件中都可以访问的</li>
-<li>函数内修改全局变量之前需要用 <code>global</code>进行声明，否则会出错</li>
-</ul>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
-<li>模块是 Python 程序框架中一个核心概念</li>
-<li>模块就好比是工具包，要想使用该工具包中的工具，就需要用 <code>import</code>来导入整个模块</li>
-<li>每一个以.py 结尾的 Python 源代码文件都是一个模块</li>
-<li>在模块中定义的全局变量、函数都是模块能提供给外界直接使用的工具</li>
-</ul>
-<h3 id="模块的命名规则"><a href="#模块的命名规则" class="headerlink" title="模块的命名规则"></a>模块的命名规则</h3><ol>
-<li>只能由字母、数字和下划线组成</li>
-<li>不能以数字开头</li>
-<li>不能以关键字重名</li>
-</ol>
-<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><p>函数可以作为函数的参数，也可以作为函数的返回值，这就是函数式编程。</p>
-<p>常见的编程范式：</p>
-<ol>
-<li>OOP 面向对象编程</li>
-<li>FP 函数式编程</li>
-<li>POP 面向过程编程</li>
-</ol>
-<p>Python支持函数式编程，支持高阶函数和 lambda 表达式</p>
-<h3 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h3><p>lambda也称为匿名函数，这种函数得名于省略了用 def 声明函数的标准步骤</p>
-<p>用法：</p>
-<p><code>lambda 参数: 表达式</code></p>
-<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>高级函数的意思就是把函数当成参数传递的一种函数。</p>
-<p>Python 系统内置的高阶函数有：</p>
-<ol>
-<li>sort()</li>
-<li>map()</li>
-<li>filter()</li>
-<li>reduce()</li>
-</ol>
-<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>定义：</p>
-<p><code>sort(*, key=None, reverse=False)</code></p>
-<p>该函数根据 key 中的函数来进行排序</p>
-<p>eg:</p>
-<p>q：元素按长度从小到大排序</p>
-<p>a：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="string">&quot;abd&quot;</span>, <span class="string">&quot;dsad&quot;</span>, <span class="string">&quot;ds&quot;</span>, <span class="string">&quot;fafas&quot;</span>,<span class="string">&quot;dasdsad&quot;</span>]</span><br><span class="line">l.sort(key=<span class="keyword">lambda</span> item: len(item))</span><br><span class="line">print(l)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="string">&#x27;ds&#x27;</span>, <span class="string">&#x27;abd&#x27;</span>, <span class="string">&#x27;dsad&#x27;</span>, <span class="string">&#x27;fafas&#x27;</span>, <span class="string">&#x27;dasdsad&#x27;</span>]</span><br></pre></td></tr></table></figure>
+        <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
 
 
 
-<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>定义：</p>
-<p><code>map(function, iterable, ...)</code></p>
-<p>该函数将每个 iterable 进行 funtion 中的操作</p>
-<p>q：将列表中的元素编程它的平方</p>
-<p>a：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = map(<span class="keyword">lambda</span> item: item ** <span class="number">2</span>, l)</span><br><span class="line">print(list(l))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br></pre></td></tr></table></figure>
+          <section class='meta'>
 
 
 
-<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p>定义：</p>
-<p><code>filter(function, iterable)</code></p>
-<p>该函数用于过滤序列，过滤掉不符合条件的元素，返回由符合条件元素组成的新列表。</p>
-<p>q：找出列表中所有的 1</p>
-<p>a：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = filter(<span class="keyword">lambda</span> item: item == <span class="number">1</span>, l)</span><br><span class="line">print(list(l))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+            <div class="meta" id="header-meta">
+
+
+              <h1 class="title">
+                <a href="/2019/cc28d4d3.html">
+                  Python 基础2
+                </a>
+              </h1>
 
 
 
-<h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4><p>定义：</p>
-<p><code>reduce(function, iterable[, initializer])</code></p>
-<p>该函数会对参数序列中元素进行累积</p>
-<p>q：求列表所有元素的和</p>
-<p>a：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> *</span><br><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = reduce(<span class="keyword">lambda</span> x, y: x + y, l)</span><br><span class="line">print(l)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意在 Python3 中移除了 reduce，需要在 functools 包中导入才能使用</p>
-</blockquote>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><ul>
-<li><p>切片就是根据步长从原序列中取出一部分元素组成的新序列</p>
-</li>
-<li><p>切片只适用于字符串、列表、元组</p>
-</li>
-<li><p>切片的格式：<code>需要切片的元素[开始索引:结束索引:步长]</code></p>
-</li>
-<li><p>切片的注意事项：</p>
-<ol>
-<li>指定的区间属于左闭右开区间，包括开始索引，不包括结束索引</li>
-<li>步长默认为 1，可以省略</li>
-<li>步长也可以是负数，代表了逆序切片</li>
-<li>从头开始，开始索引可以省略，冒号不能省略</li>
-<li>到末尾结束，结束索引可以省略，冒号不能省略</li>
-</ol>
-</li>
-</ul>
-<p>🌰：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 123456789 切出 123</span></span><br><span class="line">str1 = <span class="string">&quot;123456789&quot;</span></span><br><span class="line">str1 = str1[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">print(str1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印</span></span><br><span class="line"><span class="number">123</span>    </span><br></pre></td></tr></table></figure>
+              <div class='new-meta-box'>
 
 
 
-<blockquote>
-<p> 我们正常使用的即为正序索引，倒序索引指的是从右往左计算索引，最右边的索引值为-1，依次递减</p>
-</blockquote>
-<h2 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h2><h3 id="列表的推导式"><a href="#列表的推导式" class="headerlink" title="列表的推导式"></a>列表的推导式</h3><p>所谓列表的推导式，就是指轻量级循环创建列表</p>
-<p>列表推导式的格式如下：</p>
-<p><code>l = [计算公式 for 循环 if 判断]</code></p>
-<p>🌰：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个1 到 100 数据的数组</span></span><br><span class="line">l = [item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)]</span><br></pre></td></tr></table></figure>
+
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-04T18:55:07+08:00">
+                  <a class='notlink'>
+                    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+                    <p>更新于：2020年11月4日</p>
+                  </a>
+                </div>
 
 
 
-<h3 id="集合的推导式"><a href="#集合的推导式" class="headerlink" title="集合的推导式"></a>集合的推导式</h3><p>所谓集合的推导式，就是指轻量级循环创建集合</p>
-<p>列表推导式的格式如下：</p>
-<p><code>l = &#123;计算公式 for 循环 if 判断&#125;</code></p>
-<p>🌰：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个1 到 100 数据的集合</span></span><br><span class="line">l = &#123;item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="字典的推导式"><a href="#字典的推导式" class="headerlink" title="字典的推导式"></a>字典的推导式</h3><p>所谓字典的推导式，就是指轻量级循环创建字典</p>
-<p>列表推导式的格式如下：</p>
-<p><code>l = &#123;key: value for 循环 if 判断&#125;</code></p>
-<p>🌰：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个 &#123;1:1, 2:2, ..., 100,100&#125; 的字典</span></span><br><span class="line">l = &#123;item:item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)&#125;</span><br></pre></td></tr></table></figure>
+                <div class='new-meta-item category'>
+                  <a href='/categories/Coding/Python/' rel="nofollow">
+                    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+                    <p>Coding/Python</p>
+                  </a>
+                </div>
 
 
 
-<h2 id="数据类型之间的转换"><a href="#数据类型之间的转换" class="headerlink" title="数据类型之间的转换"></a>数据类型之间的转换</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int(x, [base])</td>
-<td>将 x按照 base 进制转换为整型，默认 10 进制</td>
-</tr>
-<tr>
-<td>float(x)</td>
-<td>将 x转换为一个浮点数</td>
-</tr>
-<tr>
-<td>str(x)</td>
-<td>将 x 转换为一个字符串</td>
-</tr>
-<tr>
-<td>tuple(s)</td>
-<td>将序列 s 转换为一个元组</td>
-</tr>
-<tr>
-<td>list(s)</td>
-<td>将序列 s 转换为一个列表</td>
-</tr>
-<tr>
-<td>set(s)</td>
-<td>将序列 s 转换为一个可变集合</td>
-</tr>
-<tr>
-<td>dict(d)</td>
-<td>创建一个字典</td>
-</tr>
-<tr>
-<td>frozenset(s)</td>
-<td>将序列 s 转换为一个不可变集合</td>
-</tr>
-<tr>
-<td>chr(x)</td>
-<td>将一个整数转换为一个字符</td>
-</tr>
-<tr>
-<td>ord(x)</td>
-<td>将一个字符转换为一个整数</td>
-</tr>
-<tr>
-<td>hex(x)</td>
-<td>将一个整数转换为一个 16 进制字符串</td>
-</tr>
-<tr>
-<td>oct(x)</td>
-<td>将一个整数转换为一个 8 进制字符串</td>
-</tr>
-</tbody></table>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
 
 
 
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-          
-        
-          
-            <p>本文永久链接是：<a href=https://www.askeynil.com/2019/cc28d4d3.html>https://www.askeynil.com/2019/cc28d4d3.html</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
+                <div class="new-meta-item wordcount">
+                  <a class='notlink'>
+                    <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+                    <p>字数：2.3k字</p>
+                  </a>
+                </div>
+                <div class="new-meta-item readtime">
+                  <a class='notlink'>
+                    <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+                    <p>时长：8分钟</p>
+                  </a>
+                </div>
 
 
-              
+
+
+              </div>
+
+              <hr>
+
             </div>
-          
-        </div>
-        
-          
+
+          </section>
 
 
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          
-<div class='new-meta-item author'>
-  <a class='author' href="https://www.askeynil.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets/icon/avatar.png">
-    <p>AskeyNil</p>
-  </a>
-</div>
-
-        
-      
-        
-          <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月6日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
+          <section class="article typo">
+            <div class="article-entry" itemprop="articleBody">
 
 
-        
-      
-    </div>
-  </section>
+              <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>
+              <p>所谓函数，就是把一个具有独立功能的代码块组织成一个整体，在需要的时候调用。</p>
+              <p>函数的使用一般包含两个步骤：</p>
+              <ol>
+                <li>定义函数：在函数中编写代码、实现功能</li>
+                <li>调用函数：执行编写的代码</li>
+              </ol>
+              <p>好的函数，可以提高代码编写的效率，以及代码的复用性。</p>
+              <h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名():</span></span><br><span class="line">  执行的代码    </span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+              <p>函数的定义规范：</p>
+              <ol>
+                <li><code>def</code>是<code>define</code>的缩写</li>
+                <li>函数的名称应该能简单明确的表明函数的功能，比如 <code>min()</code>很清晰的表达了该函数就是用来求最小值的</li>
+                <li>函数名称的命名应该符合标识符的命名规则：<ul>
+                    <li>只能由<code>字母</code>、<code>数字</code>和<code>下划线</code>组成</li>
+                    <li>不能以数字开头</li>
+                    <li>不能跟关键字重名</li>
+                  </ul>
+                </li>
+              </ol>
+              <h3 id="函数的执行过程"><a href="#函数的执行过程" class="headerlink" title="函数的执行过程"></a>函数的执行过程</h3>
+              <ol>
+                <li>代码执行到函数定义时，不会走到函数的内部，只是将该函数名作为一个标识符，添加到内存中</li>
+                <li>当调用函数时，才会从内存中去查询该函数，并执行函数内部的相关代码</li>
+              </ol>
+              <a id="more"></a>
 
 
-        
-        
-          <div class="prev-next">
-            
+
+              <h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3>
+              <p>函数的参数，可以在调用函数时传递给函数内部进行使用，参数的作用就是为了增加函数的通用型，增强函数的功能。</p>
+              <h4 id="参数的定义以及调用格式"><a href="#参数的定义以及调用格式" class="headerlink" title="参数的定义以及调用格式"></a>参数的定义以及调用格式</h4>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="comment"># 函数的定义</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 函数名(<span class="params">参数</span>):</span></span><br><span class="line">  执行的代码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数的调用</span></span><br><span class="line">函数名(参数)</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h4 id="函数参数可以用多个"><a href="#函数参数可以用多个" class="headerlink" title="函数参数可以用多个"></a>函数参数可以用多个</h4>
+              <p>在函数定义的时候，可以有多个参数传递，同时也接收多个参数</p>
+              <h4 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h4>
+              <p><strong>形参</strong>的全称为“形式参数”，由于它不是实际存在的变量，所以又称为<strong>虚拟变量</strong>。形参就是在函数被调用的时候用来接收实参的数据的变量</p>
+              <p><strong>实参</strong>全称为“实际参数”，是在调用时传递给函数的参数。</p>
+              <blockquote>
+                <ol>
+                  <li>在调用函数时，实参将赋值给形参。因而，必须注意实参的个数、类型与形参一一对应，并且实参必须要有确定的值</li>
+                  <li>实参可以是常量、变量、表达式、函数等，无论实参是何种类型，在函数进行调用的时候，它们都必须有一个具体确定的值。</li>
+                </ol>
+              </blockquote>
+              <h5 id="形参的作用域"><a href="#形参的作用域" class="headerlink" title="形参的作用域"></a>形参的作用域</h5>
+              <blockquote>
+                <p>​ 作用域，通常来说，一段程序代码中所用到的名字并不中是有效、可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域</p>
+              </blockquote>
+              <ul>
+                <li>形参的作用域只在定义函数的代码块中，一旦超出该范围就不能继续使用了</li>
+                <li>不同的函数中，可以使用相同的形参名，不会相互影响</li>
+                <li>作用域的使用提高了程序逻辑的局部性，增强了程序的可靠性，减少了名字冲突</li>
+                <li>函数间的形参是不能相互使用的</li>
+              </ul>
+              <h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4>
+              <p>在实际开发中，有时候我们希望一段函数在执行结束后，能告诉调用者一个结果，以便调用者根据这个结果进行下一步的处理。</p>
+              <p>在函数中我们使用 <code>return</code> 关键字来返回结果，调用函数的一方，可以使用变量来接收函数的返回结果</p>
+              <h4 id="函数的四种类型"><a href="#函数的四种类型" class="headerlink" title="函数的四种类型"></a>函数的四种类型</h4>
+              <ol>
+                <li>无参数，无返回值</li>
+                <li>无参数，有返回值</li>
+                <li>有参数，无返回值</li>
+                <li>有参数，有返回值</li>
+              </ol>
+              <h4 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h4>
+              <p>在一个函数内，我们又调用了另一个函数，这就是函数的嵌套调用。</p>
+              <h4 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h4>
+              <h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5>
+              <ul>
+                <li>局部变量就是定义在函数内部的变量</li>
+                <li>在不同的函数中，可以定义相同的名字的局部变量，但是各用个的不会产生影响</li>
+                <li>局部变量的作用域只在该函数内部</li>
+                <li>局部变量的目的是为了存储需要临时保存的数据</li>
+              </ul>
+              <h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5>
+              <ul>
+                <li>全局变量是定义在所以函数外的变量</li>
+                <li>全局变量在整个 py 文件中都可以访问的</li>
+                <li>函数内修改全局变量之前需要用 <code>global</code>进行声明，否则会出错</li>
+              </ul>
+              <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2>
+              <ul>
+                <li>模块是 Python 程序框架中一个核心概念</li>
+                <li>模块就好比是工具包，要想使用该工具包中的工具，就需要用 <code>import</code>来导入整个模块</li>
+                <li>每一个以.py 结尾的 Python 源代码文件都是一个模块</li>
+                <li>在模块中定义的全局变量、函数都是模块能提供给外界直接使用的工具</li>
+              </ul>
+              <h3 id="模块的命名规则"><a href="#模块的命名规则" class="headerlink" title="模块的命名规则"></a>模块的命名规则</h3>
+              <ol>
+                <li>只能由字母、数字和下划线组成</li>
+                <li>不能以数字开头</li>
+                <li>不能以关键字重名</li>
+              </ol>
+              <h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2>
+              <p>函数可以作为函数的参数，也可以作为函数的返回值，这就是函数式编程。</p>
+              <p>常见的编程范式：</p>
+              <ol>
+                <li>OOP 面向对象编程</li>
+                <li>FP 函数式编程</li>
+                <li>POP 面向过程编程</li>
+              </ol>
+              <p>Python支持函数式编程，支持高阶函数和 lambda 表达式</p>
+              <h3 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h3>
+              <p>lambda也称为匿名函数，这种函数得名于省略了用 def 声明函数的标准步骤</p>
+              <p>用法：</p>
+              <p><code>lambda 参数: 表达式</code></p>
+              <h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3>
+              <p>高级函数的意思就是把函数当成参数传递的一种函数。</p>
+              <p>Python 系统内置的高阶函数有：</p>
+              <ol>
+                <li>sort()</li>
+                <li>map()</li>
+                <li>filter()</li>
+                <li>reduce()</li>
+              </ol>
+              <h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4>
+              <p>定义：</p>
+              <p><code>sort(*, key=None, reverse=False)</code></p>
+              <p>该函数根据 key 中的函数来进行排序</p>
+              <p>eg:</p>
+              <p>q：元素按长度从小到大排序</p>
+              <p>a：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line">l = [<span class="string">&quot;abd&quot;</span>, <span class="string">&quot;dsad&quot;</span>, <span class="string">&quot;ds&quot;</span>, <span class="string">&quot;fafas&quot;</span>,<span class="string">&quot;dasdsad&quot;</span>]</span><br><span class="line">l.sort(key=<span class="keyword">lambda</span> item: len(item))</span><br><span class="line">print(l)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="string">&#x27;ds&#x27;</span>, <span class="string">&#x27;abd&#x27;</span>, <span class="string">&#x27;dsad&#x27;</span>, <span class="string">&#x27;fafas&#x27;</span>, <span class="string">&#x27;dasdsad&#x27;</span>]</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4>
+              <p>定义：</p>
+              <p><code>map(function, iterable, ...)</code></p>
+              <p>该函数将每个 iterable 进行 funtion 中的操作</p>
+              <p>q：将列表中的元素编程它的平方</p>
+              <p>a：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = map(<span class="keyword">lambda</span> item: item ** <span class="number">2</span>, l)</span><br><span class="line">print(list(l))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4>
+              <p>定义：</p>
+              <p><code>filter(function, iterable)</code></p>
+              <p>该函数用于过滤序列，过滤掉不符合条件的元素，返回由符合条件元素组成的新列表。</p>
+              <p>q：找出列表中所有的 1</p>
+              <p>a：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = filter(<span class="keyword">lambda</span> item: item == <span class="number">1</span>, l)</span><br><span class="line">print(list(l))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4>
+              <p>定义：</p>
+              <p><code>reduce(function, iterable[, initializer])</code></p>
+              <p>该函数会对参数序列中元素进行累积</p>
+              <p>q：求列表所有元素的和</p>
+              <p>a：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> *</span><br><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">l = reduce(<span class="keyword">lambda</span> x, y: x + y, l)</span><br><span class="line">print(l)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台打印如下</span></span><br><span class="line"><span class="number">45</span></span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+              <blockquote>
+                <p>注意在 Python3 中移除了 reduce，需要在 functools 包中导入才能使用</p>
+              </blockquote>
+              <h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2>
+              <ul>
+                <li>
+                  <p>切片就是根据步长从原序列中取出一部分元素组成的新序列</p>
+                </li>
+                <li>
+                  <p>切片只适用于字符串、列表、元组</p>
+                </li>
+                <li>
+                  <p>切片的格式：<code>需要切片的元素[开始索引:结束索引:步长]</code></p>
+                </li>
+                <li>
+                  <p>切片的注意事项：</p>
+                  <ol>
+                    <li>指定的区间属于左闭右开区间，包括开始索引，不包括结束索引</li>
+                    <li>步长默认为 1，可以省略</li>
+                    <li>步长也可以是负数，代表了逆序切片</li>
+                    <li>从头开始，开始索引可以省略，冒号不能省略</li>
+                    <li>到末尾结束，结束索引可以省略，冒号不能省略</li>
+                  </ol>
+                </li>
+              </ul>
+              <p>🌰：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="comment"># 将 123456789 切出 123</span></span><br><span class="line">str1 = <span class="string">&quot;123456789&quot;</span></span><br><span class="line">str1 = str1[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">print(str1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印</span></span><br><span class="line"><span class="number">123</span>    </span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <blockquote>
+                <p> 我们正常使用的即为正序索引，倒序索引指的是从右往左计算索引，最右边的索引值为-1，依次递减</p>
+              </blockquote>
+              <h2 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h2>
+              <h3 id="列表的推导式"><a href="#列表的推导式" class="headerlink" title="列表的推导式"></a>列表的推导式</h3>
+              <p>所谓列表的推导式，就是指轻量级循环创建列表</p>
+              <p>列表推导式的格式如下：</p>
+              <p><code>l = [计算公式 for 循环 if 判断]</code></p>
+              <p>🌰：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="comment"># 创建一个1 到 100 数据的数组</span></span><br><span class="line">l = [item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)]</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h3 id="集合的推导式"><a href="#集合的推导式" class="headerlink" title="集合的推导式"></a>集合的推导式</h3>
+              <p>所谓集合的推导式，就是指轻量级循环创建集合</p>
+              <p>列表推导式的格式如下：</p>
+              <p><code>l = &#123;计算公式 for 循环 if 判断&#125;</code></p>
+              <p>🌰：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="comment"># 创建一个1 到 100 数据的集合</span></span><br><span class="line">l = &#123;item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)&#125;</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h3 id="字典的推导式"><a href="#字典的推导式" class="headerlink" title="字典的推导式"></a>字典的推导式</h3>
+              <p>所谓字典的推导式，就是指轻量级循环创建字典</p>
+              <p>列表推导式的格式如下：</p>
+              <p><code>l = &#123;key: value for 循环 if 判断&#125;</code></p>
+              <p>🌰：</p>
+              <figure class="highlight python">
+                <table>
+                  <tr>
+                    <td class="gutter">
+                      <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                    </td>
+                    <td class="code">
+                      <pre><span class="line"><span class="comment"># 创建一个 &#123;1:1, 2:2, ..., 100,100&#125; 的字典</span></span><br><span class="line">l = &#123;item:item <span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)&#125;</span><br></pre>
+                    </td>
+                  </tr>
+                </table>
+              </figure>
+
+
+
+              <h2 id="数据类型之间的转换"><a href="#数据类型之间的转换" class="headerlink" title="数据类型之间的转换"></a>数据类型之间的转换</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>函数</th>
+                    <th>描述</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>int(x, [base])</td>
+                    <td>将 x按照 base 进制转换为整型，默认 10 进制</td>
+                  </tr>
+                  <tr>
+                    <td>float(x)</td>
+                    <td>将 x转换为一个浮点数</td>
+                  </tr>
+                  <tr>
+                    <td>str(x)</td>
+                    <td>将 x 转换为一个字符串</td>
+                  </tr>
+                  <tr>
+                    <td>tuple(s)</td>
+                    <td>将序列 s 转换为一个元组</td>
+                  </tr>
+                  <tr>
+                    <td>list(s)</td>
+                    <td>将序列 s 转换为一个列表</td>
+                  </tr>
+                  <tr>
+                    <td>set(s)</td>
+                    <td>将序列 s 转换为一个可变集合</td>
+                  </tr>
+                  <tr>
+                    <td>dict(d)</td>
+                    <td>创建一个字典</td>
+                  </tr>
+                  <tr>
+                    <td>frozenset(s)</td>
+                    <td>将序列 s 转换为一个不可变集合</td>
+                  </tr>
+                  <tr>
+                    <td>chr(x)</td>
+                    <td>将一个整数转换为一个字符</td>
+                  </tr>
+                  <tr>
+                    <td>ord(x)</td>
+                    <td>将一个字符转换为一个整数</td>
+                  </tr>
+                  <tr>
+                    <td>hex(x)</td>
+                    <td>将一个整数转换为一个 16 进制字符串</td>
+                  </tr>
+                  <tr>
+                    <td>oct(x)</td>
+                    <td>将一个整数转换为一个 8 进制字符串</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+              <div class='article_footer'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="widget copyright  desktop mobile">
+                  <div class='content'>
+
+                    <blockquote>
+
+
+                      <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+
+
+
+                      <p>本文永久链接是：<a
+                          href=https://www.askeynil.com/2019/cc28d4d3.html>https://www.askeynil.com/2019/cc28d4d3.html</a>
+                      </p>
+
+
+                    </blockquote>
+
+                  </div>
+                </section>
+
+
+
+
+
+              </div>
+
+            </div>
+
+
+
+
+            <section class='meta' id="footer-meta">
+              <div class='new-meta-box'>
+
+
+
+                <div class='new-meta-item author'>
+                  <a class='author' href="https://www.askeynil.com" rel="nofollow">
+                    <img no-lazy src="https://cdn.jsdelivr.net/gh/askeynil/cdn-assets/icon/avatar.png">
+                    <p>AskeyNil</p>
+                  </a>
+                </div>
+
+
+
+
+                <div class="new-meta-item date">
+                  <a class='notlink'>
+                    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+                    <p>发布于：2019年8月6日</p>
+                  </a>
+                </div>
+
+
+
+
+
+
+                <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i
+                      class="fas fa-hashtag fa-fw" aria-hidden="true"></i>
+                    <p>Python</p>
+                  </a></div>
+
+
+
+
+              </div>
+            </section>
+
+
+
+
+            <div class="prev-next">
+
               <a class='prev' href='/2019/29129922.html'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>PyQt5 的学习与使用</p>
                 <p class='content'>PyQt5是一条 Python 的 GUI 开发框架
-PyQt5 的安装
-pip3 install PyQt5
-在终端中输入 python3进入 python 解释器
-输入以下代码from Py...</p>
+                  PyQt5 的安装
+                  pip3 install PyQt5
+                  在终端中输入 python3进入 python 解释器
+                  输入以下代码from Py...</p>
               </a>
-            
-            
+
+
               <a class='next' href='/2019/55218569.html'>
                 <p class='title'>Python 基础1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>变量变量的命名规则
-只能有数字，字母，下划线（_）组成
-不能以数字开头
-不能是关键字
-区分大小写
+                  只能有数字，字母，下划线（_）组成
+                  不能以数字开头
+                  不能是关键字
+                  区分大小写
 
-命名规范
-下划线命名法  
-my_first_name
-my_last_name
+                  命名规范
+                  下划线命名法
+                  my_first_name
+                  my_last_name
 
 
-驼峰命名...</p>
+                  驼峰命名...</p>
               </a>
-            
+
+            </div>
+
+          </section>
+        </article>
+
+
+
+
+
+        <article class="post white-box reveal comments shadow">
+          <section class="article typo">
+            <p ct><i class='fas fa-comments'></i> 评论</p>
+
+            <section id="comments">
+              <div id="valine_container" class="valine_thread">
+                <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+              </div>
+
+            </section>
+          </section>
+        </article>
+
+
+
+
+
+
+
+        <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+      </div>
+      <aside class='l_side'>
+
+
+
+
+
+
+
+        <section class="widget toc-wrapper shadow desktop mobile" id="toc-div">
+
+          <header>
+
+            <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+
+          </header>
+
+
+          <div class='content'>
+            <ol class="toc">
+              <li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span
+                    class="toc-text">函数</span></a>
+                <ol class="toc-child">
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">函数的定义</span></a></li>
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span
+                        class="toc-text">函数的执行过程</span></a></li>
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a>
+                    <ol class="toc-child">
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%8F%82%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E4%BB%A5%E5%8F%8A%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F"><span
+                            class="toc-text">参数的定义以及调用格式</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%A4%9A%E4%B8%AA"><span
+                            class="toc-text">函数参数可以用多个</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"><span class="toc-text">形参和实参</span></a>
+                        <ol class="toc-child">
+                          <li class="toc-item toc-level-5"><a class="toc-link"
+                              href="#%E5%BD%A2%E5%8F%82%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span
+                                class="toc-text">形参的作用域</span></a></li>
+                        </ol>
+                      </li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span
+                            class="toc-text">函数的返回值</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span
+                            class="toc-text">函数的四种类型</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8"><span
+                            class="toc-text">函数的嵌套调用</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link"
+                          href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span
+                            class="toc-text">局部变量和全局变量</span></a>
+                        <ol class="toc-child">
+                          <li class="toc-item toc-level-5"><a class="toc-link"
+                              href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">局部变量</span></a></li>
+                          <li class="toc-item toc-level-5"><a class="toc-link"
+                              href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">全局变量</span></a></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span
+                    class="toc-text">模块</span></a>
+                <ol class="toc-child">
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span
+                        class="toc-text">模块的命名规则</span></a></li>
+                </ol>
+              </li>
+              <li class="toc-item toc-level-2"><a class="toc-link"
+                  href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-text">函数式编程</span></a>
+                <ol class="toc-child">
+                  <li class="toc-item toc-level-3"><a class="toc-link" href="#lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span
+                        class="toc-text">lambda 表达式</span></a></li>
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="toc-text">高阶函数</span></a>
+                    <ol class="toc-child">
+                      <li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span
+                            class="toc-text">sort</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link" href="#map"><span
+                            class="toc-text">map</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link" href="#filter"><span
+                            class="toc-text">filter</span></a></li>
+                      <li class="toc-item toc-level-4"><a class="toc-link" href="#reduce"><span
+                            class="toc-text">reduce</span></a></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span
+                    class="toc-text">切片</span></a></li>
+              <li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span
+                    class="toc-text">推导式</span></a>
+                <ol class="toc-child">
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span
+                        class="toc-text">列表的推导式</span></a></li>
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E9%9B%86%E5%90%88%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span
+                        class="toc-text">集合的推导式</span></a></li>
+                  <li class="toc-item toc-level-3"><a class="toc-link"
+                      href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span
+                        class="toc-text">字典的推导式</span></a></li>
+                </ol>
+              </li>
+              <li class="toc-item toc-level-2"><a class="toc-link"
+                  href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span
+                    class="toc-text">数据类型之间的转换</span></a></li>
+            </ol>
           </div>
-        
-      </section>
-    </article>
-  
-
-  
-    
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
-
-  
+        </section>
 
 
 
 
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-</div>
-<aside class='l_side'>
-  
-  
-    
-    
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
 
 
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">函数的执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E4%BB%A5%E5%8F%8A%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">参数的定义以及调用格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%A4%9A%E4%B8%AA"><span class="toc-text">函数参数可以用多个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"><span class="toc-text">形参和实参</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">形参的作用域</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="toc-text">函数的四种类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8"><span class="toc-text">函数的嵌套调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">局部变量和全局变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">全局变量</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">模块的命名规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">lambda 表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="toc-text">高阶函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map"><span class="toc-text">map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#filter"><span class="toc-text">filter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reduce"><span class="toc-text">reduce</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-text">切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-text">推导式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-text">列表的推导式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-text">集合的推导式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-text">字典的推导式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型之间的转换</span></a></li></ol>
+        <section class="widget tagcloud shadow desktop mobile">
+
+          <header>
+
+            <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>标签云</span></a>
+
+          </header>
+
+
+          <div class='content'>
+            <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/Array/"
+              style="font-size: 14px; color: #999">Array</a> <a href="/tags/C/"
+              style="font-size: 20.67px; color: #6c6c6c">C++</a> <a href="/tags/CLI-Tools/"
+              style="font-size: 14px; color: #999">CLI Tools</a> <a href="/tags/CMakeLists/"
+              style="font-size: 14px; color: #999">CMakeLists</a> <a href="/tags/Database/"
+              style="font-size: 14px; color: #999">Database</a> <a href="/tags/Dynamic-Programming/"
+              style="font-size: 14px; color: #999">Dynamic Programming</a> <a href="/tags/Enum/"
+              style="font-size: 14px; color: #999">Enum</a> <a href="/tags/Git/"
+              style="font-size: 14px; color: #999">Git</a> <a href="/tags/LeetCode-Easy/"
+              style="font-size: 14px; color: #999">LeetCode Easy</a> <a href="/tags/Matplotlib/"
+              style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/MySQL/"
+              style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/NumPy/"
+              style="font-size: 17.33px; color: #828282">NumPy</a> <a href="/tags/OpenCV/"
+              style="font-size: 20.67px; color: #6c6c6c">OpenCV</a> <a href="/tags/PyQt5/"
+              style="font-size: 14px; color: #999">PyQt5</a> <a href="/tags/Python/"
+              style="font-size: 22.33px; color: #606060">Python</a> <a href="/tags/ROS/"
+              style="font-size: 24px; color: #555">ROS</a> <a href="/tags/ROS-Service/"
+              style="font-size: 14px; color: #999">ROS Service</a> <a href="/tags/ROS-Topic/"
+              style="font-size: 15.67px; color: #8e8e8e">ROS Topic</a> <a href="/tags/ROS-command/"
+              style="font-size: 15.67px; color: #8e8e8e">ROS command</a> <a href="/tags/ROS-msg/"
+              style="font-size: 14px; color: #999">ROS msg</a> <a href="/tags/ROS-srv/"
+              style="font-size: 14px; color: #999">ROS srv</a> <a href="/tags/ROS2/"
+              style="font-size: 15.67px; color: #8e8e8e">ROS2</a> <a href="/tags/Shell/"
+              style="font-size: 19px; color: #777">Shell</a> <a href="/tags/SymPy/"
+              style="font-size: 14px; color: #999">SymPy</a> <a href="/tags/URDF/"
+              style="font-size: 15.67px; color: #8e8e8e">URDF</a> <a href="/tags/Vim/"
+              style="font-size: 14px; color: #999">Vim</a> <a href="/tags/install/"
+              style="font-size: 14px; color: #999">install</a> <a href="/tags/roslaunch/"
+              style="font-size: 14px; color: #999">roslaunch</a> <a href="/tags/xacro/"
+              style="font-size: 14px; color: #999">xacro</a> <a
+              href="/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">分水岭算法</a>
+            <a href="/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/" style="font-size: 14px; color: #999">轮廓提取</a> <a
+              href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">边缘检测</a>
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="widget related_posts shadow desktop mobile">
+
+          <header>
+
+            <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+
+          </header>
+
+
+          <div class="content">
+            <ul class="popular-posts">
+              <li class="popular-posts-item">
+                <div class="popular-posts-title">
+                  <h3><a href="/2019/matplotlib-common-method.html" title="Matplotlib 常用整理" rel="bookmark">Matplotlib
+                      常用整理</a></h3>
+                </div>
+              </li>
+              <li class="popular-posts-item">
+                <div class="popular-posts-title">
+                  <h3><a href="/2019/1df81ffb.html" title="NumPy 之 mgrid、ogrid" rel="bookmark">NumPy 之 mgrid、ogrid</a>
+                  </h3>
+                </div>
+              </li>
+              <li class="popular-posts-item">
+                <div class="popular-posts-title">
+                  <h3><a href="/2019/bae2941.html" title="OpenCV 之硬币分割" rel="bookmark">OpenCV 之硬币分割</a></h3>
+                </div>
+              </li>
+              <li class="popular-posts-item">
+                <div class="popular-posts-title">
+                  <h3><a href="/2019/e181f182.html" title="OpenCV 入门" rel="bookmark">OpenCV 入门</a></h3>
+                </div>
+              </li>
+              <li class="popular-posts-item">
+                <div class="popular-posts-title">
+                  <h3><a href="/2019/29129922.html" title="PyQt5 的学习与使用" rel="bookmark">PyQt5 的学习与使用</a></h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+
+
+
+
+      </aside>
+
+
+
     </div>
-  </section>
 
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>标签云</span></a>
-    
-  </header>
+    <footer class="clearfix">
+      <br><br>
 
 
-    <div class='content'>
-      <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/Array/" style="font-size: 14px; color: #999">Array</a> <a href="/tags/C/" style="font-size: 20.67px; color: #6c6c6c">C++</a> <a href="/tags/CLI-Tools/" style="font-size: 14px; color: #999">CLI Tools</a> <a href="/tags/CMakeLists/" style="font-size: 14px; color: #999">CMakeLists</a> <a href="/tags/Database/" style="font-size: 14px; color: #999">Database</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px; color: #999">Dynamic Programming</a> <a href="/tags/Enum/" style="font-size: 14px; color: #999">Enum</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/LeetCode-Easy/" style="font-size: 14px; color: #999">LeetCode Easy</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/NumPy/" style="font-size: 17.33px; color: #828282">NumPy</a> <a href="/tags/OpenCV/" style="font-size: 20.67px; color: #6c6c6c">OpenCV</a> <a href="/tags/PyQt5/" style="font-size: 14px; color: #999">PyQt5</a> <a href="/tags/Python/" style="font-size: 22.33px; color: #606060">Python</a> <a href="/tags/ROS/" style="font-size: 24px; color: #555">ROS</a> <a href="/tags/ROS-Service/" style="font-size: 14px; color: #999">ROS Service</a> <a href="/tags/ROS-Topic/" style="font-size: 15.67px; color: #8e8e8e">ROS Topic</a> <a href="/tags/ROS-command/" style="font-size: 15.67px; color: #8e8e8e">ROS command</a> <a href="/tags/ROS-msg/" style="font-size: 14px; color: #999">ROS msg</a> <a href="/tags/ROS-srv/" style="font-size: 14px; color: #999">ROS srv</a> <a href="/tags/ROS2/" style="font-size: 15.67px; color: #8e8e8e">ROS2</a> <a href="/tags/Shell/" style="font-size: 19px; color: #777">Shell</a> <a href="/tags/SymPy/" style="font-size: 14px; color: #999">SymPy</a> <a href="/tags/URDF/" style="font-size: 15.67px; color: #8e8e8e">URDF</a> <a href="/tags/Vim/" style="font-size: 14px; color: #999">Vim</a> <a href="/tags/install/" style="font-size: 14px; color: #999">install</a> <a href="/tags/roslaunch/" style="font-size: 14px; color: #999">roslaunch</a> <a href="/tags/xacro/" style="font-size: 14px; color: #999">xacro</a> <a href="/tags/%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">分水岭算法</a> <a href="/tags/%E8%BD%AE%E5%BB%93%E6%8F%90%E5%8F%96/" style="font-size: 14px; color: #999">轮廓提取</a> <a href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">边缘检测</a>
-    </div>
-  </section>
+      <br>
+      <div class="social-wrapper">
 
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget related_posts shadow desktop mobile">
-    
-  <header>
-    
-      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
-    
-  </header>
-
-
-    <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/matplotlib-common-method.html" title="Matplotlib 常用整理" rel="bookmark">Matplotlib 常用整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/1df81ffb.html" title="NumPy 之 mgrid、ogrid" rel="bookmark">NumPy 之 mgrid、ogrid</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/bae2941.html" title="OpenCV 之硬币分割" rel="bookmark">OpenCV 之硬币分割</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/e181f182.html" title="OpenCV 入门" rel="bookmark">OpenCV 入门</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/29129922.html" title="PyQt5 的学习与使用" rel="bookmark">PyQt5 的学习与使用</a></h3></div></li></ul>
-    </div>
-  </section>
-
-
-  
-
-
-</aside>
+        <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank"
+          rel="external nofollow noopener noreferrer">
+        </a>
 
 
 
-    </div>
-    
-  
-  <footer class="clearfix">
-    <br><br>
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-              <a href="/atom.xml"
-                class="social fas fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="mailto:askeynil@gmail.com"
-                class="social fas fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="https://github.com/askeynil"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
-      
-        本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0" target="_blank" class="codename">Volantis</a>
-        作为主题，总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
-        
-      
-    
-      
-        <div class='copyright'>
+        <a href="mailto:askeynil@gmail.com" class="social fas fa-envelope flat-btn" target="_blank"
+          rel="external nofollow noopener noreferrer">
+        </a>
+
+
+
+        <a href="https://github.com/askeynil" class="social fab fa-github flat-btn" target="_blank"
+          rel="external nofollow noopener noreferrer">
+        </a>
+
+
+      </div>
+
+
+
+      <div>
+        <p>博客内容遵循 <a target="_blank" rel="noopener"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)
+            协议</a></p>
+      </div>
+
+
+
+      本站使用
+      <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0" target="_blank"
+        class="codename">Volantis</a>
+      作为主题，总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+
+
+
+
+      <div class='copyright'>
         <p><a href="/">Copyright © 2017-2020 AskeyNil</a></p>
+        <p> 赣ICP备17011673号-1</p>
 
-        </div>
-      
-    
-  </footer>
+      </div>
+
+
+    </footer>
 
 
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
   <div>
-    
-      
-  
 
-  <div id="rightmenu-wrapper">
-    <ul class="list-v rightmenu" id="rightmenu-content">
-      <li class='option'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>复制文本</a>
-        <hr id='hr-text'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
-        <hr id='hr-href'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
-        <hr id='hr-src'>
-      </li>
-      <li class='navigation'>
-        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
-        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
-        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
-        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
-      </li>
-      <hr>
-      
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/archives
-        
-        
-        
-        
-          id="archives"
-        >
-        <i class='fas fa-archive fa-fw'></i> 归档
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/categories
-        
-        
-        
-        
-          id="categories"
-        >
-        <i class='fas fa-folder-open fa-fw'></i> 分类
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/tags
-        
-        
-        
-        
-          id="tags"
-        >
-        <i class='fas fa-tags fa-fw'></i> 标签
-      </a>
-    </li>
-  
-        
-      
-        
-          <hr>
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/note
-        
-        
-        
-        
-          id="note"
-        >
-        <i class='fas fa-pen-square fa-fw fa-fw'></i> 便签
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/talk
-        
-        
-        
-        
-          id="talk"
-        >
-        <i class='fas fa-comment-dots fa-fw'></i> 闲谈
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/day-sign
-        
-        
-        
-        
-          id="day-sign"
-        >
-        <i class='fas fa-hourglass-half fa-fw'></i> 日签
-      </a>
-    </li>
-  
-        
-      
-        
-          <hr>
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=/timeline
-        
-        
-        
-        
-          id="timeline"
-        >
-        <i class='fa fa-history fa-fw'></i> 站史
-      </a>
-    </li>
-  
-        
-      
-        
-          <hr>
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' 
-        
-        
-        
-          onclick="document.execCommand('print')"
-        
-        >
-        <i class='fa fa-print fa-fw'></i> 打印页面
-      </a>
-    </li>
-  
-        
-      
-    </ul>
-  </div>
 
-  <script>
-    window.document.oncontextmenu = function (event) {
-      if (event.ctrlKey) return true;
-      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
-      return popMenu(event);
-    };
-    document.addEventListener("click", function (event) {
-      var mymenu = document.getElementById('rightmenu-wrapper');
-      mymenu.style.display = "none";
-    });
-    function popMenu(event) {
-      var mymenu = document.getElementById('rightmenu-wrapper');
-      var menuContent = document.getElementById('rightmenu-content');
-      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
-      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
-      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
-      mymenu.style.top = event.clientY + "px";
-      mymenu.style.display = 'block';
-      if (event.clientX * 2 > screenWidth) {
-        menuContent.classList.add('left');
-      } else {
-        menuContent.classList.remove('left');
-      }
-      if (event.clientY * 2 > screenHeight) {
-        menuContent.classList.add('top');
-      } else {
-        menuContent.classList.remove('top');
-      }
 
-      let hrText = document.getElementById('hr-text');
-      let hrSrc = document.getElementById('hr-src');
-      let hrHref = document.getElementById('hr-href');
 
-      // 选中图片
-      let copySrc = document.getElementById('menu-copy-src');
-      if (copySrc != undefined) {
-        if (event.target.currentSrc) {
-          copySrc.style.display = 'block';
-          copySrc.addEventListener("click", function (e) {
-            copyString(event.target.currentSrc);
-          },{once: true});
-          hrSrc.style.display = 'block';
+    <div id="rightmenu-wrapper">
+      <ul class="list-v rightmenu" id="rightmenu-content">
+        <li class='option'>
+          <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i
+              class='fa fa-copy fa-fw'></i>复制文本</a>
+          <hr id='hr-text'>
+          <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+          <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i
+              class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+          <hr id='hr-href'>
+          <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+          <hr id='hr-src'>
+        </li>
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i
+              class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i
+              class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i
+              class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+        <hr>
+
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/archives id="archives">
+            <i class='fas fa-archive fa-fw'></i> 归档
+          </a>
+        </li>
+
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/categories id="categories">
+            <i class='fas fa-folder-open fa-fw'></i> 分类
+          </a>
+        </li>
+
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/tags id="tags">
+            <i class='fas fa-tags fa-fw'></i> 标签
+          </a>
+        </li>
+
+
+
+
+        <hr>
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/note id="note">
+            <i class='fas fa-pen-square fa-fw fa-fw'></i> 便签
+          </a>
+        </li>
+
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/talk id="talk">
+            <i class='fas fa-comment-dots fa-fw'></i> 闲谈
+          </a>
+        </li>
+
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/day-sign id="day-sign">
+            <i class='fas fa-hourglass-half fa-fw'></i> 日签
+          </a>
+        </li>
+
+
+
+
+        <hr>
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' href=/timeline id="timeline">
+            <i class='fa fa-history fa-fw'></i> 站史
+          </a>
+        </li>
+
+
+
+
+        <hr>
+
+
+
+
+        <li>
+          <a class='vlts-menu fix-cursor-default' onclick="document.execCommand('print')">
+            <i class='fa fa-print fa-fw'></i> 打印页面
+          </a>
+        </li>
+
+
+
+      </ul>
+    </div>
+
+    <script>
+      window.document.oncontextmenu = function (event) {
+        if (event.ctrlKey) return true;
+        if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+        return popMenu(event);
+      };
+      document.addEventListener("click", function (event) {
+        var mymenu = document.getElementById('rightmenu-wrapper');
+        mymenu.style.display = "none";
+      });
+      function popMenu(event) {
+        var mymenu = document.getElementById('rightmenu-wrapper');
+        var menuContent = document.getElementById('rightmenu-content');
+        var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+        mymenu.style.top = event.clientY + "px";
+        mymenu.style.display = 'block';
+        if (event.clientX * 2 > screenWidth) {
+          menuContent.classList.add('left');
         } else {
-          copySrc.style.display = 'none';
-          hrSrc.style.display = 'none';
+          menuContent.classList.remove('left');
         }
-      }
+        if (event.clientY * 2 > screenHeight) {
+          menuContent.classList.add('top');
+        } else {
+          menuContent.classList.remove('top');
+        }
 
-      // 选中按钮
-      // 判断是不是按钮
-      let href = '';
-      if (event.path) {
-        for (i = 0; i < event.path.length; i++) {
-          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
-            href = event.path[i].href;
+        let hrText = document.getElementById('hr-text');
+        let hrSrc = document.getElementById('hr-src');
+        let hrHref = document.getElementById('hr-href');
+
+        // 选中图片
+        let copySrc = document.getElementById('menu-copy-src');
+        if (copySrc != undefined) {
+          if (event.target.currentSrc) {
+            copySrc.style.display = 'block';
+            copySrc.addEventListener("click", function (e) {
+              copyString(event.target.currentSrc);
+            }, { once: true });
+            hrSrc.style.display = 'block';
+          } else {
+            copySrc.style.display = 'none';
+            hrSrc.style.display = 'none';
           }
         }
-      }
 
-      let copyText = document.getElementById('menu-copy-text');
-      copyText.style.display = 'none';
-      hrText.style.display = 'none';
-      if (href.length == 0) {
-        // 选中文本
-        if (window.getSelection().toString()) {
-          copyText.style.display = 'block';
-          hrText.style.display = 'block';
+        // 选中按钮
+        // 判断是不是按钮
+        let href = '';
+        if (event.path) {
+          for (i = 0; i < event.path.length; i++) {
+            if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+              href = event.path[i].href;
+            }
+          }
         }
-      }
 
-      // 在新标签页打开
-      let openHref = document.getElementById('menu-open-href');
-      if (openHref != undefined) {
-        if (href.length > 0) {
-          openHref.style.display = 'block';
-          openHref.addEventListener("click", function (e) {
-            window.open(href);
-          },{once: true});
-          hrHref.style.display = 'block';
-        } else {
-          openHref.style.display = 'none';
-          hrHref.style.display = 'none';
+        let copyText = document.getElementById('menu-copy-text');
+        copyText.style.display = 'none';
+        hrText.style.display = 'none';
+        if (href.length == 0) {
+          // 选中文本
+          if (window.getSelection().toString()) {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
         }
-      }
-      // 复制链接
-      let copyHref = document.getElementById('menu-copy-href');
-      if (copyHref != undefined) {
-        if (href.length > 0) {
-          copyHref.style.display = 'block';
-          copyHref.addEventListener("click", function (e) {
-            copyString(href);
-          },{once: true});
-        } else {
-          copyHref.style.display = 'none';
+
+        // 在新标签页打开
+        let openHref = document.getElementById('menu-open-href');
+        if (openHref != undefined) {
+          if (href.length > 0) {
+            openHref.style.display = 'block';
+            openHref.addEventListener("click", function (e) {
+              window.open(href);
+            }, { once: true });
+            hrHref.style.display = 'block';
+          } else {
+            openHref.style.display = 'none';
+            hrHref.style.display = 'none';
+          }
         }
+        // 复制链接
+        let copyHref = document.getElementById('menu-copy-href');
+        if (copyHref != undefined) {
+          if (href.length > 0) {
+            copyHref.style.display = 'block';
+            copyHref.addEventListener("click", function (e) {
+              copyString(href);
+            }, { once: true });
+          } else {
+            copyHref.style.display = 'none';
+          }
+        }
+
+        // 有音乐播放器
+        if (false == true) {
+          // 如果有aplayer，初始化一下
+          try {
+            checkAPlayer();
+            updateTitle();
+          } catch (error) {
+            console.log(error);
+          }
+        }
+
+        return false; // 该行代码确保系统自带的右键菜单不会被调出
       }
-
-      // 有音乐播放器
-      if (false == true) {
-        // 如果有aplayer，初始化一下
-      	try {
-      		checkAPlayer();
-          updateTitle();
-      	} catch (error) {
-      		console.log(error);
-      	}
+      function hideMenu() {
+        document.getElementById('rightmenu-wrapper').style.display = 'none';
       }
-
-      return false; // 该行代码确保系统自带的右键菜单不会被调出
-    }
-    function hideMenu() {
-      document.getElementById('rightmenu-wrapper').style.display = 'none';
-    }
-    function copyString(str) {
-      const input = document.createElement('input');
-      input.setAttribute('readonly', 'readonly');
-      document.body.appendChild(input);
-      input.setAttribute('value', str);
-      input.select();
-      document.execCommand('copy');
-      document.body.removeChild(input);
-    }
-    document.execCommand('click');
-  </script>
+      function copyString(str) {
+        const input = document.createElement('input');
+        input.setAttribute('readonly', 'readonly');
+        document.body.appendChild(input);
+        input.setAttribute('value', str);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+      document.execCommand('click');
+    </script>
 
 
-    
+
     <!-- 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
  -->
 
 
-  <script>
-    
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/" || "/";
-    if (!ROOT.endsWith('/')) ROOT += '/';
-  </script>
+    <script>
+
+      var SEARCH_SERVICE = "hexo" || "hexo";
+      var ROOT = "/" || "/";
+      if (!ROOT.endsWith('/')) ROOT += '/';
+    </script>
 
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer
+      integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
 
-  
-  
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/1.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/2.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/3.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/4.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/5.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/6.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/7.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/8.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/9.jpg"];
+      $(function () {
+        var imgs = ["https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/1.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/2.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/3.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/4.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/5.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/6.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/7.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/8.jpg", "https://cdn.jsdelivr.net/gh/askeynil/cdn-assets@master/bg/9.jpg"];
         if ('true' == 'true') {
-          function shuffle(arr){
+          function shuffle(arr) {
             /*From countercurrent-time*/
             var n = arr.length;
-            while(n--) {
+            while (n--) {
               var index = Math.floor(Math.random() * n);
               var temp = arr[index];
               arr[index] = arr[n];
@@ -1974,118 +2050,118 @@ my_last_name
         if ('.cover') {
           $('.cover').backstretch(
             imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
+            {
+              duration: "20000",
+              fade: "1500"
+            });
         } else {
           $.backstretch(
             imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
+            {
+              duration: "20000",
+              fade: "1500"
+            });
         }
       });
     </script>
-  
 
 
 
 
 
 
-  
-  
-<script src="/js/valine.js"></script>
-
-
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
-      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
-
-    let ALLPATH = '';
-    if(ALLPATH != '') pageUrl = ALLPATH;
-
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: pageUrl,
-      appId: "oLOfpLWUeN88TsR6gviA7dVk-MdYXbMMI",
-      appKey: "oNbFzpdr4m1YkWnDB9nggyqt",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
-  }
-
-  $(function () {
-    pjax_valine();
-  });
-</script>
 
 
 
+    <script src="/js/valine.js"></script>
 
-<!-- darkmodejs -->
+
+    <script>
+      var GUEST_INFO = ['nick', 'mail', 'link'];
+      var meta = 'nick,mail,link'.split(',').filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1
+      });
+      var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+      var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+        return REQUIRED_FIELDS.indexOf(item) > -1
+      });
+
+      function emoji(path, idx, ext) {
+        return path + "/" + path + "-" + idx + "." + ext;
+      }
+
+      var emojiMaps = {};
+      for (var i = 1; i <= 54; i++) {
+        emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+      }
+      for (var i = 1; i <= 101; i++) {
+        emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+      }
+      for (var i = 1; i <= 116; i++) {
+        emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+      }
+      for (var i = 1; i <= 125; i++) {
+        emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+      }
+      for (var i = 1; i <= 4; i++) {
+        emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+      }
+
+      function pjax_valine() {
+        let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ?
+          decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
+        let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+          "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+
+        let ALLPATH = '';
+        if (ALLPATH != '') pageUrl = ALLPATH;
+
+        var valine = new Valine();
+        valine.init({
+          el: '#valine_container',
+          meta: meta,
+          placeholder: pagePlaceholder,
+          path: pageUrl,
+          appId: "oLOfpLWUeN88TsR6gviA7dVk-MdYXbMMI",
+          appKey: "oNbFzpdr4m1YkWnDB9nggyqt",
+          pageSize: '10',
+          avatar: 'robohash',
+          lang: 'zh-cn',
+          visitor: 'true',
+          highlight: 'true',
+          mathJax: 'false',
+          enableQQ: 'true',
+          requiredFields: requiredFields,
+          emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+          emojiMaps: emojiMaps
+        })
+      }
+
+      $(function () {
+        pjax_valine();
+      });
+    </script>
 
 
-<!-- 复制 -->
 
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-    var clipboard = new ClipboardJS('.btn-copy', {
+
+    <!-- darkmodejs -->
+
+
+    <!-- 复制 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script>
+      var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
-            return trigger.nextElementSibling
+          return trigger.nextElementSibling
         }
-    });
-    function wait(callback, seconds) {
+      });
+      function wait(callback, seconds) {
         var timelag = null;
         timelag = window.setTimeout(callback, seconds)
-    }
-    function pjax_initCopyCode() {
+      }
+      function pjax_initCopyCode() {
         var copyHtml = '';
         copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
         copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
@@ -2093,280 +2169,284 @@ my_last_name
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-            let $btn = $(e.trigger);
-            $btn.addClass('copied');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-check-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPIED';
-            wait(function () {
-                $icon.removeClass('fa-check-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
+          let $btn = $(e.trigger);
+          $btn.addClass('copied');
+          let $icon = $($btn.find('i'));
+          $icon.removeClass('fa-copy');
+          $icon.addClass('fa-check-circle');
+          let $span = $($btn.find('span'));
+          $span[0].innerText = 'COPIED';
+          wait(function () {
+            $icon.removeClass('fa-check-circle');
+            $icon.addClass('fa-copy');
+            $span[0].innerText = 'COPY'
+          }, 2000)
         });
         clipboard.off('error').on('error', function (e) {
-            e.clearSelection();
-            let $btn = $(e.trigger);
-            $btn.addClass('copy-failed');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-times-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPY FAILED';
-            wait(function () {
-                $icon.removeClass('fa-times-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
+          e.clearSelection();
+          let $btn = $(e.trigger);
+          $btn.addClass('copy-failed');
+          let $icon = $($btn.find('i'));
+          $icon.removeClass('fa-copy');
+          $icon.addClass('fa-times-circle');
+          let $span = $($btn.find('span'));
+          $span[0].innerText = 'COPY FAILED';
+          wait(function () {
+            $icon.removeClass('fa-times-circle');
+            $icon.addClass('fa-copy');
+            $span[0].innerText = 'COPY'
+          }, 2000)
         })
-    }
-    $(function () {
+      }
+      $(function () {
         pjax_initCopyCode()
-    });
-</script>
-
-
-<!-- scrollreveal -->
-
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    function pjax_scrollrebeal() {
-      ScrollReveal().reveal('.l_main .reveal', {
-        distance: '32px',
-        duration: '800',
-        interval: '20',
-        scale: '1',
-        easing: 'ease-out'
       });
-    }
-
-    $(function () {
-      pjax_scrollrebeal();
-    });
-  </script>
-
-<!-- ******************************** -->
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  function pjax_fancybox() {
-    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".article-entry").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  $(function () {
-    pjax_fancybox();
-  });
-</script>
-
-<!-- ******************************** -->
-
-
-  
-<script src="/js/app.js"></script>
-
-
-
-
-  
-    
-<script src="/js/search.js"></script>
-
-  
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script type="text/javascript">
-    $(function () {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-
-
-
-
-
-
-    
-      
-
-
-<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
-  
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
     </script>
-  
-</div>
 
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
+
+    <!-- scrollreveal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+    <script type="text/javascript">
+      function pjax_scrollrebeal() {
+        ScrollReveal().reveal('.l_main .reveal', {
+          distance: '32px',
+          duration: '800',
+          interval: '20',
+          scale: '1',
+          easing: 'ease-out'
+        });
+      }
+
+      $(function () {
+        pjax_scrollrebeal();
       });
-    });
+    </script>
 
-    document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+    <!-- ******************************** -->
 
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = ["/talk"];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      $.fancybox.close();    // 关闭弹窗
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
-
-      // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-      window.ShowLoading();
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      // 关于百度统计对 SPA 页面的处理：
-      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
-      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
-
-      // 关于谷歌统计对 SPA 页面的处理：
-      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
-      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
-      
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('config', 'UA-148517433-1', {'page_path': document.location.pathname});
-      
-
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-
-      try{
+    <!-- fancybox -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script>
+      function pjax_fancybox() {
+        $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+          var element = document.createElement("a"); // a 标签
+          $(element).attr("class", "fancybox");
+          $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+          $(element).attr("href", $(this).attr("src"));
+          if ($(this).attr("data-original")) {
+            $(element).attr("href", $(this).attr("data-original"));
+          }
+          $(element).attr("data-fancybox", "images");
+          var caption = "";   // 描述信息
+          if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+            $(element).attr('data-caption', $(this).attr('alt'));
+            caption = $(this).attr('alt');
+          }
+          var div = document.createElement("div");
+          $(div).addClass("fancybox");
+          $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+          var span = document.createElement("span");
+          $(span).addClass("image-caption");
+          $(span).text(caption); // 加描述
+          $(this).after(span);  // 再套一层描述
+          $(this).wrap(element);  // 最后套 a 标签
+        })
+        $(".article-entry").find("img").fancybox({
+          selector: '[data-fancybox="images"]',
+          hash: false,
+          loop: false,
+          closeClick: true,
+          helpers: {
+            overlay: { closeClick: true }
+          },
+          buttons: [
+            "zoom",
+            "close"
+          ]
+        });
+      };
+      $(function () {
         pjax_fancybox();
-        
-          
+      });
+    </script>
+
+    <!-- ******************************** -->
+
+
+
+    <script src="/js/app.js"></script>
+
+
+
+
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"
+      data-pjax></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        Waves.attach('.flat-btn', ['waves-button']);
+        Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+        Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+        Waves.attach('.flat-box', ['waves-block']);
+        Waves.attach('.float-box', ['waves-block', 'waves-float']);
+        Waves.attach('.waves-image');
+        Waves.init();
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+    <div class="pjax-animate">
+
+      <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+      <div id="loading-bar-wrapper">
+        <script>NProgress.configure({ parent: "#loading-bar-wrapper", trickleSpeed: 100 })</script>
+      </div>
+      <script>
+        window.ShowLoading = function () {
+          NProgress.start();
+        };
+        window.HideLoading = function () {
+          NProgress.done();
+        }
+      </script>
+
+    </div>
+
+    <script>
+      var pjax;
+      document.addEventListener('DOMContentLoaded', function () {
+        pjax = new Pjax({
+          elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+          selectors: [
+            "title",
+            "#pjax-container",
+            "#pjax-header-nav-list"
+          ],
+          cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+          timeout: 5000
+        });
+      });
+
+      document.addEventListener('pjax:send', function (e) {
+        window.stop(); // 相当于点击了浏览器的停止按钮
+
+        try {
+          var currentUrl = window.location.pathname;
+          var targetUrl = e.triggerElement.href;
+          var banUrl = ["/talk"];
+          if (banUrl[0] != "") {
+            banUrl.forEach(item => {
+              if (currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+                window.location.href = targetUrl;
+              }
+            });
+          }
+        } catch (error) { }
+
+        window.subData = null; // 移除标题（用于一二级导航栏切换处）
+        $.fancybox.close();    // 关闭弹窗
+        $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+        $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+        $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+        // 解绑事件 避免重复监听
+        $('.s-top').unbind('click');
+        $('.menu a').unbind('click');
+        $(window).unbind('resize');
+        $(window).unbind('scroll');
+        $(document).unbind('scroll');
+        $(document).unbind('click');
+        $('body').unbind('click');
+        window.ShowLoading();
+      });
+
+      document.addEventListener('pjax:complete', function () {
+        // 关于百度统计对 SPA 页面的处理：
+        // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+        // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+        // 
+
+        // 关于谷歌统计对 SPA 页面的处理：
+        // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+        // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('config', 'UA-148517433-1', { 'page_path': document.location.pathname });
+
+
+        $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style", ""); // 移除小尾巴的移除
+        $('.menu-phone.list-v').removeAttr("style", ""); // 移除小尾巴的移除
+        $('script[data-pjax], .pjax-reload script').each(function () {
+          $(this).parent().append($(this).remove());
+        });
+
+        try {
+          pjax_fancybox();
+
+
           if ('.cover') {
             $('.cover').backstretch("resize");
           } else {
             $.backstretch("resize");
           }
-        
-        
-        
+
+
+
           pjax_scrollrebeal();
-        
-        
+
+
           pjax_initCopyCode();
-        
-        
+
+
           pjax_valine();
-        
-        
-        
-        
-        
-      } catch (e) {
-        console.log(e);
-      }
-      window.HideLoading();
-    });
 
-    document.addEventListener('pjax:error', function (e) {
-      window.HideLoading();
-      window.location.href = e.triggerElement.href;
-    });
-</script>
 
-    
+
+
+
+        } catch (e) {
+          console.log(e);
+        }
+        window.HideLoading();
+      });
+
+      document.addEventListener('pjax:error', function (e) {
+        window.HideLoading();
+        window.location.href = e.triggerElement.href;
+      });
+    </script>
+
+
   </div>
 </body>
+
 </html>
